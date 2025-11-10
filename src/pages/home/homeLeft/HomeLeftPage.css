@@ -1,0 +1,102 @@
+.hero {
+  width: 50%;
+  background-color: #f7e9ff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #1d1d1f;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #8b5cf6;
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.play-icon {
+  background-color: #f3dfff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8b5cf6;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.watch p {
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+}
+
+.sub-text {
+  color: #4b4b4b;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.try-btn {
+  background-color: #9b4bff;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.try-btn:hover {
+  background-color: #7a3bd1;
+}
+
+.creator-section {
+  margin-top: 40px;
+}
+
+.creator-title {
+  font-size: 14px;
+  color: #777;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.creator-images {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.creator-images img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.creator-images img:hover {
+  transform: scale(1.05);
+}
