@@ -42,7 +42,7 @@ const Header = () => {
         <a href="#">AI Avatar</a>
       </nav>
 
-      <button className="try-btn">Try it Free</button>
+      <Buttons className="try-btn">Log in</Button>
     </header>
   );
 };
