@@ -1,15 +1,50 @@
-import Button from "../components/Button";
+// import React from "react";
+// import "./Header.css";
+// import Button from "../../components/Button";
+
+// const Header = () => {
+//   return (
+//     <header className="header">
+//       <h1 className="logo">Logo</h1>
+
+//       <nav className="nav">
+//         <a href="#" className="nav-link">Product</a>
+//         <a href="#" className="nav-link">Solution</a>
+//       </nav>
+
+//       <div className="btn-group">
+//         <Button>Log in</Button>
+//         <Button>Start creating</Button>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+
+import "./Header.css";
+import Button from "../../components/Button";
+
 
 const Header = () => {
-    return (
-      <>
-        <h1>Logo</h1>
-        <h>Product</h2>
-        <h2>Solution</h2>
-        <Button>Log in</Button>
-        <Button>Start creating</Button>
-      </>  
-    )
-}
+  return (
+    <header className="header">
+      <div className="logo">
+        <div className="logo-icon">◎</div>
+        <h2>idea AI</h2>
+      </div>
+
+      <nav className="nav">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">AI Avatar</a>
+      </nav>
+
+      <button className="try-btn">Try it Free</button>
+    </header>
+  );
+};
 
 export default Header;

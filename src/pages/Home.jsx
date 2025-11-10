@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div>
-        <h1>Welcome to PicZen</h1>
+        
     </div>
   );
 }
