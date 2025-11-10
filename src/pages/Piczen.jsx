@@ -1,11 +1,12 @@
-import Header from "./Header";
+import Header from "./header/Header";
+
 
 const PicZen = () => {
   return (
     <div>
         <Header />
         <div>
-            
+
         </div>
     </div>
   );
