@@ -1,4 +1,5 @@
 import Header from "./header/Header";
+import Home from "./home/Home";
 
 
 const PicZen = () => {
@@ -6,7 +7,7 @@ const PicZen = () => {
     <div>
         <Header />
         <div>
-
+            <Home />
         </div>
     </div>
   );
