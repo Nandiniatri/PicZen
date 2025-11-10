@@ -1,0 +1,93 @@
+.right-panel {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image */
+.model-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Purple gradient overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top right, rgba(115, 60, 220, 0.6), rgba(255, 255, 255, 0));
+}
+
+/* Social bar (middle right) */
+.social-bar {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-bar a {
+  color: #5b21b6;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Control panel (bottom) */
+.control-panel {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Slider design */
+.slider {
+  position: relative;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.slider-track {
+  position: absolute;
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(to right, #a855f7, #7e22ce);
+  border-radius: 3px;
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  background-color: #c084fc;
+  border-radius: 50%;
+}
