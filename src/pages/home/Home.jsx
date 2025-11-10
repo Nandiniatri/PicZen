@@ -1,11 +1,17 @@
 import HomeLeftPage from "./homeLeft/HomeLeftPage";
 import HomeRightPage from "./homeRight/HomeRightPage";
+import './Home.css';
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
+      <div className="home-left">
         <HomeLeftPage />
-        <HomeRightPage /> 
+      </div>
+
+      <div className="home-right">
+        <HomeRightPage />
+      </div>
     </div>
   );
 }

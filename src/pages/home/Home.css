@@ -1,0 +1,24 @@
+.home {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.home-left {
+  flex: 1;
+  background-color: #f7e9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right part */
+.home-right {
+  flex: 1;
+  background: linear-gradient(to top right, #9b4bff, #d8b4fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
