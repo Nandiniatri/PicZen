@@ -26,7 +26,7 @@ const HomeLeftPage = () => {
                     <div className="creator-images">
                         <img src="https://cdn.pixabay.com/photo/2024/07/09/13/48/beautiful-girl-8883604_1280.jpg" alt="creator1" />
                         <img src="https://cdn.pixabay.com/photo/2024/06/25/13/12/woman-8852664_1280.jpg" alt="creator2" />
-                        <img src="https://cdn.pixabay.com/photo/2024/06/25/13/12/beautiful-girl-8852671_640.jpg 1x, https://cdn.pixabay.com/photo/2024/06/25/13/12/beautiful-girl-8852671_1280.jpg 2x" alt="creator3" />
+                        <img src="https://cdn.pixabay.com/photo/2024/06/25/13/12/beautiful-girl-8852671_640.jpg" alt="creator3" />
                         <img src="https://cdn.pixabay.com/photo/2024/06/25/13/12/woman-8852672_640.jpg" alt="creator4" />
                     </div>
                 </div>
