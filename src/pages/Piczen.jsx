@@ -7,7 +7,7 @@ import HomePage4Food from "./home/homePage4/HomePage4Food";
 const PicZen = () => {
   return (
     <div>
-        {/* <Header /> */}
+        <Header />
         <div>
             <Home />
             <HomePage2 />
