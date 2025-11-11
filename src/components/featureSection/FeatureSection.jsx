@@ -15,25 +15,7 @@ const FeatureSection = ({
     return (
         <div className="hp2-wrapper">
 
-            <div className="hp2-title-block">
-                <h1 className="hp2-title">{hpTitle}</h1>
-
-                <h1 className="hp2-title-flex">
-                    <span className="hp2-you">{hpYou}</span>
-
-                    {hpImage1 && (
-                        <img
-                            src={hpImage1}
-                            className="hp2-icon"
-                        />
-                    )}
-
-                    {hpText3}
-                </h1>
-            </div>
-
             <div className={`hp2-content ${reverse ? 'reverse' : ''}`}>
-
                 <div className="hp2-image-block">
                     <img
                         src={hpImage2}
@@ -48,8 +30,8 @@ const FeatureSection = ({
 
                     <Button className="hp2-btn">{hpButtonText}</Button>
                 </div>
-
             </div>
+
         </div>
     );
 }

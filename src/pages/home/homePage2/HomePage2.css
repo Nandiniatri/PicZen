@@ -1,0 +1,24 @@
+
+.hp2-title-block {
+     text-align: center;
+ }
+
+.hp2-title {
+     font-size: 48px;
+     font-weight: 700;
+     color: black;
+} 
+
+.hp2-title-flex {
+     font-size: 48px;
+     font-weight: 700;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 12px;
+}
+
+.hp2-icon {
+     width: 48px;
+     height: 48px;
+}
