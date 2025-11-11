@@ -1,16 +1,16 @@
 .right-panel {
-  width: 50%;
+  /* width: 50%; */
   height: 100vh;
   position: relative;
   overflow: hidden;
-  border: solid 
+  /* border: solid  */
 }
 
 .model-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: solid;
+  /* border: solid; */
 }
 
 
