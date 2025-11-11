@@ -1,16 +1,78 @@
+// import './FeatureSection.css';
+
+// const FeatureSection = ({}) => {
+//     return (
+//         <div className="hp2-wrapper">
+//             <div className="hp2-title-block">
+//                 <h1 className="hp2-title">{hpTitle}</h1>
+//                 <h1 className="hp2-title-flex">
+//                     <h1 className="hp2-you">{hpYou}</h1>
+//                     {icon && <img
+//                         src={hpImage1}
+//                         className="hp2-icon"
+//                     />}
+
+//                     {hpText3}
+//                 </h1>
+//             </div>
+
+//             <div className="hp2-content">
+
+//                 <div className="hp2-image-block">
+//                     <img
+//                         src={hpImage2}
+//                         className="hp2-main-img"
+//                     />
+//                 </div>
+
+//                 <div className="hp2-text-block">
+//                     <h2 className="hp2-heading">
+//                         {hpHeading}
+//                     </h2>
+
+//                     <p className="hp2-desc">
+//                         {hpDesc}
+//                     </p>
+
+//                     <Button className="hp2-btn">{hpButtonText}</Button>
+//                 </div>
+
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default FeatureSection;
+
+
+import Button from '../Button';
 import './FeatureSection.css';
 
-const FeatureSection = () => {
+const FeatureSection = ({
+    hpTitle,
+    hpYou,
+    hpText3,
+    hpImage1,
+    hpImage2,
+    hpHeading,
+    hpDesc,
+    hpButtonText
+}) => {
     return (
         <div className="hp2-wrapper">
+
             <div className="hp2-title-block">
                 <h1 className="hp2-title">{hpTitle}</h1>
+
                 <h1 className="hp2-title-flex">
-                    <h1 className="hp2-you">{hpYou}</h1>
-                    {icon && <img
-                        src={hpImage1}
-                        className="hp2-icon"
-                    />}
+                    <span className="hp2-you">{hpYou}</span>
+
+                    {hpImage1 && (
+                        <img
+                            src={hpImage1}
+                            className="hp2-icon"
+                        />
+                    )}
 
                     {hpText3}
                 </h1>
@@ -26,15 +88,12 @@ const FeatureSection = () => {
                 </div>
 
                 <div className="hp2-text-block">
-                    <h2 className="hp2-heading">
-                        {hpHeading}
-                    </h2>
+                    <h2 className="hp2-heading">{hpHeading}</h2>
 
-                    <p className="hp2-desc">
-                        {hpDesc}
-                    </p>
+                    <p className="hp2-desc">{hpDesc}</p>
 
                     <Button className="hp2-btn">{hpButtonText}</Button>
+
                 </div>
 
             </div>
