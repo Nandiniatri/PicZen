@@ -7,6 +7,7 @@ const HomePage4Food = () => {
             hpHeading="Create visuals across all devices"
             hpDesc="Whether you’re at your desk or on the move, Photoroom’s mobile and desktop apps let you create and edit visuals anywhere, anytime."
             hpButtonText="Start creating for free"
+            reverse={true}
         />
     )
 }

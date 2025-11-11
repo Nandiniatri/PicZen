@@ -9,7 +9,8 @@ const FeatureSection = ({
     hpImage2,
     hpHeading,
     hpDesc,
-    hpButtonText
+    hpButtonText,
+    reverse   
 }) => {
     return (
         <div className="hp2-wrapper">
@@ -31,7 +32,7 @@ const FeatureSection = ({
                 </h1>
             </div>
 
-            <div className="hp2-content">
+            <div className={`hp2-content ${reverse ? 'reverse' : ''}`}>
 
                 <div className="hp2-image-block">
                     <img
@@ -46,7 +47,6 @@ const FeatureSection = ({
                     <p className="hp2-desc">{hpDesc}</p>
 
                     <Button className="hp2-btn">{hpButtonText}</Button>
-
                 </div>
 
             </div>
