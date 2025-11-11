@@ -1,4 +1,5 @@
 import Header from "./header/Header";
+import Footer from "./home/footer/Footer";
 import Home from "./home/Home";
 import HomePage2 from "./home/homePage2/HomePage2";
 import HomePage3Food from "./home/homePage3/HomePage3Food";
@@ -16,6 +17,7 @@ const PicZen = () => {
             <HomePage3Food />
             <HomePage4Food />
             <HomePage5 />
+            <Footer />
         </div>
     </div>
   );
