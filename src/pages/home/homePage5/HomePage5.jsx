@@ -3,7 +3,6 @@ import "./HomePage5.css";
 export default function HomePage5() {
   return (
     <div className="testimonial-container">
-      {/* Card 1 */}
       <div className="tc-card">
         <div className="tc-tag">SMB</div>
 
