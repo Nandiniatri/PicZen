@@ -5,7 +5,7 @@ import Home from "./home/Home";
 const PicZen = () => {
   return (
     <div>
-        <Header />
+        {/* <Header /> */}
         <div>
             <Home />
         </div>

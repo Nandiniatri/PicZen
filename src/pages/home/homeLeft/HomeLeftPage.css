@@ -1,11 +1,12 @@
 .hero {
-  width: 50%;
+  /* width: 50%; */
   background-color: #f7e9ff;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 80px;
+  /* padding-left: 80px; */
+  /* border: solid; */
 }
 
 .hero-content {
