@@ -1,12 +1,10 @@
- .hp2-wrapper {
-     width: 100%;
-     padding: 60px 80px;
-     /* background: linear-gradient(135deg, #f5e6ff, #d9c2ff); */
-     display: flex;
-     flex-direction: column;
-     gap: 60px;
-     font-family: "Poppins", sans-serif;
- }
+.hp2-wrapper {
+    width: 100%;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
 
  .hp2-content {
      display: flex;
@@ -64,7 +62,7 @@
  .hp2-you {
      color: #8b5cf6;
      font-size: 60px;
-     font-family: cursive;
+     /* font-family: cursive; */
  }
 
  .hp2-content {

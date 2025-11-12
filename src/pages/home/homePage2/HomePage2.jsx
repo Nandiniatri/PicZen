@@ -14,7 +14,7 @@ const HomePage2 = () => {
                         className="hp2-icon"
                     />
                     Ever Need
-                </h1>
+                </h1> 
             </div> 
 
             <FeatureSection

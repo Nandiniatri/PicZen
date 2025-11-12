@@ -1,12 +1,12 @@
-
 .hp2-title-block {
      text-align: center;
+     margin-top: 25px;
  }
 
 .hp2-title {
      font-size: 48px;
      font-weight: 700;
-     color: black;
+     color: black; 
 } 
 
 .hp2-title-flex {
