@@ -1,18 +1,17 @@
-/* Main header */
 .header {
   width: 100%;
-  padding: 20px 50px;
+  padding: 11px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
   background: transparent;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
+  /* border: solid;s */
 }
 
-/* Logo section */
 .logo {
   display: flex;
   align-items: center;
@@ -37,7 +36,6 @@
   font-weight: 700;
 }
 
-/* Navigation menu */
 .nav {
   display: flex;
   gap: 32px;
@@ -55,12 +53,11 @@
   color: #8a4ddc;
 }
 
-/* Right button */
 .try-btn {
   background: #9b4bff;
   color: #fff;
   border: none;
-  padding: 10px 22px;
+  padding: 7px 20px;;
   border-radius: 30px;
   font-size: 15px;
   font-weight: 600;
@@ -72,7 +69,6 @@
   background: #7a3bd1;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
