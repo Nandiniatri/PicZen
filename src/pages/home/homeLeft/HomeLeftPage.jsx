@@ -19,7 +19,7 @@ const HomeLeftPage = () => {
                     retouching, we help you achieve stunning results in seconds.
                 </p>
 
-                <Button className="try-btn">Try it Free</Button>
+                <Button className="try-btn" onClick={handleTryItFree}>Try it Free</Button>
 
                 <div className="creator-section">
                     <p className="creator-title">OUR CREATOR</p>
@@ -36,4 +36,4 @@ const HomeLeftPage = () => {
 }
 
 export default HomeLeftPage;
-
+ 
