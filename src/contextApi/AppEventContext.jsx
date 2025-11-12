@@ -8,10 +8,9 @@ const AppEventProvider = ({ children }) => {
     const navigate = useNavigate();
     
     const handleTryItFree = () => {
-        alert("Try it Free button clicked");
         navigate('/second');
     }
-
+ 
     return (
         <AppEventContext.Provider value={{
             handleTryItFree

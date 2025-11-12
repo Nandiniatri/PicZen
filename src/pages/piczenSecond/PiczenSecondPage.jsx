@@ -1,6 +1,10 @@
 const PicZenSendondPage = () => {
-  return <div>PicZen Second Page</div>;
-  
+  return (
+    <>
+        <h1>PicZen Second Page</h1>
+    </>
+  )
+
 }   
 
 export default PicZenSendondPage;
