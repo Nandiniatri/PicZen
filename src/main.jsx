@@ -11,9 +11,7 @@ makeServer();
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <AppEventProvider>
-        <App />
-      </AppEventProvider>
+      <App />
     </BrowserRouter>
   </StrictMode>
 )
