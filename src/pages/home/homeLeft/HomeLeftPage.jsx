@@ -1,7 +1,10 @@
 import Button from '../../../components/Button';
+import { useAppEvent } from '../../../contextApi/AppEventContext';
 import './HomeLeftPage.css';
 
 const HomeLeftPage = () => {
+    const { handleTryItFree } = useAppEvent();
+
     return (
         <section className="hero">
             <div className="hero-content">
@@ -36,4 +39,4 @@ const HomeLeftPage = () => {
 }
 
 export default HomeLeftPage;
- 
+
