@@ -15,7 +15,6 @@ const AppEventProvider = ({ children }) => {
     return (
         <AppEventContext.Provider value={{
             handleTryItFree,
-            menu
         }}>
             {children}
         </AppEventContext.Provider>
