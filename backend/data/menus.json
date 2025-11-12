@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Create", "icon": "home" },
+  { "id": 2, "name": "AI Tools", "icon": "cpu" },
+  { "id": 3, "name": "Batch", "icon": "layers" },
+  { "id": 4, "name": "Activity", "icon": "clock" }
+]
