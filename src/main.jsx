@@ -4,13 +4,16 @@ import './index.css'
 import App from './App.jsx'
 import AppEventProvider from './contextApi/AppEventContext.jsx'
 import { makeServer } from './mirageJs/server.js'
-
+import { BrowserRouter } from 'react-router-dom'
 
 makeServer();
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppEventProvider>
-      <App />
-    </AppEventProvider>
-  </StrictMode>,
+    <BrowserRouter>
+      <AppEventProvider>
+        <App />
+      </AppEventProvider>
+    </BrowserRouter>
+  </StrictMode>
 )
