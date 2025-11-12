@@ -1,7 +1,6 @@
 import { createServer, Model } from "miragejs";
-import menus from "./fixtures/menus.json";
-import contents from "./fixtures/contents.json";
-import footers from "./fixtures/footers.json";
+import menus from "./fixtures/sidebar/menus.json";
+import contents from "./fixtures/sidebar/contents.json";
 
 export function makeServer({ environment = "development" } = {}) {
   return createServer({
@@ -10,13 +9,11 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       menu: Model,
       content: Model,
-      footer: Model,
     },
 
     fixtures: {
       menus,
       contents,
-      footers,
     },
 
     routes() {
@@ -24,7 +21,6 @@ export function makeServer({ environment = "development" } = {}) {
 
       this.get("/menus", (schema) => schema.db.menus);
       this.get("/contents", (schema) => schema.db.contents);
-      this.get("/footers", (schema) => schema.db.footers);
     },
   });
 }
