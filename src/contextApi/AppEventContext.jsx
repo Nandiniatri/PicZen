@@ -21,8 +21,20 @@ const AppEventProvider = ({ children }) => {
         }
     }
 
+    const fetchContent = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/contents');
+            const result = await response.json();
+            console.log('Menus data fetched successfully:', result);
+            setContents(result);
+        } catch (error) {
+            console.error('Error fetching menus data:', error);
+        }
+    }
+
     const handleTryItFree = () => {
         fetchMenus();
+        fetchContent();
         navigate('/second');
     }
 
@@ -30,6 +42,7 @@ const AppEventProvider = ({ children }) => {
         <AppEventContext.Provider value={{
             handleTryItFree,
             menus,
+            contents
         }}>
             {children}
         </AppEventContext.Provider>

@@ -13,10 +13,10 @@ app.get("/api/menus", (req, res) => {
 });
 
 
-// app.get("/api/contents", (req, res) => {
-//   const data = JSON.parse(fs.readFileSync("./data/contents.json", "utf-8"));
-//   res.json(data);
-// });
+app.get("/api/contents", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/contents.json", "utf-8"));
+  res.json(data);
+});
 
 
 const PORT = 4000;
