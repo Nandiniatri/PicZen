@@ -1,8 +1,13 @@
+import PiczenSidebar from "./piczenSidebar/PiczenSidebar";
+import './PiczenSecondPage.css';
+import PiczenRightSide from "./piczenRightSide/PiczenRightSide";
+
 const PicZenSendondPage = () => {
   return (
-    <>
-        <h1>PicZen Second Page</h1>
-    </>
+    <div className="main-div-PicZenSecondPage">
+        <PiczenSidebar />
+        <PiczenRightSide />
+    </div>
   )
 
 }   
