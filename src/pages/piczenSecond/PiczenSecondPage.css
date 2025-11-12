@@ -1,3 +1,6 @@
-.main-div-PicZenSecondPage{
+.main-div-PicZenSecondPage {
     border: solid;
+    display: flex;
+    flex-direction: row;
+    gap: 20px
 }
