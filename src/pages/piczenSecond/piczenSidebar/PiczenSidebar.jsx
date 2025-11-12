@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { useAppEvent } from "../../../contextApi/AppEventContext";
 
 const PiczenSidebar = () => {
-    const { menus } = useAppEvent();
+    const { menus, contents } = useAppEvent();
     console.log(menus);
 
 
