@@ -6,7 +6,7 @@ const PicZenSendondPage = () => {
   return (
     <div className="main-div-PicZenSecondPage">
         <PiczenSidebar />
-        <PiczenRightSide />
+        {/* <PiczenRightSide /> */}
     </div>
   )
 

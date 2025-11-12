@@ -8,7 +8,6 @@ const PiczenSidebar = () => {
 
     return (
         <>
-            <h2>Piczen Sidebar</h2>
             <h2>Menus</h2>
             <ul>
                 {menus.map(item => (
