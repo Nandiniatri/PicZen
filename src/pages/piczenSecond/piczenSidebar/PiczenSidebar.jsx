@@ -6,9 +6,9 @@ const iconMap = {
     home: <Home size={18} />,
     cpu: <Cpu size={18} />,
     layers: <Layers size={18} />,
-    design: <GalleryVerticalEnd size={18} />,
-    brandKit: <AlignEndHorizontal size={18} />,
-    template: <BookText size={18} />
+    galleryVerticalEnd: <GalleryVerticalEnd size={18} />,
+    alignEndHorizontal: <AlignEndHorizontal size={18} />,
+    bookText: <BookText size={18} />
 };
 
 const PiczenSidebar = () => {

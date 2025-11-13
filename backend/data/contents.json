@@ -1,5 +1,5 @@
 [
-  { "id": 1, "title": "Design" , "icon": "GalleryVerticalEnd"},
-  { "id": 2, "title": "Brand kit" , "icon": "AlignEndHorizontal"},
-  { "id": 3, "title": "Template" , "icon": "BookText"}
+  { "id": 1, "title": "Design" , "icon": "design"},
+  { "id": 2, "title": "Brand kit" , "icon": "brandKit"},
+  { "id": 3, "title": "Template" , "icon": "template"}
 ]

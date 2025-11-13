@@ -1,5 +1,5 @@
 .sidebar {
-  width: 300px;
+  width: 280px;
   height: 100vh;
   border-right: 1px solid #e5e5e5;
   display: flex;
@@ -62,7 +62,6 @@
 }
 
 .content-section {
-  border: solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
