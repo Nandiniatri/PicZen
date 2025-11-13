@@ -17,9 +17,8 @@ const ImageSelect = () => {
 
                 <Button className="imageDrop-btn" onClick={handleImageDropBtn}>Select photos</Button>
             </div>
-
         </>
     );
 };
 
-export default ImageSelect; 
+export default ImageSelect;  

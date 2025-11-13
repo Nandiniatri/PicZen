@@ -1,6 +1,5 @@
 .imageDrop-icon{
     border: 1px dashed #9b4bff;
-    /* padding: 20px; */
     width: 150px;
     height: 100px;
     display: flex;
@@ -16,8 +15,6 @@
 }
 
 .imageDrop-div2{
-    /* border: solid; */
-    /* height: 90px; */
     display: flex;
     flex-direction: column;
     align-items: center;

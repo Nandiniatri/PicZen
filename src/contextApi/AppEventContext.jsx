@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react"
+import { createContext, use, useContext, useRef } from "react"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -8,12 +8,19 @@ const AppEventProvider = ({ children }) => {
     const navigate = useNavigate();
     const [menus, setMenus] = useState([]);
     const [contents, setContents] = useState([]);
+    const fileInputRef = useRef(null);
+    const [selectedFiles, setSelectedFiles] = useState([]);
 
     const handleImageDropBtn = () => {
-        alert('Image drop button clicked!');
-        
+        fileInputRef.current.click();
     }
 
+    const handleImageSelect = (event) => {
+        const files = event.target.files;
+        console.log("Selected Files:", files);
+        setSelectedFiles(files);
+        navigate("/imageDrop")
+    };
 
 
 
@@ -54,9 +61,19 @@ const AppEventProvider = ({ children }) => {
             handleTryItFree,
             menus,
             contents,
-            handleImageDropBtn
+            handleImageDropBtn,
+            selectedFiles
         }}>
             {children}
+
+            <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                multiple
+                accept="image/*"
+                onChange={handleImageSelect}
+            />
         </AppEventContext.Provider>
     )
 }

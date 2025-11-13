@@ -4,4 +4,4 @@ const Input = ({ type , className, value, onChange, placeholder }) => {
     );
 }   
 
-export default Input; 
+export default Input;  
