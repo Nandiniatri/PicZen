@@ -19,7 +19,7 @@ app.get("/api/contents", (req, res) => {
 });
 
 
-app.get("/api/contents", (req, res) => {
+app.get("/api/editHeader", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/editHeader.json", "utf-8"));
   res.json(data);
 });
