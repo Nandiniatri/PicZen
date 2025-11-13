@@ -1,6 +1,7 @@
 import Button from "../../../components/Button";
 import ImageSelect from "../../../components/ImageSelect/ImageSelect";
 import Input from "../../../components/Input";
+import ResuableEditInfo from "../../../components/resuableEditInfoCard/ResuableEditInfo";
 import './PiczenRightSide.css';
 
 const PiczenRightSide = () => {
@@ -26,7 +27,7 @@ const PiczenRightSide = () => {
 
         <div className="imagesDrop-div">
           <div className="image-drop-box imagedrop-div"><ImageSelect /></div>
-          <div className="image-drop-box"><ImageSelect /></div>
+          <div className="image-drop-box"><ResuableEditInfo /></div>
           <div className="image-drop-box"><ImageSelect /></div>
           <div className="image-drop-box"><ImageSelect /></div>
           <div className="image-drop-box"><ImageSelect /></div>
