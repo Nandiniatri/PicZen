@@ -4,7 +4,7 @@ import './PiczenRightSide.css';
 
 const PiczenRightSide = () => {
   return (
-    <div>
+    <div className="piczenRightSide-main-div">
       <div>
         <h2>Create</h2>
         <Input type="search" placeholder="Search a template" />
@@ -17,7 +17,7 @@ const PiczenRightSide = () => {
         </div>
 
         <div>
-          
+
         </div>
 
 
