@@ -12,6 +12,10 @@ const AppEventProvider = ({ children }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [editHeaderData, setEditHeaderData] = useState([]);
 
+    const handleEditPageHome = () => {
+        navigate("/second");
+    }
+
     const fetchEditHeaderData = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/editHeader');
@@ -25,7 +29,7 @@ const AppEventProvider = ({ children }) => {
 
     useEffect(() => {
         fetchEditHeaderData();
-    },[])
+    }, [])
 
 
 
@@ -79,7 +83,8 @@ const AppEventProvider = ({ children }) => {
             contents,
             handleImageDropBtn,
             selectedFiles,
-            editHeaderData
+            editHeaderData,
+            handleEditPageHome
         }}>
             {children}
 

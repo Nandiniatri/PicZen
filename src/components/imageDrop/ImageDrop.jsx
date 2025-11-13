@@ -27,7 +27,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData } = useAppEvent();
+    const { selectedFiles, editHeaderData , handleEditPageHome} = useAppEvent();
 
     if (!selectedFiles) {
         return <p>No files selected.</p>;
@@ -37,7 +37,7 @@ const ImageDropFile = () => {
         <div className="image-drop-container">
             <header className="header-container">
                 <div className="header-left">
-                    <House size={22} color="#9b4bff" />
+                    <House size={22} color="#9b4bff" onClick={handleEditPageHome}/>
                 </div>
 
                 <div className="header-undo-redo">
@@ -60,7 +60,7 @@ const ImageDropFile = () => {
                         <Download size={18} /> Download
                     </Button>
                     <Button className="header-btn share-btn">
-                        <Share size={18} /> Share
+                        <Share size={18} /> Share 
                     </Button>
                 </div>
             </header>
@@ -69,7 +69,6 @@ const ImageDropFile = () => {
             <div className="ImageDrop-Selected-div">
                 
                 <div className="imageDrop-selected-files">
-                    <h2 className="selected-title">Selected Files:</h2>
                     <div className="file-preview">
                         {[...selectedFiles].map((file, index) => (
                             <div key={index} className="preview-item">
