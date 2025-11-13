@@ -9,6 +9,18 @@ const AppEventProvider = ({ children }) => {
     const [menus, setMenus] = useState([]);
     const [contents, setContents] = useState([]);
 
+    const handleImageDropBtn = () => {
+        alert('Image drop button clicked!');
+        
+    }
+
+
+
+
+
+
+
+    //sidebar data fetch functions
     const fetchMenus = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/menus');
@@ -41,7 +53,8 @@ const AppEventProvider = ({ children }) => {
         <AppEventContext.Provider value={{
             handleTryItFree,
             menus,
-            contents
+            contents,
+            handleImageDropBtn
         }}>
             {children}
         </AppEventContext.Provider>
@@ -50,4 +63,4 @@ const AppEventProvider = ({ children }) => {
 
 export const useAppEvent = () => useContext(AppEventContext);
 
-export default AppEventProvider;
+export default AppEventProvider; 
