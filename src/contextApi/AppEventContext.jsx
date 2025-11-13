@@ -24,9 +24,6 @@ const AppEventProvider = ({ children }) => {
 
 
 
-
-
-
     //sidebar data fetch functions
     const fetchMenus = async () => {
         try {
