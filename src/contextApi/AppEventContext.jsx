@@ -14,10 +14,10 @@ const AppEventProvider = ({ children }) => {
 
     const fetchEditHeaderData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/api/editHeader');   
+            const response = await fetch('http://localhost:4000/api/editHeader');
             const result = await response.json();
-            console.log('Edit Header Data fetched successfully:', result);
-            // setEditHeaderData(result);
+            console.log('Edit Header Data', result);
+            setEditHeaderData(result);
         } catch (error) {
             console.error('Error fetching Edit Header Data:', error);
         }
@@ -25,7 +25,7 @@ const AppEventProvider = ({ children }) => {
 
     useEffect(() => {
         fetchEditHeaderData();
-    })
+    },[])
 
 
 
@@ -78,7 +78,8 @@ const AppEventProvider = ({ children }) => {
             menus,
             contents,
             handleImageDropBtn,
-            selectedFiles
+            selectedFiles,
+            editHeaderData
         }}>
             {children}
 
