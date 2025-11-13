@@ -32,7 +32,8 @@
 
 
 import { useAppEvent } from "../../../contextApi/AppEventContext";
-import { Home, Cpu, Layers, Clock } from "lucide-react"; // icons
+import { Home, Cpu, Layers, Clock } from "lucide-react";
+import './PiczenSidebar.css';
 
 const iconMap = {
     home: <Home size={18} />,
