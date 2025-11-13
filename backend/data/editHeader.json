@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Insert",
+        "icon": "plus"
+    },
+    {
+        "name": "Brand kit",
+        "icon": "briefcase"
+    },
+    {
+        "name": "Add text",
+        "icon": "type"
+    },
+    {
+        "name": "Templates",
+        "icon": "template"
+    },
+    {
+        "name": "Backgrounds",
+        "icon": "image"
+    },
+    {
+        "name": "AI Shadows",
+        "icon": "wand"
+    },
+    {
+        "name": "Resize",
+        "icon": "resize"
+    }
+]

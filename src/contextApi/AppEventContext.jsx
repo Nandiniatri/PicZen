@@ -1,4 +1,4 @@
-import { createContext, use, useContext, useRef } from "react"
+import { createContext, use, useContext, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -10,7 +10,26 @@ const AppEventProvider = ({ children }) => {
     const [contents, setContents] = useState([]);
     const fileInputRef = useRef(null);
     const [selectedFiles, setSelectedFiles] = useState([]);
+    const [editHeaderData, setEditHeaderData] = useState([]);
 
+    const fetchEditHeaderData = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/editHeader');   
+            const result = await response.json();
+            console.log('Edit Header Data fetched successfully:', result);
+            // setEditHeaderData(result);
+        } catch (error) {
+            console.error('Error fetching Edit Header Data:', error);
+        }
+    }
+
+    useEffect(() => {
+        fetchEditHeaderData();
+    })
+
+
+
+    //input Value
     const handleImageDropBtn = () => {
         fileInputRef.current.click();
     }

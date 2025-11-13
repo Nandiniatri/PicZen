@@ -19,5 +19,10 @@ app.get("/api/contents", (req, res) => {
 });
 
 
+app.get("/api/contents", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/editHeader.json", "utf-8"));
+  res.json(data);
+});
+
 const PORT = 4000;
 app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));
