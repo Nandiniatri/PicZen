@@ -12,6 +12,10 @@ const AppEventProvider = ({ children }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [editHeaderData, setEditHeaderData] = useState([]);
 
+    const handlePageSecondRoute = () => {
+        navigate("/");
+    }
+
     const handleEditPageHome = () => {
         navigate("/second");
     }
@@ -84,7 +88,8 @@ const AppEventProvider = ({ children }) => {
             handleImageDropBtn,
             selectedFiles,
             editHeaderData,
-            handleEditPageHome
+            handleEditPageHome,
+            handlePageSecondRoute
         }}>
             {children}
 

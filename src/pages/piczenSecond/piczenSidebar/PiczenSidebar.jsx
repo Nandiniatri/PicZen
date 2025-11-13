@@ -12,11 +12,11 @@ const iconMap = {
 };
 
 const PiczenSidebar = () => {
-    const { menus, contents } = useAppEvent();
+    const { menus, contents, handlePageSecondRoute } = useAppEvent();
 
     return (
         <aside className="sidebar">
-            <div className="logo">
+            <div className="logo" onClick={handlePageSecondRoute}>
                 <div className="logo-icon">◎</div>
                 <h2>PICZEN</h2>
             </div>
