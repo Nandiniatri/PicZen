@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .header-container {
@@ -145,4 +145,11 @@
 .preview-image {
   border-radius: 8px;
   object-fit: cover;
+}
+
+.myCanvas {
+  border: 1px solid #ccc;
+  background-color: #FFC4C4;
+  width: 400px;
+  height: 500px;
 }

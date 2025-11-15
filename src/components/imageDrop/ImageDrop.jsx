@@ -70,8 +70,7 @@ const ImageDropFile = () => {
 
                 <div className="imageDrop-selected-files">
                     <div className="file-preview">
-                        <canvas style={{ border: "1px solid #ccc", backgroundColor: "#FFC4C4" }} width={400}
-                            height={500} />
+                        <canvas className="myCanvas" />
                         {/* {[...selectedFiles].map((file, index) => (
                             <div key={index} className="preview-item">
                                 <img
