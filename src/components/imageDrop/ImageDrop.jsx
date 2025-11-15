@@ -27,7 +27,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData , handleEditPageHome} = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome } = useAppEvent();
 
     if (!selectedFiles) {
         return <p>No files selected.</p>;
@@ -37,7 +37,7 @@ const ImageDropFile = () => {
         <div className="image-drop-container">
             <header className="header-container">
                 <div className="header-left">
-                    <House size={22} color="#9b4bff" onClick={handleEditPageHome}/>
+                    <House size={22} color="#9b4bff" onClick={handleEditPageHome} />
                 </div>
 
                 <div className="header-undo-redo">
@@ -60,17 +60,19 @@ const ImageDropFile = () => {
                         <Download size={18} /> Download
                     </Button>
                     <Button className="header-btn share-btn">
-                        <Share size={18} /> Share 
+                        <Share size={18} /> Share
                     </Button>
                 </div>
             </header>
 
 
             <div className="ImageDrop-Selected-div">
-                
+
                 <div className="imageDrop-selected-files">
                     <div className="file-preview">
-                        {[...selectedFiles].map((file, index) => (
+                        <canvas style={{ border: "1px solid #ccc", backgroundColor: "#FFC4C4" }} width={400}
+                            height={500} />
+                        {/* {[...selectedFiles].map((file, index) => (
                             <div key={index} className="preview-item">
                                 <img
                                     src={URL.createObjectURL(file)}
@@ -79,13 +81,13 @@ const ImageDropFile = () => {
                                     className="preview-image"
                                 />
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
 
 
                 <div>
-                    Edit sideBar 
+                    Edit sideBar
                 </div>
             </div>
 

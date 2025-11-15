@@ -12,4 +12,4 @@ const PicZenSendondPage = () => {
 
 }   
 
-export default PicZenSendondPage;
+export default PicZenSendondPage; 
