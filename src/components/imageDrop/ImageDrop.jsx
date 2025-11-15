@@ -1,3 +1,106 @@
+// import { useAppEvent } from "../../contextApi/AppEventContext";
+// import Button from "../Button";
+// import {
+//     House,
+//     CornerUpLeft,
+//     CornerUpRight,
+//     Plus,
+//     AlignEndHorizontal,
+//     CaseSensitive,
+//     BookText,
+//     Images,
+//     SquareDashedTopSolid,
+//     ImageUpscale,
+//     Share,
+//     Download
+// } from "lucide-react";
+// import './ImageDrop.css';
+
+// const iconMap = {
+//     plus: <Plus />,
+//     briefcase: <AlignEndHorizontal />,
+//     type: <CaseSensitive />,
+//     template: <BookText />,
+//     image: <Images />,
+//     wand: <SquareDashedTopSolid />,
+//     resize: <ImageUpscale />,
+// };
+
+// const ImageDropFile = () => {
+//     const { selectedFiles, editHeaderData, handleEditPageHome } = useAppEvent();
+
+//     if (!selectedFiles) {
+//         return <p>No files selected.</p>;
+//     }
+
+//     return (
+//         <div className="image-drop-container">
+//             <header className="header-container">
+//                 <div className="header-left">
+//                     <House size={22} color="#9b4bff" onClick={handleEditPageHome} />
+//                 </div>
+
+//                 <div className="header-undo-redo">
+//                     <CornerUpLeft className="header-icon" />
+//                     <CornerUpRight className="header-icon" />
+//                 </div>
+
+//                 <div className="header-center">
+//                     {editHeaderData &&
+//                         editHeaderData.map((item) => (
+//                             <div className="header-item" key={item.id}>
+//                                 <span className="header-item-icon">{iconMap[item.icon]}</span>
+//                                 <p className="header-item-text">{item.name}</p>
+//                             </div>
+//                         ))}
+//                 </div>
+
+//                 <div className="header-right">
+//                     <Button className="header-btn">
+//                         <Download size={18} /> Download
+//                     </Button>
+//                     <Button className="header-btn share-btn">
+//                         <Share size={18} /> Share
+//                     </Button>
+//                 </div>
+//             </header>
+
+
+//             <div className="ImageDrop-Selected-div">
+//                 <div className="imageDrop-selected-files">
+//                     <div className="file-preview">
+//                         <canvas className="myCanvas" />
+
+//                         {[...selectedFiles].map((file, index) => (
+//                             <div key={index} className="preview-item">
+//                                 <img
+//                                     src={URL.createObjectURL(file)}
+//                                     alt={file.name}
+//                                     width="200"
+//                                     className="preview-image"
+//                                 />
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+
+//                 <div>
+//                     Edit sideBar
+//                 </div>
+//             </div>
+
+//         </div>
+//     );
+// };
+
+// export default ImageDropFile;
+
+
+
+
+
+
+import { useState, useRef } from "react";
 import { useAppEvent } from "../../contextApi/AppEventContext";
 import Button from "../Button";
 import {
@@ -14,7 +117,7 @@ import {
     Share,
     Download
 } from "lucide-react";
-import './ImageDrop.css';
+import "./ImageDrop.css";
 
 const iconMap = {
     plus: <Plus />,
@@ -23,18 +126,55 @@ const iconMap = {
     template: <BookText />,
     image: <Images />,
     wand: <SquareDashedTopSolid />,
-    resize: <ImageUpscale />,
+    resize: <ImageUpscale />
 };
 
 const ImageDropFile = () => {
     const { selectedFiles, editHeaderData, handleEditPageHome } = useAppEvent();
 
-    if (!selectedFiles) {
+    const canvasRef = useRef(null);
+    const [pos, setPos] = useState({ x: 50, y: 50 });
+    const [dragging, setDragging] = useState(false);
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+    if (!selectedFiles || selectedFiles.length === 0) {
         return <p>No files selected.</p>;
     }
 
+    // Start Dragging
+    const startDrag = (e) => {
+        setDragging(true);
+
+        const rect = canvasRef.current.getBoundingClientRect();
+
+        setOffset({
+            x: e.clientX - rect.left - pos.x,
+            y: e.clientY - rect.top - pos.y
+        });
+    };
+
+    // During Drag
+    const onDrag = (e) => {
+        if (!dragging) return;
+
+        const rect = canvasRef.current.getBoundingClientRect();
+
+        let newX = e.clientX - rect.left - offset.x;
+        let newY = e.clientY - rect.top - offset.y;
+
+        // 🛑 Stop outside canvas (image = 200px)
+        newX = Math.max(0, Math.min(newX, rect.width - 200));
+        newY = Math.max(0, Math.min(newY, rect.height - 200));
+
+        setPos({ x: newX, y: newY });
+    };
+
+ 
+    const stopDrag = () => setDragging(false);
+
     return (
         <div className="image-drop-container">
+         
             <header className="header-container">
                 <div className="header-left">
                     <House size={22} color="#9b4bff" onClick={handleEditPageHome} />
@@ -68,30 +208,49 @@ const ImageDropFile = () => {
 
             <div className="ImageDrop-Selected-div">
                 <div className="imageDrop-selected-files">
-                    <div className="file-preview">
-                        <canvas className="myCanvas" />
+                    <div
+                        className="file-preview"
+                        ref={canvasRef}
+                        onMouseMove={onDrag}
+                        onMouseUp={stopDrag}
+                        onMouseLeave={stopDrag}
+                        style={{
+                            position: "relative",
+                            width: "400px",
+                            height: "500px",
+                            border: "1px solid #ccc",
+                            overflow: "hidden",
+                            background: "#f5f5f5"
+                        }}
+                    >
 
-                        {[...selectedFiles].map((file, index) => (
-                            <div key={index} className="preview-item">
-                                <img
-                                    src={URL.createObjectURL(file)}
-                                    alt={file.name}
-                                    width="200"
-                                    className="preview-image"
-                                />
-                            </div>
-                        ))}
+                        <canvas
+                            className="myCanvas"
+                            width={400}
+                            height={500}
+                        />
+
+                        <img
+                            src={URL.createObjectURL(selectedFiles[0])}
+                            alt="preview"
+                            width="200"
+                            onMouseDown={startDrag}
+                            style={{
+                                position: "absolute",
+                                top: pos.y,
+                                left: pos.x,
+                                cursor: "grab",
+                                userSelect: "none",
+                                zIndex: 10
+                            }}
+                        />
                     </div>
                 </div>
 
-                <div>
-                    Edit sideBar
-                </div>
+                <div> Edit sideBar </div>
             </div>
-
         </div>
     );
 };
 
 export default ImageDropFile;
-
