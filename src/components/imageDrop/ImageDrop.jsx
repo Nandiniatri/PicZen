@@ -67,11 +67,11 @@ const ImageDropFile = () => {
 
 
             <div className="ImageDrop-Selected-div">
-
                 <div className="imageDrop-selected-files">
                     <div className="file-preview">
                         <canvas className="myCanvas" />
-                        {/* {[...selectedFiles].map((file, index) => (
+
+                        {[...selectedFiles].map((file, index) => (
                             <div key={index} className="preview-item">
                                 <img
                                     src={URL.createObjectURL(file)}
@@ -80,10 +80,9 @@ const ImageDropFile = () => {
                                     className="preview-image"
                                 />
                             </div>
-                        ))} */}
+                        ))}
                     </div>
                 </div>
-
 
                 <div>
                     Edit sideBar

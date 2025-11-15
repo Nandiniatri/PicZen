@@ -127,12 +127,6 @@
   justify-content: center;
 }
 
-.file-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  /* border: solid; */
-}
 
 
 .preview-item {
@@ -140,11 +134,23 @@
   padding: 10px;
   border-radius: 10px;
   background: #fff;
+  position: absolute;
+  left: 90px;
+  top: 90px;
+  text-align: center;
 }
 
 .preview-image {
   border-radius: 8px;
   object-fit: cover;
+}
+
+.file-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* border: solid; */
+  position: relative;
 }
 
 .myCanvas {
