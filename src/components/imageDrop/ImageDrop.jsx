@@ -188,7 +188,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome } = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome , handleTextInEdit} = useAppEvent();
 
     const canvasRef = useRef(null);
 
@@ -206,11 +206,8 @@ const ImageDropFile = () => {
         return <p>No files selected.</p>;
     }
 
-    /** ----------------------------
-     * MOVE START
-     * --------------------------- */
     const startDrag = (e) => {
-        if (resizing) return; // prevent conflict
+        if (resizing) return;
 
         setDragging(true);
         const rect = canvasRef.current.getBoundingClientRect();
@@ -221,9 +218,6 @@ const ImageDropFile = () => {
         });
     };
 
-    /** ----------------------------
-     * MOVE DURING DRAG
-     * --------------------------- */
     const onDrag = (e) => {
         if (!dragging || resizing) return;
 
@@ -232,25 +226,19 @@ const ImageDropFile = () => {
         let newX = e.clientX - rect.left - offset.x;
         let newY = e.clientY - rect.top - offset.y;
 
-        // Prevent moving outside
         newX = Math.max(0, Math.min(newX, rect.width - size.width));
         newY = Math.max(0, Math.min(newY, rect.height - size.height));
 
         setPos({ x: newX, y: newY });
     };
 
-    /** ----------------------------
-     * RESIZE START
-     * --------------------------- */
+
     const startResize = (e, handle) => {
         e.stopPropagation();
         setResizing(true);
         setCurrentHandle(handle);
     };
 
-    /** ----------------------------
-     * RESIZE DURING DRAG
-     * --------------------------- */
     const onResize = (e) => {
         if (!resizing) return;
 
@@ -284,16 +272,13 @@ const ImageDropFile = () => {
             newY = mouseY;
         }
 
-        // Minimum size
+
         if (newWidth > 50 && newHeight > 50) {
             setSize({ width: newWidth, height: newHeight });
             setPos({ x: newX, y: newY });
         }
     };
 
-    /** ----------------------------
-     * STOP ALL DRAG/RESIZE
-     * --------------------------- */
     const stopActions = () => {
         setDragging(false);
         setResizing(false);
@@ -303,7 +288,6 @@ const ImageDropFile = () => {
     return (
         <div className="image-drop-container">
 
-            {/* HEADER */}
             <header className="header-container">
                 <div className="header-left">
                     <House size={22} color="#9b4bff" onClick={handleEditPageHome} />
@@ -317,7 +301,7 @@ const ImageDropFile = () => {
                 <div className="header-center">
                     {editHeaderData &&
                         editHeaderData.map((item) => (
-                            <div className="header-item" key={item.id}>
+                            <div className="header-item" key={item.id} onClick={handleTextInEdit}>
                                 <span className="header-item-icon">{iconMap[item.icon]}</span>
                                 <p className="header-item-text">{item.name}</p>
                             </div>
