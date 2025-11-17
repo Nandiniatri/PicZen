@@ -159,3 +159,14 @@
   width: 400px;
   height: 500px;
 }
+
+
+.resize-handle {
+  width: 20px;
+  height: 20px;
+  background: #4b7cff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  border: solid;
+}
