@@ -13,7 +13,7 @@ const AppEventProvider = ({ children }) => {
     const [editHeaderData, setEditHeaderData] = useState([]);
 
     const handleTextInEdit = () => {
-
+        
     }
 
     const handlePageSecondRoute = () => {
