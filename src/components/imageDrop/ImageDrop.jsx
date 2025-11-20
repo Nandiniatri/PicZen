@@ -142,7 +142,7 @@ const ImageDropFile = () => {
                 <div className="header-center">
                     {editHeaderData &&
                         editHeaderData.map((item) => (
-                            <div className="header-item" key={item.id} onClick={handleTextInEdit}>
+                            <div className="header-item" key={item.id} onClick={() => handleTextInEdit(item)}>
                                 <span className="header-item-icon">{iconMap[item.icon]}</span>
                                 <p className="header-item-text">{item.name}</p>
                             </div>
