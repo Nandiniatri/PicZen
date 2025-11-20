@@ -138,6 +138,7 @@ const ImageDropFile = () => {
                     <CornerUpRight className="header-icon" />
                 </div>
 
+
                 <div className="header-center">
                     {editHeaderData &&
                         editHeaderData.map((item) => (
@@ -147,6 +148,7 @@ const ImageDropFile = () => {
                             </div>
                         ))}
                 </div>
+
 
                 <div className="header-right">
                     <Button className="header-btn">

@@ -12,8 +12,8 @@ const AppEventProvider = ({ children }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [editHeaderData, setEditHeaderData] = useState([]);
 
-    const handleTextInEdit = () => {
-        
+    const handleTextInEdit = (editHeaderData) => {
+        console.log(editHeaderData);
     }
 
     const handlePageSecondRoute = () => {
