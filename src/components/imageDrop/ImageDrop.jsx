@@ -28,7 +28,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome , handleTextInEdit} = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit , activeRightPanel} = useAppEvent();
 
     const canvasRef = useRef(null);
 
@@ -247,7 +247,9 @@ const ImageDropFile = () => {
                     </div>
                 </div>
 
-                <div> Edit sideBar </div>
+                <div>
+
+                </div>
             </div>
         </div>
     );

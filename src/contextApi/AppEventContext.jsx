@@ -11,9 +11,11 @@ const AppEventProvider = ({ children }) => {
     const fileInputRef = useRef(null);
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [editHeaderData, setEditHeaderData] = useState([]);
+    const [activeRightPanel, setActiveRightPanel] = useState(null);
 
     const handleTextInEdit = (item) => {
         console.log(item.name);
+        setActiveRightPanel(item.name);
     }
 
     const handlePageSecondRoute = () => {
@@ -94,7 +96,8 @@ const AppEventProvider = ({ children }) => {
             editHeaderData,
             handleEditPageHome,
             handlePageSecondRoute,
-            handleTextInEdit
+            handleTextInEdit,
+            activeRightPanel
         }}>
             {children}
 
