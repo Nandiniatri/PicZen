@@ -16,6 +16,7 @@ import {
     Download
 } from "lucide-react";
 import "./ImageDrop.css";
+import AddText from "../../pages/edits/AddText";
 
 const iconMap = {
     plus: <Plus />,
@@ -28,7 +29,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit , activeRightPanel} = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel } = useAppEvent();
 
     const canvasRef = useRef(null);
 
@@ -248,7 +249,7 @@ const ImageDropFile = () => {
                 </div>
 
                 <div>
-
+                    {activeRightPanel === "Add text" && <AddText />}
                 </div>
             </div>
         </div>
