@@ -1,0 +1,26 @@
+[
+    {
+        "label": "NEW",
+        "class": "style-box bold"
+    },
+    {
+        "label": "Natural",
+        "class": "style-box cursive"
+    },
+    {
+        "label": "Like & Share",
+        "class": "style-box green"
+    },
+    {
+        "label": "Thank you",
+        "class": "style-box blue"
+    },
+    {
+        "label": "DM for Price",
+        "class": "style-box simple" 
+    },
+    {
+        "label": "CONTACT US",
+        "class": "style-box bold-red"
+    }
+]

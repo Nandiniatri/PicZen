@@ -18,7 +18,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/textStyles');
             const result = await response.json();
-            console.log('Edit Header Data', result);
+            console.log('add text Data', result);
             setTextStyle(result);
         } catch (error) {
             console.error('Error fetching Edit Header Data:', error);
