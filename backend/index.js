@@ -24,5 +24,10 @@ app.get("/api/editHeader", (req, res) => {
   res.json(data);
 });
 
+app.get("/api/textStyles", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/textStyles.json", "utf-8"));
+  res.json(data);
+});
+
 const PORT = 4000;
 app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));

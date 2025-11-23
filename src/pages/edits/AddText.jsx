@@ -12,18 +12,13 @@ const textStyles = [
 const AddText = () => {
     return (
         <div className="addText-container">
-            
-            {/* Top Add text button */}
             <button className="addText-btn">+ Add text</button>
-
-            {/* Search bar */}
             <input
                 type="text"
                 className="addText-search"
                 placeholder="Search text styles"
             />
-
-            {/* Category Tabs */}
+            
             <div className="addText-categories">
                 <button className="active">All</button>
                 <button>Celebration</button>
@@ -31,7 +26,6 @@ const AddText = () => {
                 <button>Sale</button>
             </div>
 
-            {/* Text styles grid */}
             <div className="textStyle-grid">
                 {textStyles.map((item, index) => (
                     <div key={index} className={item.class}>
