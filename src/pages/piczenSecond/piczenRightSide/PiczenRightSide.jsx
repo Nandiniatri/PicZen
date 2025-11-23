@@ -16,7 +16,7 @@ const PiczenRightSide = () => {
           className="piczen-search"
         />
       </div>
-
+ 
 
       <div className="getStarted-main-div">
 
@@ -32,6 +32,10 @@ const PiczenRightSide = () => {
           <div className="image-drop-box"><ResuableEditInfo data="Batch mode" src="https://cdn.pixabay.com/photo/2017/03/14/13/50/urban-art-2143183_960_720.jpg" /></div>
           <div className="image-drop-box"><ResuableEditInfo data="Retouch" src="https://cdn.pixabay.com/photo/2023/11/13/17/25/women-8386031_960_720.jpg" /></div>
         </div>
+      </div>
+
+      <div>
+        hello
       </div>
 
     </div>

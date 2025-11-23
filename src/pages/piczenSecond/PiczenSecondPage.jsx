@@ -7,7 +7,7 @@ const PicZenSendondPage = () => {
     <div className="main-div-PicZenSecondPage">
         <PiczenSidebar />
         <PiczenRightSide />
-    </div>
+    </div> 
   )
 
 }   
