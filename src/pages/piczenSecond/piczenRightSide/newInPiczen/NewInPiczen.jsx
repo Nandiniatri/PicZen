@@ -1,6 +1,6 @@
 import "./NewInPiczen.css";
 
-const screenshot = "/mnt/data/6663117a-4e05-4b47-b48c-bb4225a1d31f.png";
+const screenshot = "https://serverless-api.photoroom.com/mini_app/images/virtual-tryon.jpg";
 
 const NewInPiczen = () => {
   return (
