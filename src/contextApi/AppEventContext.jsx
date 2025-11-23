@@ -12,6 +12,18 @@ const AppEventProvider = ({ children }) => {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [editHeaderData, setEditHeaderData] = useState([]);
     const [activeRightPanel, setActiveRightPanel] = useState(null);
+    const [textStyle, setTextStyle] = useState([]);
+
+    const fetchTextStyleData = async() => {
+        try {
+            const response = await fetch('http://localhost:4000/api/textStyles');
+            const result = await response.json();
+            console.log('Edit Header Data', result);
+            setTextStyle(result);
+        } catch (error) {
+            console.error('Error fetching Edit Header Data:', error);
+        }
+    }
 
     const handleTextInEdit = (item) => {
         console.log(item.name);
@@ -39,6 +51,7 @@ const AppEventProvider = ({ children }) => {
 
     useEffect(() => {
         fetchEditHeaderData();
+        fetchTextStyleData();
     }, [])
 
 
@@ -97,7 +110,8 @@ const AppEventProvider = ({ children }) => {
             handleEditPageHome,
             handlePageSecondRoute,
             handleTextInEdit,
-            activeRightPanel
+            activeRightPanel,
+            textStyle
         }}>
             {children}
 
