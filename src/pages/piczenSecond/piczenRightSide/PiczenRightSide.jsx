@@ -2,6 +2,7 @@ import Button from "../../../components/Button";
 import ImageSelect from "../../../components/ImageSelect/ImageSelect";
 import Input from "../../../components/Input";
 import ResuableEditInfo from "../../../components/resuableEditInfoCard/ResuableEditInfo";
+import NewInPiczen from "./newInPiczen/NewInPiczen";
 import './PiczenRightSide.css';
 
 const PiczenRightSide = () => {
@@ -35,7 +36,7 @@ const PiczenRightSide = () => {
       </div>
 
       <div>
-        hello
+        <NewInPiczen />
       </div>
 
     </div>
