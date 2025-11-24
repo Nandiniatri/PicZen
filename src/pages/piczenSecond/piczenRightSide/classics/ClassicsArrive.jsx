@@ -1,8 +1,8 @@
-import AppEventProvider from '../../../../contextApi/AppEventContext';
+import { useAppEvent } from '../../../../contextApi/AppEventContext';
 import './ClassicsArrive.css';
 
 const ClassicsArrive = () => {
-    const { classicArrive } = AppEventProvider();
+    const { classicArrive } = useAppEvent();
 
     return (
         <div className="classics-container">
