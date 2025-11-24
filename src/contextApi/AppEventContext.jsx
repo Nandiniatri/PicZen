@@ -13,6 +13,18 @@ const AppEventProvider = ({ children }) => {
     const [editHeaderData, setEditHeaderData] = useState([]);
     const [activeRightPanel, setActiveRightPanel] = useState(null);
     const [textStyle, setTextStyle] = useState([]);
+    const [newInPiczen , setNewInPiczen] = useState([]);
+
+    const fetchNewInPiczen = async() => {
+       try {
+            const response = await fetch('http://localhost:4000/api/newInPiczenData');
+            const result = await response.json();
+            console.log('new In Piczen', result);
+            setNewInPiczen(result);
+        } catch (error) {
+            console.error('Error fetching:', error);
+        } 
+    }
 
     const fetchTextStyleData = async() => {
         try {
@@ -46,12 +58,13 @@ const AppEventProvider = ({ children }) => {
             setEditHeaderData(result);
         } catch (error) {
             console.error('Error fetching Edit Header Data:', error);
-        }
+        } 
     }
 
     useEffect(() => {
         fetchEditHeaderData();
         fetchTextStyleData();
+        fetchNewInPiczen();
     }, [])
 
 
@@ -111,7 +124,8 @@ const AppEventProvider = ({ children }) => {
             handlePageSecondRoute,
             handleTextInEdit,
             activeRightPanel,
-            textStyle
+            textStyle,
+            newInPiczen
         }}>
             {children}
 
