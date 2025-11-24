@@ -19,9 +19,9 @@ const Trending = () => {
     ]
 
     return (
-        <div>
-            <div className='trending-main-div'>
-                <h2>Trending</h2>
+        <div className='trending-main-div'>
+            <div>
+                <h2 className='trending-h2'>Trending</h2>
             </div>
 
             <div className="scroll-container">

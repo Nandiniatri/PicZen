@@ -1,7 +1,12 @@
 .trending-main-div{
-    border: solid;
+    /* border: solid; */
+    margin-top: 40px;
 }
-
+.trending-h2{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 .scroll-container {
     display: flex;
     gap: 12px;
@@ -13,6 +18,7 @@
 
 .scroll-container::-webkit-scrollbar {
     height: 8px;
+    border: none;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
@@ -21,7 +27,7 @@
 }
 
 .scroll-image {
-    height: 140px;
+    height: 200px;
     width: auto;
     flex-shrink: 0;
     border-radius: 10px;
