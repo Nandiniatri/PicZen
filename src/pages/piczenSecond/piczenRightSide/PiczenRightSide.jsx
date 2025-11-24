@@ -4,6 +4,7 @@ import Input from "../../../components/Input";
 import ResuableEditInfo from "../../../components/resuableEditInfoCard/ResuableEditInfo";
 import ClassicsArrive from "./Classics/ClassicsArrive";
 import NewInPiczen from "./newInPiczen/NewInPiczen";
+import PhotoEditingClassics from "./photoEditClassics/PhotoEditingClassics";
 import './PiczenRightSide.css';
 
 const PiczenRightSide = () => {
@@ -42,6 +43,10 @@ const PiczenRightSide = () => {
 
       <div>
         <ClassicsArrive />
+      </div>
+
+      <div>
+        <PhotoEditingClassics />
       </div>
 
     </div>

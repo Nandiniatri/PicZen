@@ -99,3 +99,10 @@
     border: solid 1px #9b4bff;
     background-color: #efe7f8;
 }
+
+.section-wrapper {
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+}
