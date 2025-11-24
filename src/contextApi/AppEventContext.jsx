@@ -13,33 +13,46 @@ const AppEventProvider = ({ children }) => {
     const [editHeaderData, setEditHeaderData] = useState([]);
     const [activeRightPanel, setActiveRightPanel] = useState(null);
     const [textStyle, setTextStyle] = useState([]);
-    const [newInPiczen , setNewInPiczen] = useState([]);
-    const [classicArrive , setClassicArrive] = useState([]);
+    const [newInPiczen, setNewInPiczen] = useState([]);
+    const [classicArrive, setClassicArrive] = useState([]);
+    const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
 
-    const fetchClassicArrive = async() => {
-       try {
-            const response = await fetch('http://localhost:4000/api/classicsArriveData');
+    const fetchPhotoEditingClassics = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/photoEditingClassicsData');
             const result = await response.json();
-            console.log('new In classicsArriveData', result);
-            setClassicArrive(result);
+            console.log('new In PhotoEditingClassics', result);
+            setPhotoEditingClassics(result);
         } catch (error) {
             console.error('Error fetching:', error);
-        } 
+        }
     }
 
 
-    const fetchNewInPiczen = async() => {
-       try {
+    const fetchClassicArrive = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/classicsArriveData');
+            const result = await response.json();
+            // console.log('new In classicsArriveData', result);
+            setClassicArrive(result);
+        } catch (error) {
+            console.error('Error fetching:', error);
+        }
+    }
+
+
+    const fetchNewInPiczen = async () => {
+        try {
             const response = await fetch('http://localhost:4000/api/newInPiczenData');
             const result = await response.json();
             // console.log('new In Piczen', result);
             setNewInPiczen(result);
         } catch (error) {
             console.error('Error fetching:', error);
-        } 
+        }
     }
 
-    const fetchTextStyleData = async() => {
+    const fetchTextStyleData = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/textStyles');
             const result = await response.json();
@@ -71,7 +84,7 @@ const AppEventProvider = ({ children }) => {
             setEditHeaderData(result);
         } catch (error) {
             console.error('Error fetching Edit Header Data:', error);
-        } 
+        }
     }
 
     useEffect(() => {
@@ -79,6 +92,7 @@ const AppEventProvider = ({ children }) => {
         fetchTextStyleData();
         fetchNewInPiczen();
         fetchClassicArrive();
+        fetchPhotoEditingClassics();
     }, [])
 
 
@@ -140,7 +154,8 @@ const AppEventProvider = ({ children }) => {
             activeRightPanel,
             textStyle,
             newInPiczen,
-            classicArrive
+            classicArrive,
+            photoEditingClassics
         }}>
             {children}
 
