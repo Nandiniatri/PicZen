@@ -20,7 +20,7 @@ const Trending = () => {
 
     return (
         <div>
-            <div>
+            <div className='trending-main-div'>
                 <h2>Trending</h2>
             </div>
 
