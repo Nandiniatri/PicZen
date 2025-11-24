@@ -45,7 +45,7 @@ const PiczenRightSide = () => {
       <div>
         <ClassicsArrive />
       </div>
-
+      
       <div>
         <PhotoEditingClassics />
       </div>
