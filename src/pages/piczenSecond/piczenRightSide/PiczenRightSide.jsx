@@ -39,6 +39,10 @@ const PiczenRightSide = () => {
         <NewInPiczen />
       </div>
 
+      <div>
+        
+      </div>
+
     </div>
   );
 };
