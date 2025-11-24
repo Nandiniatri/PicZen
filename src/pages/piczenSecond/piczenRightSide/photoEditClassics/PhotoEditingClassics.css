@@ -1,49 +1,39 @@
-/* .photoEditing-main{
-    border: solid;
-}
-
-.photoEditing-imgDiv{
-    border: solid blue;
-}
-
-.photoEditing-imgDiv img{
-    border: solid red;
-    width: 100%;
-    height: 100px;
-}
-
-.photoEditing-scroll{
-    border: solid green;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-} */
-
-
 .photoEditing-main {
-    border: solid;
+    margin-top: 50px;
 }
 
 .photoEditing-imgDiv {
-    border: solid blue;
-    width: 160px;     
-    height: 160px;      
-    overflow: hidden;  
+    width: 160px;
+    height: 160px;
+    overflow: hidden;    
     border-radius: 10px;
 }
 
 .photoEditing-imgDiv img {
-    border: solid red;
     width: 100%;
     height: 100%;
-    object-fit: cover;  
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photEditImg {
+    border: none;
     border-radius: 10px;
 }
 
 .photoEditing-scroll {
-    border: solid green;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    overflow-x: auto;
+    text-align: center;
+}
+
+.photoEditing-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.photoEditing-titleDiv{
+    font-size: 13px;
+    font-weight: 500;
 }

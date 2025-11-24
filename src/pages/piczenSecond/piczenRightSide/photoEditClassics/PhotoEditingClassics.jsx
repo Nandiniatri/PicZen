@@ -13,7 +13,7 @@ const PhotoEditingClassics = () => {
                     return (
                         <div className="photoEditing-card" key={index}>
                             <div className="photoEditing-imgDiv">
-                                <img src={item.image} alt={item.title} />
+                                <img src={item.image} alt={item.title} className="photEditImg"/>
                             </div>
                             <div className="photoEditing-titleDiv">
                                 {item.title}
