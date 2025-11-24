@@ -1,0 +1,25 @@
+.scroll-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 50px;
+}
+
+.scroll-image {
+    height: 140px;
+    width: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+}

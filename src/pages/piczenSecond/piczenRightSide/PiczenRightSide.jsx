@@ -6,6 +6,7 @@ import ClassicsArrive from "./Classics/ClassicsArrive";
 import NewInPiczen from "./newInPiczen/NewInPiczen";
 import PhotoEditingClassics from "./photoEditClassics/PhotoEditingClassics";
 import './PiczenRightSide.css';
+import Trending from "./trending/Trending";
 
 const PiczenRightSide = () => {
   return (
@@ -47,6 +48,10 @@ const PiczenRightSide = () => {
 
       <div>
         <PhotoEditingClassics />
+      </div>
+
+      <div>
+        <Trending />
       </div>
 
     </div>
