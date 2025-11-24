@@ -32,7 +32,7 @@ const AppEventProvider = ({ children }) => {
        try {
             const response = await fetch('http://localhost:4000/api/newInPiczenData');
             const result = await response.json();
-            console.log('new In Piczen', result);
+            // console.log('new In Piczen', result);
             setNewInPiczen(result);
         } catch (error) {
             console.error('Error fetching:', error);
@@ -43,7 +43,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/textStyles');
             const result = await response.json();
-            console.log('add text Data', result);
+            // console.log('add text Data', result);
             setTextStyle(result);
         } catch (error) {
             console.error('Error fetching Edit Header Data:', error);
@@ -67,7 +67,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/editHeader');
             const result = await response.json();
-            console.log('Edit Header Data', result);
+            // console.log('Edit Header Data', result);
             setEditHeaderData(result);
         } catch (error) {
             console.error('Error fetching Edit Header Data:', error);
@@ -90,7 +90,7 @@ const AppEventProvider = ({ children }) => {
 
     const handleImageSelect = (event) => {
         const files = event.target.files;
-        console.log("Selected Files:", files);
+        // console.log("Selected Files:", files);
         setSelectedFiles(files);
         navigate("/imageDrop")
     };
@@ -102,7 +102,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/menus');
             const result = await response.json();
-            console.log('Menus data fetched successfully:', result);
+            // console.log('Menus data fetched successfully:', result);
             setMenus(result);
         } catch (error) {
             console.error('Error fetching menus data:', error);
@@ -113,7 +113,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/contents');
             const result = await response.json();
-            console.log('Menus data fetched successfully:', result);
+            // console.log('Menus data fetched successfully:', result);
             setContents(result);
         } catch (error) {
             console.error('Error fetching menus data:', error);
