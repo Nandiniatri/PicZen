@@ -14,6 +14,19 @@ const AppEventProvider = ({ children }) => {
     const [activeRightPanel, setActiveRightPanel] = useState(null);
     const [textStyle, setTextStyle] = useState([]);
     const [newInPiczen , setNewInPiczen] = useState([]);
+    const [classicArrive , setClassicArrive] = useState([]);
+
+    const fetchClassicArrive = async() => {
+       try {
+            const response = await fetch('http://localhost:4000/api/classicsArriveData');
+            const result = await response.json();
+            console.log('new In classicsArriveData', result);
+            setClassicArrive(result);
+        } catch (error) {
+            console.error('Error fetching:', error);
+        } 
+    }
+
 
     const fetchNewInPiczen = async() => {
        try {
@@ -65,6 +78,7 @@ const AppEventProvider = ({ children }) => {
         fetchEditHeaderData();
         fetchTextStyleData();
         fetchNewInPiczen();
+        fetchClassicArrive();
     }, [])
 
 
@@ -125,7 +139,8 @@ const AppEventProvider = ({ children }) => {
             handleTextInEdit,
             activeRightPanel,
             textStyle,
-            newInPiczen
+            newInPiczen,
+            classicArrive
         }}>
             {children}
 
