@@ -1,17 +1,21 @@
 [
     {
+      "id":1,
       "title": "Virtual Model",
       "image": "https://serverless-api.photoroom.com/mini_app/images/virtual-tryon.jpg"
     },
     {
+      "id":2,
       "title": "Product Staging",
       "image": "https://serverless-api.photoroom.com/mini_app/images/lifestyle-shot.jpg"
     },
     {
+      "id":3,
       "title": "Product Beautifier",
       "image": "https://serverless-api.photoroom.com/mini_app/images/pro-shot.jpg"
     },
     {
+      "id":4,
       "title": "Describe any change",
       "image": "https://serverless-api.photoroom.com/mini_app/images/describe-a-change.webp"
     }

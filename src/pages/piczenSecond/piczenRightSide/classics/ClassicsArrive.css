@@ -1,0 +1,114 @@
+/* .classics-container {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.classics-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.classics-grid {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.classics-card {
+  width: 200px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 0 0 transparent;
+  border: solid 1px black;
+}
+
+.classics-card:hover {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.classic-img {
+  width: 100%;
+  border-radius: 12px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.classic-label {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 500;
+} */
+
+
+
+
+
+
+.classics-container {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.classics-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.classics-grid {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.classics-card {
+    width: 200px;
+    /* text-align: center; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.classic-bg {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: solid 1px gray;
+}
+
+.checker {
+    background-image:
+        linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
+        linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
+        linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.classic-img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.classic-label {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
