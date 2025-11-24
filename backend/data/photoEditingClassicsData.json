@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Blur",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F024f1033-9efd-45f0-8077-a203ada0d4ec%2Fthumb_1154F6AF-219A-4310-969B-4CBA7C8F7C1B.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Color Splash",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F331488cb-d13c-48e2-b5aa-af0f75308576%2Fthumb_A94CC372-5953-4D96-9803-B6B490CA39DB.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Motion",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F52734f70-1fff-4092-bc16-5eae5a2a7bb6%2Fthumb_DAA7FF44-D914-4FA1-BB37-10B7EB62612B.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Low Key",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F708a18a3-c69d-47ba-b136-1db4ff02dc9f%2Fthumb.jpg"
+    },
+    {
+        "id": 5,
+        "title": "High Key",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2Fcc1fa67e-df15-489d-b701-6e3e73a62f8c%2Fthumb.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Sepia",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2Fa8802826-13e4-4e1c-b034-f1a1e4ae8093%2Fthumb.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Black & White",
+        "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F417fb90d-ff25-4b44-ac5d-02a5c68dca74%2Fthumb.jpg"
+    }
+]
