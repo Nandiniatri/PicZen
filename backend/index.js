@@ -47,7 +47,7 @@ app.get("/api/photoEditingClassicsData", (req, res) => {
 
 
 app.get("/api/trending", (req, res) => {
-  const data = JSON.parse(fs.readFileSync("./data/c.json", "utf-8"));
+  const data = JSON.parse(fs.readFileSync("./data/trendings.json", "utf-8"));
   res.json(data);
 });
 

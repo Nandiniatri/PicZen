@@ -21,7 +21,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/photoEditingClassicsData');
             const result = await response.json();
-            console.log('new In PhotoEditingClassics', result);
+            // console.log('new In PhotoEditingClassics', result);
             setPhotoEditingClassics(result);
         } catch (error) {
             console.error('Error fetching:', error);

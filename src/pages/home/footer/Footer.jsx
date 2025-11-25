@@ -2,20 +2,20 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-brand">
+        <footer className="footer">
+            <div className="footer-container">
+                <div className="footer-brand">
                     <h2>Piczen</h2>
                     <p>AI tools to enhance your images with ease.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <div className="social-icons">
+                        <a href="#"><i className="fab fa-facebook-f"></i></a>
+                        <a href="#"><i className="fab fa-instagram"></i></a>
+                        <a href="#"><i className="fab fa-x-twitter"></i></a>
+                        <a href="#"><i className="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <div class="footer-links">
+                <div className="footer-links">
                     <div>
                         <h4>Tools</h4>
                         <a href="#">AI Backgrounds</a>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div className="footer-bottom">
                 <p>© 2025 Piczen. All rights reserved.</p>
             </div>
         </footer>

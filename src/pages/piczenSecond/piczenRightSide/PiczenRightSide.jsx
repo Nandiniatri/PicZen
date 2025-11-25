@@ -45,13 +45,13 @@ const PiczenRightSide = () => {
       <div>
         <ClassicsArrive />
       </div>
-      
+
       <div>
         <PhotoEditingClassics />
       </div>
 
       <div>
-        <ResuableTrending apiUrl="trending.json"/>
+        <ResuableTrending apiUrl="trending" mapImage={(item) => item.image} />
       </div>
 
     </div>
