@@ -48,9 +48,9 @@
 
 
 import { useEffect, useState } from "react";
-import "./Trending.css";
+import "./ResuableTrending.css";
 
-const Trending = ({ apiUrl, title = "Trending", mapImage }) => {
+const ResuableTrending = ({ apiUrl, title = "Trending", mapImage }) => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -58,7 +58,7 @@ const Trending = ({ apiUrl, title = "Trending", mapImage }) => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const res = await fetch(apiUrl);
+                const res = await fetch(`http://localhost:4000/api/${apiUrl}`);
                 const data = await res.json();
                 const finalImages = mapImage ? data.map(mapImage) : data;
                 setImages(finalImages);
@@ -83,7 +83,7 @@ const Trending = ({ apiUrl, title = "Trending", mapImage }) => {
                 {images.map((src, index) => (
                     <img
                         key={index}
-                        src={src}
+                        src={src.image}
                         className="scroll-image"
                         alt={`img-${index}`}
                     />
@@ -93,4 +93,4 @@ const Trending = ({ apiUrl, title = "Trending", mapImage }) => {
     );
 };
 
-export default Trending;
+export default ResuableTrending;

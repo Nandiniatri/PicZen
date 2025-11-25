@@ -6,7 +6,7 @@ import ClassicsArrive from "./Classics/ClassicsArrive";
 import NewInPiczen from "./newInPiczen/NewInPiczen";
 import PhotoEditingClassics from "./photoEditClassics/PhotoEditingClassics";
 import './PiczenRightSide.css';
-import Trending from "./trending/Trending";
+import ResuableTrending from "./resuabletrending/ResuableTrending";
 
 const PiczenRightSide = () => {
   return (
@@ -51,7 +51,7 @@ const PiczenRightSide = () => {
       </div>
 
       <div>
-        <Trending />
+        <ResuableTrending apiUrl="trending.json"/>
       </div>
 
     </div>

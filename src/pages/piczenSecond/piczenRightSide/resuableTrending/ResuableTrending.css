@@ -10,7 +10,7 @@
 .scroll-container {
     display: flex;
     gap: 12px;
-    overflow-x: auto;
+    overflow-x: auto; 
     white-space: nowrap;
     padding: 10px;
     scroll-behavior: smooth;
