@@ -51,7 +51,7 @@ const PiczenRightSide = () => {
       </div>
 
       <div>
-        <ResuableTrending apiUrl="trending" mapImage={(item) => item.image} />
+        <ResuableTrending apiUrl="trending" />
       </div>
 
     </div>

@@ -11,8 +11,7 @@ const ResuableTrending = ({ apiUrl, title }) => {
             try {
                 const res = await fetch(`http://localhost:4000/api/${apiUrl}`);
                 const data = await res.json();
-                setImages(finalImages);
-
+                setImages(data);
             } catch (err) {
                 setError("Failed to load images");
             } finally {
