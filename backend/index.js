@@ -46,5 +46,10 @@ app.get("/api/photoEditingClassicsData", (req, res) => {
 });
 
 
+app.get("/api/trending", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/trending.json", "utf-8"));
+  res.json(data);
+});
+
 const PORT = 4000;
 app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));
