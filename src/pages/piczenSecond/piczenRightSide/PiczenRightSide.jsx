@@ -55,7 +55,7 @@ const PiczenRightSide = () => {
       </div>
 
       <div>
-        <ResuableTrending apiUrl="Marble&Wood" title="Marble & Wood" />
+        <ResuableTrending apiUrl="marble&Wood" title="Marble & Wood" />
       </div>
 
     </div>

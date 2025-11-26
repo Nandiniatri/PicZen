@@ -51,8 +51,8 @@ app.get("/api/trending", (req, res) => {
   res.json(data);
 });
 
-app.get("/api/Marble&Wood", (req, res) => {
-  const data = JSON.parse(fs.readFileSync("./data/Marble&Wood.json", "utf-8"));
+app.get("/api/marble&Wood", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/marble&Wood.json", "utf-8"));
   res.json(data);
 });
 
