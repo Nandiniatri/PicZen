@@ -112,7 +112,7 @@ const ImageDropFile = () => {
             newX = mouseX;
             newY = mouseY;
         }
-
+ 
 
         if (newWidth > 50 && newHeight > 50) {
             setSize({ width: newWidth, height: newHeight });

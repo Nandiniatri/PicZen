@@ -7,7 +7,7 @@ const AddText = () => {
     const { textStyle } = useAppEvent();
 
     return (
-        <div className="addText-container">
+        <div className="addText-container"> 
             <Button className="addText-btn">+ Add text</Button>
             <input
                 type="text"
