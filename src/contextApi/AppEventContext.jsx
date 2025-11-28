@@ -182,6 +182,7 @@ const AppEventProvider = ({ children }) => {
 
             canvasTexts,
             addTextToCanvas,
+            setCanvasTexts
         }}>
             {children}
 

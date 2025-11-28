@@ -29,8 +29,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts } = useAppEvent();
-
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts , setCanvasTexts} = useAppEvent();
     const canvasRef = useRef(null);
 
     // Move State
@@ -42,6 +41,24 @@ const ImageDropFile = () => {
     const [size, setSize] = useState({ width: 200, height: 200 });
     const [resizing, setResizing] = useState(false);
     const [currentHandle, setCurrentHandle] = useState(null);
+
+    const [editingTextId, setEditingTextId] = useState(null);
+    const [editingValue, setEditingValue] = useState("");
+
+    const handleTextClick = (txt) => {
+        setEditingTextId(txt.id);
+        setEditingValue(txt.label);
+    };
+
+    const handleTextSave = () => {
+        setCanvasTexts((prev) =>
+            prev.map((t) =>
+                t.id === editingTextId ? { ...t, label: editingValue } : t
+            )
+        );
+        setEditingTextId(null);
+    };
+
 
     if (!selectedFiles || selectedFiles.length === 0) {
         return <p>No files selected.</p>;
@@ -203,7 +220,6 @@ const ImageDropFile = () => {
                         {canvasTexts.map((txt) => (
                             <div
                                 key={txt.id}
-                                className={txt.class}
                                 style={{
                                     position: "absolute",
                                     top: txt.y,
@@ -211,10 +227,30 @@ const ImageDropFile = () => {
                                     zIndex: 50,
                                     userSelect: "none",
                                 }}
+                                onClick={() => handleTextClick(txt)}
                             >
-                                {txt.label}
+                                {editingTextId === txt.id ? (
+                                    <input
+                                        autoFocus
+                                        value={editingValue}
+                                        onChange={(e) => setEditingValue(e.target.value)}
+                                        onBlur={handleTextSave}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter") handleTextSave();
+                                        }}
+                                        style={{
+                                            padding: "2px 4px",
+                                            fontSize: "18px",
+                                            border: "1px solid #ccc",
+                                            outline: "none",
+                                        }}
+                                    />
+                                ) : (
+                                    <div className={txt.class}>{txt.label}</div>
+                                )}
                             </div>
                         ))}
+
 
 
                         {/* 🔵 RESIZE HANDLES (4 CORNERS) */}
