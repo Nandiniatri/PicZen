@@ -4,10 +4,10 @@ import Button from "../../components/Button";
 
 
 const AddText = () => {
-    const { textStyle } = useAppEvent();
+    const { textStyle, addTextToCanvas } = useAppEvent();
 
     return (
-        <div className="addText-container"> 
+        <div className="addText-container">
             <Button className="addText-btn">+ Add text</Button>
             <input
                 type="text"
@@ -24,7 +24,7 @@ const AddText = () => {
 
             <div className="textStyle-grid">
                 {textStyle.map((item, index) => (
-                    <div key={index} className={item.class}>
+                    <div key={index} className={item.class} onClick={() => addTextToCanvas(item)}>
                         {item.label}
                     </div>
                 ))}
