@@ -29,7 +29,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel } = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts } = useAppEvent();
 
     const canvasRef = useRef(null);
 
@@ -112,7 +112,7 @@ const ImageDropFile = () => {
             newX = mouseX;
             newY = mouseY;
         }
- 
+
 
         if (newWidth > 50 && newHeight > 50) {
             setSize({ width: newWidth, height: newHeight });
@@ -199,6 +199,23 @@ const ImageDropFile = () => {
                                 zIndex: 10,
                             }}
                         />
+
+                        {canvasTexts.map((txt) => (
+                            <div
+                                key={txt.id}
+                                className={txt.class}
+                                style={{
+                                    position: "absolute",
+                                    top: txt.y,
+                                    left: txt.x,
+                                    zIndex: 50,
+                                    userSelect: "none",
+                                }}
+                            >
+                                {txt.label}
+                            </div>
+                        ))}
+
 
                         {/* 🔵 RESIZE HANDLES (4 CORNERS) */}
 
