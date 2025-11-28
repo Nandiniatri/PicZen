@@ -16,6 +16,20 @@ const AppEventProvider = ({ children }) => {
     const [newInPiczen, setNewInPiczen] = useState([]);
     const [classicArrive, setClassicArrive] = useState([]);
     const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
+    const [canvasTexts, setCanvasTexts] = useState([]);
+
+    const addTextToCanvas = (textItem) => {
+        setCanvasTexts((prev) => [
+            ...prev,
+            {
+                id: Date.now(),
+                label: textItem.label,
+                class: textItem.class,
+                x: 50,
+                y: 50,
+            },
+        ]);
+    };
 
     const fetchPhotoEditingClassics = async () => {
         try {
@@ -155,7 +169,19 @@ const AppEventProvider = ({ children }) => {
             textStyle,
             newInPiczen,
             classicArrive,
-            photoEditingClassics
+            photoEditingClassics,
+
+            selectedFiles,
+            setSelectedFiles,
+
+            textStyle,
+            setTextStyle,
+
+            activeRightPanel,
+            setActiveRightPanel,
+
+            canvasTexts,
+            addTextToCanvas,
         }}>
             {children}
 
