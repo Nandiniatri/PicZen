@@ -303,11 +303,11 @@ const ImageDropFile = () => {
 
                 <div>
                     {activeRightPanel === "Add text" && <AddText />}
-                    {activeRightPanel === "Add text" && <AddText />}
+                    {activeRightPanel === "Backgrounds" && <AddText />}
                 </div>
             </div>
         </div>
     );
 };
-
+ 
 export default ImageDropFile;

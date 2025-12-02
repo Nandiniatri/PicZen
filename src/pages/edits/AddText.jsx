@@ -3,7 +3,7 @@ import "./AddText.css";
 import Button from "../../components/Button";
 
 
-const AddText = () => {
+const AddText = () => { 
     const { textStyle, addTextToCanvas } = useAppEvent();
 
     return (
