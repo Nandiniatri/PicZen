@@ -1,7 +1,8 @@
+import React from "react";
 import "./AddBackground.css";
 import { Wand2, Square, Image, Trash2 } from "lucide-react";
 
-const BackgroundModal = ({ onClose }) => {
+const BackgroundMenu = () => {
     return (
         <div className="bg-menu-container">
             <ul className="bg-menu-list">
@@ -31,4 +32,4 @@ const BackgroundModal = ({ onClose }) => {
     );
 };
 
-export default BackgroundModal;
+export default BackgroundMenu;

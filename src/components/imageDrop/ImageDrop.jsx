@@ -18,6 +18,7 @@ import {
 import "./ImageDrop.css";
 import AddText from "../../pages/edits/AddText";
 import AddBackgrounds from "../../pages/edits/addBackground/AddBackground";
+import BackgroundMenu from "../../pages/edits/addBackground/BackgroundModal";
 
 const iconMap = {
     plus: <Plus />,
@@ -168,7 +169,7 @@ const ImageDropFile = () => {
                         ))}
                 </div>
 
-
+ 
                 <div className="header-right">
                     <Button className="header-btn">
                         <Download size={18} /> Download
@@ -304,7 +305,7 @@ const ImageDropFile = () => {
 
                 <div>
                     {activeRightPanel === "Add text" && <AddText />}
-                    {activeRightPanel === "Backgrounds" && <AddBackgrounds />}
+                    {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                 </div>
             </div>
         </div>

@@ -32,5 +32,5 @@ const AddText = () => {
         </div>
     );
 };
-
+ 
 export default AddText;
