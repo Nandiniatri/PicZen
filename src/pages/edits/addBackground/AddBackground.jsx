@@ -1,3 +1,5 @@
+import './AddBackground.css'
+
 const AddBackgrounds = () => {
     return (
         <div>

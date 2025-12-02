@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import "./ImageDrop.css";
 import AddText from "../../pages/edits/AddText";
+import AddBackgrounds from "../../pages/edits/addBackground/AddBackground";
 
 const iconMap = {
     plus: <Plus />,
@@ -29,7 +30,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts , setCanvasTexts} = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts, setCanvasTexts } = useAppEvent();
     const canvasRef = useRef(null);
 
     // Move State
@@ -303,11 +304,11 @@ const ImageDropFile = () => {
 
                 <div>
                     {activeRightPanel === "Add text" && <AddText />}
-                    {activeRightPanel === "Backgrounds" && <AddText />}
+                    {activeRightPanel === "Backgrounds" && <AddBackgrounds />}
                 </div>
             </div>
         </div>
     );
 };
- 
+
 export default ImageDropFile;
