@@ -20,6 +20,16 @@ const AppEventProvider = ({ children }) => {
 
     const [solidColor , setSolidColor] = useState('white');
 
+    const handleSolidColorAPI = async() =>{
+        try{
+            const response = await fetch('http://localhost:4000/api/solidColor');
+            const result = await response.json();
+            setSolidColor(result);
+        }catch(error){
+            console.log("Network Error");
+        }
+    }
+
     const handleSolidColor = () => {
         setActiveRightPanel("Solid color");
     }
@@ -39,7 +49,7 @@ const AppEventProvider = ({ children }) => {
 
     const fetchPhotoEditingClassics = async () => {
         try {
-            const response = await fetch('http://localhost:4000/api/photoEditingClassicsData');
+            const response = await fetch('cphotoEditingClassicsData');
             const result = await response.json();
             // console.log('new In PhotoEditingClassics', result);
             setPhotoEditingClassics(result);
@@ -113,6 +123,7 @@ const AppEventProvider = ({ children }) => {
         fetchNewInPiczen();
         fetchClassicArrive();
         fetchPhotoEditingClassics();
+        handleSolidColorAPI();
     }, [])
 
 
@@ -189,7 +200,8 @@ const AppEventProvider = ({ children }) => {
             canvasTexts,
             addTextToCanvas,
             setCanvasTexts , 
-            handleSolidColor
+            handleSolidColor ,
+            solidColor
         }}>
             {children}
 

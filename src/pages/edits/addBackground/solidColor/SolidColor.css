@@ -1,0 +1,61 @@
+.solidColor-container {
+    padding: 18px;
+}
+
+.solidColor-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.solidColor-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.solidColor-btn {
+    padding: 10px 14px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-align: left;
+}
+
+.solidColor-btn:hover {
+    background: #ececec;
+}
+
+.solidColor-subtitle {
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.colorPicker {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.palette-wrapper {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+}
+
+.palette-color {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.palette-color:hover {
+    transform: scale(1.06);
+}
