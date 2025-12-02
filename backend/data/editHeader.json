@@ -1,29 +1,36 @@
 [
     {
+        "id": 1,
         "name": "Insert",
         "icon": "plus"
     },
     {
+        "id": 2,
         "name": "Brand kit",
         "icon": "briefcase"
     },
     {
-        "name": "Add text", 
+        "id": 3,
+        "name": "Add text",
         "icon": "type"
     },
     {
+        "id": 4,
         "name": "Templates",
         "icon": "template"
     },
     {
+        "id": 5,
         "name": "Backgrounds",
         "icon": "image"
     },
     {
+        "id": 6,
         "name": "AI Shadows",
         "icon": "wand"
     },
     {
+        "id": 7,
         "name": "Resize",
         "icon": "resize"
     }

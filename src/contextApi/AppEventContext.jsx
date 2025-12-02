@@ -79,6 +79,7 @@ const AppEventProvider = ({ children }) => {
 
     const handleTextInEdit = (item) => {
         console.log("Image Drop Header" , item.name);
+        navigate(`/imageDrop/${item.name}`);
         setActiveRightPanel(item.name);
     }
 

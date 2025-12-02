@@ -303,6 +303,7 @@ const ImageDropFile = () => {
 
                 <div>
                     {activeRightPanel === "Add text" && <AddText />}
+                    {activeRightPanel === "Add text" && <AddText />}
                 </div>
             </div>
         </div>
