@@ -54,7 +54,6 @@
     gap: 12px;
 }
 
-/* Base style box */
 .style-box {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -68,7 +67,7 @@
 }
 
 .style-box:hover {
-    background: #f7f7f7; 
+    background: #f7f7f7;
 }
 
 .bold { font-weight: 900; }
@@ -78,5 +77,69 @@
 .simple { font-weight: 500; }
 .bold-red { font-weight: 900; color: #e65555; }
 
+.arc-black {
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+}
 
+.red-pill {
+    background: #ff1e1e;
+    color: white;
+    padding: 14px 0;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+    border: none;
+}
 
+.heavy-bold {
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.circle-text {
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid #000;
+    padding: 18px 5px;
+    border-radius: 50%;
+    line-height: 18px;
+}
+
+.yellow-outline {
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    padding: 10px 0;
+    border: 3px solid yellow;
+    background: white;
+    border-radius: 10px;
+}
+
+.serif-thin {
+    font-family: "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: #222;
+}
+
+.elegant {
+    font-family: "Georgia", serif;
+    font-size: 20px;
+    color: #3c2f80;
+    font-weight: 600;
+}
+
+.purple-soft {
+    background: #e7dbff;
+    color: #6a29ff;
+    padding: 14px 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
