@@ -17,10 +17,43 @@
     },
     {
         "label": "DM for Price",
-        "class": "style-box simple" 
+        "class": "style-box simple"
     },
     {
         "label": "CONTACT US",
         "class": "style-box bold-red"
+    },
+
+    {
+        "label": "SALE SALE SALE",
+        "class": "style-box arc-black"
+    },
+    {
+        "label": "DISCOUNT",
+        "class": "style-box red-pill"
+    },
+    {
+        "label": "BLACK FRIDAY",
+        "class": "style-box heavy-bold"
+    },
+    {
+        "label": "NEW . NEW . NEW",
+        "class": "style-box circle-text"
+    },
+    {
+        "label": "Follow Us",
+        "class": "style-box yellow-outline"
+    },
+    {
+        "label": "Week",
+        "class": "style-box serif-thin"
+    },
+    {
+        "label": "Happy New Year",
+        "class": "style-box elegant"
+    },
+    {
+        "label": "CONTACT US",
+        "class": "style-box purple-soft"
     }
 ]
