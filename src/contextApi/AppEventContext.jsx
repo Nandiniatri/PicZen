@@ -78,7 +78,7 @@ const AppEventProvider = ({ children }) => {
     }
 
     const handleTextInEdit = (item) => {
-        console.log(item.name);
+        console.log("Image Drop Header" , item.name);
         setActiveRightPanel(item.name);
     }
 
