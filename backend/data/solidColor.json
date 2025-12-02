@@ -1,0 +1,41 @@
+{
+    "title": "Color Background",
+    "actions": [
+        {
+            "id": 1,
+            "label": "Add an AI background",
+            "type": "ai_background"
+        },
+        {
+            "id": 2,
+            "label": "Add image as background",
+            "type": "image_background"
+        },
+        {
+            "id": 3,
+            "label": "Remove background",
+            "type": "remove_background"
+        }
+    ],
+    "customColor": {
+        "enabled": true,
+        "default": "#ffffff"
+    },
+    "palette": [
+        "#000000",
+        "#ffffff",
+        "#ff4d4d",
+        "#ff7f00",
+        "#ff00ff",
+        "#8b00ff",
+        "#0047ab",
+        "#0096ff",
+        "#00c8ff",
+        "#00ff85",
+        "#65d600",
+        "#d4ff00",
+        "#ffe600",
+        "#ff9f00",
+        "#ff4d00"
+    ]
+}
