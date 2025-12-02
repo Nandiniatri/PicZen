@@ -19,6 +19,7 @@ import "./ImageDrop.css";
 import AddText from "../../pages/edits/AddText";
 import AddBackgrounds from "../../pages/edits/addBackground/AddBackground";
 import BackgroundMenu from "../../pages/edits/addBackground/BackgroundModal";
+import SolidColor from "../../pages/edits/addBackground/solidColor/SolidColor";
 
 const iconMap = {
     plus: <Plus />,
@@ -306,6 +307,7 @@ const ImageDropFile = () => {
                 <div>
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
+                    {activeRightPanel === "Solid color" && <SolidColor />}
                 </div>
             </div>
         </div>
