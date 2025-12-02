@@ -68,7 +68,7 @@
 }
 
 .style-box:hover {
-    background: #f7f7f7;
+    background: #f7f7f7; 
 }
 
 .bold { font-weight: 900; }
@@ -77,3 +77,6 @@
 .blue { color: #4287f5; }
 .simple { font-weight: 500; }
 .bold-red { font-weight: 900; color: #e65555; }
+
+
+
