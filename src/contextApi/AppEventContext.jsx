@@ -18,6 +18,12 @@ const AppEventProvider = ({ children }) => {
     const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
     const [canvasTexts, setCanvasTexts] = useState([]);
 
+    const [solidColor , setSolidColor] = useState(white);
+
+    const handleSolidColor = () => {
+        alert('Hello');
+    }
+
     const addTextToCanvas = (textItem) => {
         setCanvasTexts((prev) => [
             ...prev,
