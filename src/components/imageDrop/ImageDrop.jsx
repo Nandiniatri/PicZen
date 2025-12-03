@@ -308,6 +308,7 @@ const ImageDropFile = () => {
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                     {activeRightPanel === "Solid color" && <SolidColor />}
+                    {activeRightPanel === "Background Image" && <SolidColor />}
                 </div>
             </div>
         </div>

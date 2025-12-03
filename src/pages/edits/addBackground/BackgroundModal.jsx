@@ -4,7 +4,7 @@ import { Wand2, Square, Image, Trash2 } from "lucide-react";
 import { useAppEvent } from "../../../contextApi/AppEventContext";
 
 const BackgroundMenu = () => {
-    const { handleSolidColor } = useAppEvent();
+    const { handleSolidColor , handleImage } = useAppEvent();
 
     return (
         <div className="bg-menu-container">
@@ -20,7 +20,7 @@ const BackgroundMenu = () => {
                     <span>Solid color</span>
                 </li>
 
-                <li className="bg-menu-item">
+                <li className="bg-menu-item" onClick={handleImage}>
                     <Image size={18} />
                     <span>Image</span>
                 </li>

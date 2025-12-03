@@ -20,10 +20,13 @@ const AppEventProvider = ({ children }) => {
     const [solidColor, setSolidColor] = useState(null);
     const [canvasBgColor, setCanvasBgColor] = useState('');
 
+    const handleImage = () => {
+        setActiveRightPanel("Background Image");
+    }
+
     const handlePalette = (color) => {
         setCanvasBgColor(color);
     }
-
 
     const handleSolidColorAPI = async () => {
         try {
@@ -208,7 +211,8 @@ const AppEventProvider = ({ children }) => {
             handleSolidColor,
             solidColor, handlePalette,
 
-            canvasBgColor, setCanvasBgColor
+            canvasBgColor, setCanvasBgColor,
+            handleImage
         }}>
             {children}
 
