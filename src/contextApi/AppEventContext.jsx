@@ -19,7 +19,17 @@ const AppEventProvider = ({ children }) => {
     const [canvasTexts, setCanvasTexts] = useState([]);
     const [solidColor, setSolidColor] = useState(null);
     const [canvasBgColor, setCanvasBgColor] = useState('');
-    const [imageBackground , setImageBackground] = useState(null);
+    const [imageBackground, setImageBackground] = useState(null);
+
+    const handleImageBackgroundAPI = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/imageBackground');
+            const result = await response.json();
+            setImageBackground(result);
+        } catch (error) {
+            console.log('Network Error in Image Background');
+        }
+    }
 
     const handleImage = () => {
         setActiveRightPanel("Background Image");
@@ -133,6 +143,7 @@ const AppEventProvider = ({ children }) => {
         fetchClassicArrive();
         fetchPhotoEditingClassics();
         handleSolidColorAPI();
+        handleImageBackgroundAPI();
     }, [])
 
 
@@ -213,7 +224,8 @@ const AppEventProvider = ({ children }) => {
             solidColor, handlePalette,
 
             canvasBgColor, setCanvasBgColor,
-            handleImage
+            handleImage ,
+            imageBackground
         }}>
             {children}
 
