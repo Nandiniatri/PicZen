@@ -14,6 +14,16 @@
                     "id": 102,
                     "name": "Wood 2",
                     "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fwood%2F1130494_thumb.jpg"
+                },
+                {
+                    "id":103,
+                    "name":"Wood 3",
+                    "thumb":"https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fwood%2F1516370_thumb.jpg"
+                },
+                 {
+                    "id":104,
+                    "name":"Wood 4",
+                    "thumb":"https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fwood%2F1846861_thumb.jpg"
                 }
             ]
         },
@@ -29,6 +39,16 @@
                 {
                     "id": 202,
                     "name": "Marble 2",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fmarble_texture%2F_a_background_image_of_black_marble_and_gold_lines--v__f24e5906-805f-424b-8865-78e904ff697e_thumb.jpg"
+                },
+                {
+                    "id": 203,
+                    "name": "Marble 3",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fmarble_texture%2F_a_background_image_of_black_marble_and_gold_lines--v__f24e5906-805f-424b-8865-78e904ff697e_thumb.jpg"
+                },
+                {
+                    "id": 204,
+                    "name": "Marble 4",
                     "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fmarble_texture%2F_a_background_image_of_black_marble_and_gold_lines--v__f24e5906-805f-424b-8865-78e904ff697e_thumb.jpg"
                 }
             ]
@@ -46,6 +66,16 @@
                     "id": 302,
                     "name": "Concrete 2",
                     "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fconcrete%2F1217083_thumb.jpg"
+                },
+                {
+                    "id": 303,
+                    "name": "Concrete 3",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fconcrete%2F1646788_thumb.jpg"
+                },
+                {
+                    "id": 304,
+                    "name": "Concrete 4",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fconcrete%2F1725520_thumb.jpg"
                 }
             ]
         },
@@ -62,6 +92,16 @@
                     "id": 402,
                     "name": "Boken 2",
                     "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fbokeh%2F10_thumb.jpg"
+                },
+                {
+                    "id": 403,
+                    "name": "Boken 3",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fbokeh%2F18_isfree_thumb.jpg"
+                },
+                {
+                    "id": 404,
+                    "name": "Boken 4",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fbokeh%2F19_thumb.jpg"
                 }
             ]
         },
@@ -77,6 +117,16 @@
                 {
                     "id": 502,
                     "name": "Paper 2",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fpaper%2F3_thumb.jpg"
+                },
+                {
+                    "id": 503,
+                    "name": "Paper 3",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fpaper%2F2_thumb.jpg"
+                },
+                {
+                    "id": 504,
+                    "name": "Paper 4",
                     "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fpaper%2F36_thumb.jpg"
                 }
             ]
@@ -94,6 +144,16 @@
                     "id": 602,
                     "name": "Wall 2",
                     "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fwall%2F14_thumb.jpg"
+                },
+                {
+                    "id": 603,
+                    "name": "Wall 3",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fwall%2F10_thumb.jpg"
+                },
+                {
+                    "id": 604,
+                    "name": "Wall 4",
+                    "thumb": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Ftexture%2Fwall%2F11_thumb.jpg"
                 }
             ]
         }
