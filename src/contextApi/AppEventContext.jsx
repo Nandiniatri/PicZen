@@ -17,10 +17,12 @@ const AppEventProvider = ({ children }) => {
     const [classicArrive, setClassicArrive] = useState([]);
     const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
     const [canvasTexts, setCanvasTexts] = useState([]);
-    const [solidColor, setSolidColor] = useState('');
+    const [solidColor, setSolidColor] = useState(null);
+
+    const [canvasBgColor, setCanvasBgColor] = useState('');
 
     const handlePalette = (color) => {
-        alert(color);
+        setCanvasBgColor(color);
     }
 
 
@@ -205,7 +207,9 @@ const AppEventProvider = ({ children }) => {
             addTextToCanvas,
             setCanvasTexts,
             handleSolidColor,
-            solidColor, handlePalette
+            solidColor, handlePalette,
+
+            canvasBgColor, setCanvasBgColor
         }}>
             {children}
 
