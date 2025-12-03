@@ -61,5 +61,10 @@ app.get("/api/solidColor", (req, res) => {
   res.json(data);
 });
 
+app.get("/api/solidColor", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/solidColor.json", "utf-8"));
+  res.json(data);
+});
+
 const PORT = 4000;
 app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));

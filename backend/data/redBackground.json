@@ -56,6 +56,10 @@
     {
       "id": 14,
       "url": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Fcolors%2Fred%2Fimage_119_color3_thumb.jpg"
+    },
+    {
+        "id":15,
+        "url":"https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fbackgrounds_v4%2Fcolors%2Fred%2Fimage_13_color1_thumb.jpg"
     }
   ]
 }
