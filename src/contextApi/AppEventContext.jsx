@@ -19,6 +19,7 @@ const AppEventProvider = ({ children }) => {
     const [canvasTexts, setCanvasTexts] = useState([]);
     const [solidColor, setSolidColor] = useState(null);
     const [canvasBgColor, setCanvasBgColor] = useState('');
+    const [imageBackground , setImageBackground] = useState(null);
 
     const handleImage = () => {
         setActiveRightPanel("Background Image");
