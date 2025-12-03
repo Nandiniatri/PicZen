@@ -20,6 +20,7 @@ import AddText from "../../pages/edits/AddText";
 import AddBackgrounds from "../../pages/edits/addBackground/AddBackground";
 import BackgroundMenu from "../../pages/edits/addBackground/BackgroundModal";
 import SolidColor from "../../pages/edits/addBackground/solidColor/SolidColor";
+import ImageBackground from "../../pages/edits/addBackground/imageBackground/ImageBackground";
 
 const iconMap = {
     plus: <Plus />,
@@ -308,7 +309,7 @@ const ImageDropFile = () => {
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                     {activeRightPanel === "Solid color" && <SolidColor />}
-                    {activeRightPanel === "Background Image" && <SolidColor />}
+                    {activeRightPanel === "Background Image" && <ImageBackground />}
                 </div>
             </div>
         </div>
