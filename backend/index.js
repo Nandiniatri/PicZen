@@ -61,8 +61,8 @@ app.get("/api/solidColor", (req, res) => {
   res.json(data);
 });
 
-app.get("/api/solidColor", (req, res) => {
-  const data = JSON.parse(fs.readFileSync("./data/solidColor.json", "utf-8"));
+app.get("/api/imageBackground", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("./data/imageBackground.json", "utf-8"));
   res.json(data);
 });
 
