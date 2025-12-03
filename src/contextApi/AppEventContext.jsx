@@ -18,7 +18,6 @@ const AppEventProvider = ({ children }) => {
     const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
     const [canvasTexts, setCanvasTexts] = useState([]);
     const [solidColor, setSolidColor] = useState(null);
-
     const [canvasBgColor, setCanvasBgColor] = useState('');
 
     const handlePalette = (color) => {
