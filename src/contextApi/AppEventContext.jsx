@@ -17,15 +17,19 @@ const AppEventProvider = ({ children }) => {
     const [classicArrive, setClassicArrive] = useState([]);
     const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
     const [canvasTexts, setCanvasTexts] = useState([]);
+    const [solidColor, setSolidColor] = useState('');
 
-    const [solidColor , setSolidColor] = useState('white');
+    const handlePalette = (color) => {
+        alert(color);
+    }
 
-    const handleSolidColorAPI = async() =>{
-        try{
+
+    const handleSolidColorAPI = async () => {
+        try {
             const response = await fetch('http://localhost:4000/api/solidColor');
             const result = await response.json();
             setSolidColor(result);
-        }catch(error){
+        } catch (error) {
             console.log("Network Error");
         }
     }
@@ -94,7 +98,7 @@ const AppEventProvider = ({ children }) => {
     }
 
     const handleTextInEdit = (item) => {
-        console.log("Image Drop Header" , item.name);
+        console.log("Image Drop Header", item.name);
         setActiveRightPanel(item.name);
     }
 
@@ -199,9 +203,9 @@ const AppEventProvider = ({ children }) => {
 
             canvasTexts,
             addTextToCanvas,
-            setCanvasTexts , 
-            handleSolidColor ,
-            solidColor
+            setCanvasTexts,
+            handleSolidColor,
+            solidColor, handlePalette
         }}>
             {children}
 

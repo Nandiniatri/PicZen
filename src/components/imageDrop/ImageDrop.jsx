@@ -32,7 +32,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts, setCanvasTexts } = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts, setCanvasTexts, solidColor } = useAppEvent();
     const canvasRef = useRef(null);
 
     // Move State
@@ -170,7 +170,7 @@ const ImageDropFile = () => {
                         ))}
                 </div>
 
- 
+
                 <div className="header-right">
                     <Button className="header-btn">
                         <Download size={18} /> Download
@@ -200,7 +200,7 @@ const ImageDropFile = () => {
                             height: "500px",
                             border: "1px solid #ccc",
                             overflow: "hidden",
-                            background: "#f5f5f5"
+                            background: solidColor
                         }}
                     >
                         {/* IMAGE */}

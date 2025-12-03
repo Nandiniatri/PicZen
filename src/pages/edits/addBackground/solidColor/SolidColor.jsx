@@ -3,7 +3,7 @@ import "./SolidColor.css";
 import { useAppEvent } from "../../../../contextApi/AppEventContext";
 
 const SolidColor = () => {
-    const { solidColor } = useAppEvent();
+    const { solidColor, setCanvasBgColor, handlePalette } = useAppEvent();
 
 
     if (!solidColor) return <p>Loading...</p>;
@@ -27,6 +27,7 @@ const SolidColor = () => {
                 type="color"
                 defaultValue={solidColor.customColor.default}
                 className="colorPicker"
+                onChange={(e) => setCanvasBgColor(e.target.value)}
             />
 
             <h4 className="solidColor-subtitle">Palette</h4>
@@ -37,6 +38,7 @@ const SolidColor = () => {
                         key={index}
                         className="palette-color"
                         style={{ backgroundColor: color }}
+                        onClick={() => handlePalette(color)}
                     ></div>
                 ))}
             </div>
