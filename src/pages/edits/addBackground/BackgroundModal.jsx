@@ -25,7 +25,7 @@ const BackgroundMenu = () => {
                     <span>Image</span>
                 </li>
 
-                <li className="bg-menu-item remove">
+                <li className="bg-menu-item remove" >
                     <Trash2 size={18} />
                     <span>Remove background</span>
                 </li>
