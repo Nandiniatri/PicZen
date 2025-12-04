@@ -34,7 +34,7 @@ const PiczenRightSide = () => {
           <div className="image-drop-box"><ResuableEditInfo src="https://cdn.pixabay.com/photo/2016/11/25/09/47/sun-flower-1857997_1280.png" data="Remove Background" /></div>
           <div className="image-drop-box"><ResuableEditInfo data="AI Background" src="https://cdn.pixabay.com/photo/2024/08/02/10/40/picture-8939420_1280.jpg" /></div>
           <div className="image-drop-box"><ResuableEditInfo data="Batch mode" src="https://cdn.pixabay.com/photo/2017/03/14/13/50/urban-art-2143183_960_720.jpg" /></div>
-          <div className="image-drop-box"><ResuableEditInfo data="Retouch" src="https://cdn.pixabay.com/photo/2023/11/13/17/25/women-8386031_960_720.jpg" /></div>
+          <div className="image-drop-box"><ResuableEditInfo data="Retouch" src="https://cdn.pixabay.com/photo/2023/11/13/17/25/women-8386031_960_720.jpg" /></div>a
         </div>
       </div>
 

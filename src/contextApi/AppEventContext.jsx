@@ -26,7 +26,7 @@ const AppEventProvider = ({ children }) => {
     // const [] = useState([]);
 
     const handleAIGenerate = () => {
-
+        navigate('/aiModal')
     }
 
     useEffect(() => {
