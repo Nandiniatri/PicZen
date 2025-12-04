@@ -33,7 +33,7 @@ const iconMap = {
 };
 
 const ImageDropFile = () => {
-    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts, setCanvasTexts, canvasBgColor } = useAppEvent();
+    const { selectedFiles, editHeaderData, handleEditPageHome, handleTextInEdit, activeRightPanel, canvasTexts, setCanvasTexts, canvasBgColor, canvasImageBackground } = useAppEvent();
     const canvasRef = useRef(null);
 
     // Move State
@@ -201,7 +201,12 @@ const ImageDropFile = () => {
                             height: "500px",
                             border: "1px solid #ccc",
                             overflow: "hidden",
-                            background: canvasBgColor
+                            background: canvasBgColor,
+                            backgroundImage: canvasImageBackground
+                                ? `url(${canvasImageBackground})`
+                                : "none",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
                         }}
                     >
                         {/* IMAGE */}

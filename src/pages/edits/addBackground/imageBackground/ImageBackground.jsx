@@ -2,7 +2,7 @@ import { useAppEvent } from "../../../../contextApi/AppEventContext";
 import './ImageBackground.css';
 
 const ImageBackground = () => {
-    const { imageBackground , handleImageBackground} = useAppEvent();
+    const { imageBackground , handleImageBackground , canvasImageBackground} = useAppEvent();
 
     if (!imageBackground) return <p>Loading...</p>;
 

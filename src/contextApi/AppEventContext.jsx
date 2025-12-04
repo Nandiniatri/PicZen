@@ -20,9 +20,10 @@ const AppEventProvider = ({ children }) => {
     const [solidColor, setSolidColor] = useState(null);
     const [canvasBgColor, setCanvasBgColor] = useState('');
     const [imageBackground, setImageBackground] = useState(null);
+    const [canvasImageBackground, setICanvasImageBackground] = useState('');
 
     const handleImageBackground = (item) => {
-        alert()
+        setICanvasImageBackground(item.thumb);
     }
 
     const handleImageBackgroundAPI = async () => {
@@ -228,9 +229,10 @@ const AppEventProvider = ({ children }) => {
             solidColor, handlePalette,
 
             canvasBgColor, setCanvasBgColor,
-            handleImage ,
-            imageBackground ,
-            handleImageBackground
+            handleImage,
+            imageBackground,
+            handleImageBackground , 
+            canvasImageBackground
         }}>
             {children}
 
