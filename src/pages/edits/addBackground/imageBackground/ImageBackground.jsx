@@ -2,7 +2,7 @@ import { useAppEvent } from "../../../../contextApi/AppEventContext";
 import './ImageBackground.css';
 
 const ImageBackground = () => {
-    const { imageBackground } = useAppEvent();
+    const { imageBackground , handleImageBackground} = useAppEvent();
 
     if (!imageBackground) return <p>Loading...</p>;
 
@@ -21,6 +21,7 @@ const ImageBackground = () => {
                                     src={item.thumb}
                                     alt={item.name}
                                     className="texture-thumb"
+                                    onClick={() => handleImageBackground(item)}
                                 />
                             </div>
                         ))}

@@ -21,6 +21,10 @@ const AppEventProvider = ({ children }) => {
     const [canvasBgColor, setCanvasBgColor] = useState('');
     const [imageBackground, setImageBackground] = useState(null);
 
+    const handleImageBackground = (item) => {
+        alert()
+    }
+
     const handleImageBackgroundAPI = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/imageBackground');
@@ -225,7 +229,8 @@ const AppEventProvider = ({ children }) => {
 
             canvasBgColor, setCanvasBgColor,
             handleImage ,
-            imageBackground
+            imageBackground ,
+            handleImageBackground
         }}>
             {children}
 
