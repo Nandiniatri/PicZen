@@ -1,0 +1,65 @@
+{
+  "title": "What do you need?",
+  "categories": [
+    {
+      "id": 1,
+      "label": "Create any image",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/expert.jpg"
+    },
+    {
+      "id": 2,
+      "label": "Product Beautifier",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/pro-shot.jpg"
+    },
+    {
+      "id": 3,
+      "label": "Virtual Model",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/virtual-tryon.jpg"
+    },
+    {
+      "id": 4,
+      "label": "Product Staging",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/lifestyle-shot.jpg"
+    },
+    {
+      "id": 5,
+      "label": "Describe any change",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/describe-a-change.webp"
+    },
+    {
+      "id": 6,
+      "label": "Flat lay",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/flat-lay.jpg"
+    },
+    {
+      "id": 7,
+      "label": "Ghost Mannequin",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/ghost-mannequin.jpg"
+    },
+    {
+      "id": 8,
+      "label": "Logo",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/logo.jpg"
+    },
+    {
+      "id": 9,
+      "label": "Text",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/text.jpg"
+    },
+    {
+      "id": 10,
+      "label": "Instagram story",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/instagram-story.jpg"
+    },
+    {
+      "id": 11,
+      "label": "Background",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/background.jpg"
+    },
+    {
+      "id": 12,
+      "label": "3D illustration",
+      "image": "https://serverless-api.photoroom.com/mini_app/images/3d-illustrations.jpg"
+    }
+  ]
+}

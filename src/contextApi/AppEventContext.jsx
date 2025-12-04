@@ -21,8 +21,13 @@ const AppEventProvider = ({ children }) => {
     const [canvasBgColor, setCanvasBgColor] = useState('');
     const [imageBackground, setImageBackground] = useState(null);
     const [canvasImageBackground, setICanvasImageBackground] = useState('');
-
     const [insertData, setInsertData] = useState(null);
+
+    // const [] = useState([]);
+
+    const handleAIGenerate = () => {
+
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -250,7 +255,8 @@ const AppEventProvider = ({ children }) => {
             imageBackground,
             handleImageBackground,
             canvasImageBackground,
-            insertData
+            insertData ,
+            handleAIGenerate
         }}>
             {children}
 
