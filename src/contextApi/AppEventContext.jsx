@@ -22,6 +22,23 @@ const AppEventProvider = ({ children }) => {
     const [imageBackground, setImageBackground] = useState(null);
     const [canvasImageBackground, setICanvasImageBackground] = useState('');
 
+    const [insertData, setInsertData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("http://localhost:4000/api/insertPanelData"); 
+                const data = await response.json();
+                setInsertData(data);
+            } catch (error) {
+                console.error("Error fetching JSON:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+
     const handleImageBackground = (item) => {
         setICanvasImageBackground(item.thumb);
     }
@@ -231,8 +248,9 @@ const AppEventProvider = ({ children }) => {
             canvasBgColor, setCanvasBgColor,
             handleImage,
             imageBackground,
-            handleImageBackground , 
-            canvasImageBackground
+            handleImageBackground,
+            canvasImageBackground,
+            insertData
         }}>
             {children}
 
