@@ -1,0 +1,68 @@
+{
+  "actions": {
+    "aiGenerateButton": {
+      "label": "Generate an image with AI",
+      "bgColor": "#f3f0ff"
+    },
+    "uploadBox": {
+      "title": "Drop a file or select an image",
+      "selectText": "select an image"
+    }
+  },
+
+  "recentUploads": [
+    {
+      "id": 1,
+      "image": "https://via.placeholder.com/80x100.png",
+      "type": "portrait"
+    },
+    {
+      "id": 2,
+      "image": "https://via.placeholder.com/80x100.png",
+      "type": "product"
+    }
+  ],
+
+  "shapes": [
+    {
+      "section": "Classics",
+      "items": [
+        { "id": 1, "shape": "circle" },
+        { "id": 2, "shape": "triangle" },
+        { "id": 3, "shape": "star" }
+      ]
+    },
+    {
+      "section": "Stickers",
+      "items": [
+        { "id": 4, "shape": "sticker_orange" },
+        { "id": 5, "shape": "sticker_yellow" },
+        { "id": 6, "shape": "sticker_pink" }
+      ]
+    },
+    {
+      "section": "Blobs",
+      "items": [
+        { "id": 7, "shape": "blob1" },
+        { "id": 8, "shape": "blob2" },
+        { "id": 9, "shape": "blob3" }
+      ]
+    },
+    {
+      "section": "Wired",
+      "items": [
+        { "id": 10, "shape": "wired1" },
+        { "id": 11, "shape": "wired2" },
+        { "id": 12, "shape": "wired3" }
+      ]
+    },
+    {
+      "section": "Loops",
+      "items": [
+        { "id": 13, "shape": "loop1" },
+        { "id": 14, "shape": "loop2" },
+        { "id": 15, "shape": "loop3" }
+      ]
+    }
+  ]
+}
