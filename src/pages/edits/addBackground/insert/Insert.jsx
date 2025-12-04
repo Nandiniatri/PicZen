@@ -1,7 +1,11 @@
-import React from "react";
 import "./Insert.css";
+import { useAppEvent } from "../../../../contextApi/AppEventContext";
 
 const Insert = () => {
+    const { insertData } = useAppEvent();
+
+    if (!insertData) return <p>Loading...</p>;
+
     const { actions, recentUploads, shapes } = insertData;
 
     return (
@@ -14,11 +18,12 @@ const Insert = () => {
             <div className="upload-box">
                 <p>
                     {actions.uploadBox.title.split("select")[0]}
-                    <span className="select-text"> {actions.uploadBox.selectText}</span>
+                    <span className="select-text">
+                        {actions.uploadBox.selectText}
+                    </span>
                 </p>
             </div>
 
-            {/* Recent Uploads */}
             <h3 className="section-heading">Recent uploads</h3>
             <div className="recent-uploads">
                 {recentUploads.map((item) => (
@@ -31,17 +36,18 @@ const Insert = () => {
                 ))}
             </div>
 
-            {/* Shapes */}
             <h3 className="section-heading">Shapes</h3>
 
             <div className="shape-sections">
-                {shapes.map((shapeGroup) => (
-                    <div key={shapeGroup.section} className="shape-group">
-                        <p className="shape-title">{shapeGroup.section}</p>
+                {shapes.map((group) => (
+                    <div key={group.section} className="shape-group">
+                        <p className="shape-title">{group.section}</p>
 
                         <div className="shape-list">
-                            {shapeGroup.items.map((item) => (
-                                <div key={item.id} className="shape-box"></div>
+                            {group.items.map((item) => (
+                                <div key={item.id} className="shape-box">
+                                    {item.shape}
+                                </div>
                             ))}
                         </div>
                     </div>
