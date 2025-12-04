@@ -124,3 +124,115 @@
   border-color: #5a36dd;
   transform: scale(1.05);
 }
+
+
+.shape-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+
+.shape-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #9ec5fc;
+}
+
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 28px solid #9ec5fc;
+}
+
+
+.shape-star {
+  font-size: 26px;
+  color: #9ec5fc;
+}
+
+.shape-blob {
+  width: 32px;
+  height: 32px;
+  background: #d9b5ff;
+}
+
+.blob1 {
+  border-radius: 50% 40% 60% 50%;
+}
+
+.blob2 {
+  border-radius: 60% 50% 40% 50%;
+}
+
+.blob3 {
+  border-radius: 50% 60% 50% 40%;
+}
+
+/* Wired */
+.shape-wired {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.wired1 {
+  border: 2px solid #bbbbbb;
+}
+
+.wired2 {
+  border: 2px dotted #bbbbbb;
+}
+
+.wired3 {
+  border: 2px dashed #bbbbbb;
+}
+
+.shape-loop {
+  width: 32px;
+  height: 32px;
+}
+
+.loop1 {
+  border-bottom: 3px solid #d5aaff;
+  border-radius: 50%;
+}
+
+.loop2 {
+  border-bottom: 3px solid #d5aaff;
+  border-radius: 70%;
+}
+
+.loop3 {
+  border-bottom: 3px solid #d5aaff;
+  border-radius: 90%;
+}
+
+
+.shape-sticker {
+  width: 38px;
+  height: 14px;
+  border-radius: 6px;
+}
+
+.shape-sticker.orange {
+  background: #ffb36b;
+}
+
+.shape-sticker.yellow {
+  background: #f2d874;
+}
+
+.shape-sticker.pink {
+  background: #ffb2d6;
+}
