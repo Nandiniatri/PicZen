@@ -24,9 +24,9 @@ const AppEventProvider = ({ children }) => {
     const [insertData, setInsertData] = useState(null);
     const [templateData, setTemplateData] = useState([]);
 
-    const handleTemplate = () => {
+    const handleTemplate = (item) => {
         alert("Template clicked");
-
+        setCanvasBgColor(item.bgColor);
     }
 
     const fetchTemplateData = async () => {
@@ -274,7 +274,7 @@ const AppEventProvider = ({ children }) => {
             insertData,
             handleAIGenerate,
             templateData ,
-            handleTemplates
+            handleTemplate
         }}>
             {children}
 

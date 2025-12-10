@@ -19,7 +19,7 @@ const Template = () => {
                     <h3>Classics</h3>
                     <div className="template-grid">
                         {templateData?.classics?.map((item) => (
-                            <div className="template-card" key={item.id} onClick={handleTemplate}>
+                            <div className="template-card" key={item.id} onClick={() => handleTemplate(item)}>
                                 <img src={item.image} alt={item.title} />
                                 <p>{item.title}</p>
                             </div>
