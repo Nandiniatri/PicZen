@@ -59,7 +59,7 @@ const Insert = () => {
 
     if (!insertData) return <p>Loading...</p>;
 
-    const { actions, recentUploads, shapes } = insertData;
+    const { actions, recentUploads, shapes, handleAIGenerate } = useAppEvent();;
 
     return (
         <div className="insert-panel">
