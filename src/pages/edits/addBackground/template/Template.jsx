@@ -31,7 +31,7 @@ const Template = () => {
                     <h3>Studio</h3>
                     <div className="template-grid">
                         {templateData?.studio?.map((item) => (
-                            <div className="template-card" key={item.id} onClick={handleTemplate}>
+                            <div className="template-card" key={item.id} onClick={() => handleTemplate(item)}>
                                 <img src={item.image} alt={item.title} />
                                 <p>{item.title}</p>
                             </div>
@@ -43,7 +43,7 @@ const Template = () => {
                     <h3>Photo Editing Classics</h3>
                     <div className="template-grid">
                         {templateData?.photoEditingClassics?.map((item) => (
-                            <div className="template-card" key={item.id} onClick={handleTemplate}>
+                            <div className="template-card" key={item.id} onClick={() => handleTemplate(item)}>
                                 <img src={item.image} alt={item.title} />
                                 <p>{item.title}</p>
                             </div>
