@@ -318,7 +318,7 @@ const ImageDropFile = () => {
                     {activeRightPanel === "Solid color" && <SolidColor />}
                     {activeRightPanel === "Background Image" && <ImageBackground />}
                     {activeRightPanel === "Insert" && <Insert />}
-                    {activeRightPanel === "Template" && <Template />}
+                    {activeRightPanel === "Templates" && <Template />}
                 </div>
             </div>
         </div>
