@@ -22,6 +22,7 @@ import BackgroundMenu from "../../pages/edits/addBackground/BackgroundModal";
 import SolidColor from "../../pages/edits/addBackground/solidColor/SolidColor";
 import ImageBackground from "../../pages/edits/addBackground/imageBackground/ImageBackground";
 import Insert from "../../pages/edits/addBackground/insert/Insert";
+import Template from "../../pages/edits/addBackground/template/Template";
 
 const iconMap = {
     plus: <Plus />,
@@ -305,7 +306,7 @@ const ImageDropFile = () => {
                             style={{
                                 top: pos.y + size.height - 10,
                                 left: pos.x + size.width - 10,
-                                cursor: "nwse-resize"
+                                cursor: "nwse-resize" 
                             }}
                         />
                     </div>
@@ -317,6 +318,7 @@ const ImageDropFile = () => {
                     {activeRightPanel === "Solid color" && <SolidColor />}
                     {activeRightPanel === "Background Image" && <ImageBackground />}
                     {activeRightPanel === "Insert" && <Insert />}
+                    {activeRightPanel === "Template" && <Template />}
                 </div>
             </div>
         </div>
