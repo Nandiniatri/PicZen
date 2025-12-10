@@ -203,13 +203,15 @@ const ImageDropFile = () => {
                             height: "500px",
                             border: "1px solid #ccc",
                             overflow: "hidden",
-                            background: canvasBgColor,
+
+                            backgroundColor: canvasBgColor,   
                             backgroundImage: canvasImageBackground
                                 ? `url(${canvasImageBackground})`
                                 : "none",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                         }}
+
                     >
                         {/* IMAGE */}
                         <img
@@ -306,7 +308,7 @@ const ImageDropFile = () => {
                             style={{
                                 top: pos.y + size.height - 10,
                                 left: pos.x + size.width - 10,
-                                cursor: "nwse-resize" 
+                                cursor: "nwse-resize"
                             }}
                         />
                     </div>

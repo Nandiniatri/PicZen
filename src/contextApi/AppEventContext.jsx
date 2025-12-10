@@ -27,6 +27,7 @@ const AppEventProvider = ({ children }) => {
     const handleTemplate = (item) => {
         alert("Template clicked");
         setCanvasBgColor(item.bgColor);
+        setICanvasImageBackground(item.image);
     }
 
     const fetchTemplateData = async () => {
