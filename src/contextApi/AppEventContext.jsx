@@ -22,8 +22,17 @@ const AppEventProvider = ({ children }) => {
     const [imageBackground, setImageBackground] = useState(null);
     const [canvasImageBackground, setICanvasImageBackground] = useState('');
     const [insertData, setInsertData] = useState(null);
+    const [templateData , setTemplateData] = useState([]);
 
-    // const [] = useState([]);
+    const fetchTemplateData = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/template'); 
+            const data = await response.json();
+            setTemplateData(data);
+        }   catch (error) { 
+            console.error("Error fetching JSON:", error);
+        }
+    }
 
     const handleAIGenerate = () => {
         alert('hello')
@@ -172,6 +181,7 @@ const AppEventProvider = ({ children }) => {
         fetchPhotoEditingClassics();
         handleSolidColorAPI();
         handleImageBackgroundAPI();
+        fetchTemplateData()
     }, [])
 
 
@@ -257,7 +267,8 @@ const AppEventProvider = ({ children }) => {
             handleImageBackground,
             canvasImageBackground,
             insertData ,
-            handleAIGenerate
+            handleAIGenerate , 
+            templateData
         }}>
             {children}
 
