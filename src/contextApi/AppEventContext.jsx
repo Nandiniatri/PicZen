@@ -22,14 +22,19 @@ const AppEventProvider = ({ children }) => {
     const [imageBackground, setImageBackground] = useState(null);
     const [canvasImageBackground, setICanvasImageBackground] = useState('');
     const [insertData, setInsertData] = useState(null);
-    const [templateData , setTemplateData] = useState([]);
+    const [templateData, setTemplateData] = useState([]);
+
+    const handleTemplate = () => {
+        alert("Template clicked");
+
+    }
 
     const fetchTemplateData = async () => {
         try {
-            const response = await fetch('http://localhost:4000/api/template'); 
+            const response = await fetch('http://localhost:4000/api/template');
             const data = await response.json();
             setTemplateData(data);
-        }   catch (error) { 
+        } catch (error) {
             console.error("Error fetching JSON:", error);
         }
     }
@@ -42,7 +47,7 @@ const AppEventProvider = ({ children }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:4000/api/insertPanelData"); 
+                const response = await fetch("http://localhost:4000/api/insertPanelData");
                 const data = await response.json();
                 setInsertData(data);
             } catch (error) {
@@ -266,9 +271,10 @@ const AppEventProvider = ({ children }) => {
             imageBackground,
             handleImageBackground,
             canvasImageBackground,
-            insertData ,
-            handleAIGenerate , 
-            templateData
+            insertData,
+            handleAIGenerate,
+            templateData ,
+            handleTemplates
         }}>
             {children}
 
