@@ -5,7 +5,7 @@ const Template = () => {
     const { templateData, handleTemplate } = useAppEvent();
 
     return (
-        <>
+        <div className="template-container">
             <h2>Template</h2>
             <div className="template-wrapper">
 
@@ -52,7 +52,7 @@ const Template = () => {
                 </div>
 
             </div>
-        </>
+        </div>
     );
 };
 

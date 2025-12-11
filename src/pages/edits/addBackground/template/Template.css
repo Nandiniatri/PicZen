@@ -1,11 +1,18 @@
+.template-container{
+  border: solid;
+  padding: 2px;
+}
+.template-container h2{
+  margin-left: 20px;
+}
 .template-wrapper {
   width: 330px;
-  height: 84vh;
+  height: 82.7vh;
   overflow-y: auto;
   background: #fff;
   padding: 20px;
   border-left: 1px solid #e5e5e5;
-  border: solid;
+  /* padding: 10px; */
 }
 
 .template-search {
@@ -27,7 +34,7 @@
 .template-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 20px;
 }
 
 .template-card {
