@@ -9,8 +9,7 @@ const Resize = () => {
     return (
         <Modal open={openModal} onClose={handleModelClose} title="Resize Image">
             <div className="resize-page">
-                <h2>Resize Page</h2>
-                <p>This is the Resize page content.</p>
+                
             </div>
         </Modal>
     )
