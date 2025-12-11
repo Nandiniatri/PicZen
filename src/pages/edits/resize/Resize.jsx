@@ -1,7 +1,6 @@
 import Modal from '../../../components/modal/Modal';
 import { useAppEvent } from '../../../contextApi/AppEventContext';
 import './Resize.css';
-import { useState } from 'react';
 
 
 const Resize = () => {
