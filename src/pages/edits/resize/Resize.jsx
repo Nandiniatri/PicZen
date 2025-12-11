@@ -1,66 +1,3 @@
-// import { useState, useRef } from 'react';
-// import EditorCanvas from '../../../components/editorCanvas/EditorCanvas';
-// import Modal from '../../../components/modal/Modal';
-// import { useAppEvent } from '../../../contextApi/AppEventContext';
-// import './Resize.css';
-
-// const Resize = () => {
-//     const { handleModelClose, openModal, selectedFiles, canvasTexts, setCanvasTexts, canvasBgColor, canvasImageBackground } = useAppEvent();
-
-//     const canvasRef = useRef(null);
-
-//     const [pos, setPos] = useState({ x: 50, y: 50 });
-//     const [size, setSize] = useState({ width: 200, height: 200 });
-//     const [dragging, setDragging] = useState(false);
-//     const [resizing, setResizing] = useState(false);
-//     const [currentHandle, setCurrentHandle] = useState(null);
-
-//     const [editingTextId, setEditingTextId] = useState(null);
-//     const [editingValue, setEditingValue] = useState("");
-
-//     const startDrag = (e) => { /* same as ImageDropFile */ };
-//     const onDrag = (e) => { /* same as ImageDropFile */ };
-//     const startResize = (e, handle) => { /* same as ImageDropFile */ };
-//     const onResize = (e) => { /* same as ImageDropFile */ };
-//     const stopActions = () => { setDragging(false); setResizing(false); setCurrentHandle(null); };
-//     const handleTextClick = (txt) => { setEditingTextId(txt.id); setEditingValue(txt.label); };
-//     const handleTextSave = () => { setCanvasTexts(prev => prev.map(t => t.id === editingTextId ? { ...t, label: editingValue } : t)); setEditingTextId(null); };
-
-//     if (!selectedFiles || selectedFiles.length === 0) return <p>No image selected</p>;
-
-//     return (
-//         <Modal open={openModal} onClose={handleModelClose} title="Resize Image">
-//             <div className="resize-page">
-//                 <EditorCanvas
-//                     canvasRef={canvasRef}
-//                     selectedFile={selectedFiles[0]}
-//                     canvasTexts={canvasTexts}
-//                     editingTextId={editingTextId}
-//                     editingValue={editingValue}
-//                     pos={pos}
-//                     size={size}
-//                     dragging={dragging}
-//                     canvasBgColor={canvasBgColor}
-//                     canvasImageBackground={canvasImageBackground}
-
-//                     startDrag={startDrag}
-//                     onDrag={onDrag}
-//                     onResize={onResize}
-//                     stopActions={stopActions}
-//                     startResize={startResize}
-//                     handleTextClick={handleTextClick}
-//                     handleTextSave={handleTextSave}
-//                     setEditingValue={setEditingValue}
-//                 />
-//             </div>
-//         </Modal>
-//     );
-// }
-
-// export default Resize;
-
-
-
 import { useState, useRef } from 'react';
 import EditorCanvas from '../../../components/editorCanvas/EditorCanvas';
 import Modal from '../../../components/modal/Modal';
@@ -95,10 +32,9 @@ const Resize = () => {
     if (!selectedFiles || selectedFiles.length === 0) return <p>No image selected</p>;
 
     return (
-        <Modal open={openModal} onClose={handleModelClose} title="Resize Image">
+        <Modal open={openModal} onClose={handleModelClose} title="Resize Image" >
             <div className="resize-page">
 
-                {/* LEFT SIDE - Canvas */}
                 <div className="resize-left">
                     <EditorCanvas
                         canvasRef={canvasRef}
@@ -123,7 +59,6 @@ const Resize = () => {
                     />
                 </div>
 
-                {/* RIGHT SIDE - PhotoRoom Style Panel */}
                 <div className="resize-right-panel">
 
                     <div className="resize-search">
@@ -171,7 +106,7 @@ const Resize = () => {
                     </div>
 
                     <button className="resize-btn">Resize</button>
-                    <button className="cancel-btn">Cancel</button>
+                    <button className="cancel-btn" onClick={handleModelClose}>Cancel</button>
 
                 </div>
             </div>
