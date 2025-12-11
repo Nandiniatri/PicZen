@@ -23,6 +23,11 @@ const AppEventProvider = ({ children }) => {
     const [canvasImageBackground, setICanvasImageBackground] = useState('');
     const [insertData, setInsertData] = useState(null);
     const [templateData, setTemplateData] = useState([]);
+    const [openModal, setOpenModal] = useState(true);
+
+    const handleModelClose = () => {
+        setOpenModal(false);
+    }
 
     const handleTemplate = (item) => {
         alert("Template clicked");
@@ -274,8 +279,9 @@ const AppEventProvider = ({ children }) => {
             canvasImageBackground,
             insertData,
             handleAIGenerate,
-            templateData ,
-            handleTemplate
+            templateData,
+            handleTemplate , 
+            handleModelClose , openModal
         }}>
             {children}
 
