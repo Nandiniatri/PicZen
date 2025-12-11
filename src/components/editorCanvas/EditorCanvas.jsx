@@ -1,115 +1,200 @@
-import { useRef } from "react";
-import { useAppEvent } from "../../contextApi/AppEventContext";
+// import React from "react";
 
-const EditorCanvas = () => {
-    const {
-        selectedFiles,
-        canvasTexts,
-        setCanvasTexts,
-        pos,
-        setPos,
-        size,
-        setSize,
-        canvasBgColor,
-        canvasImageBackground
-    } = useAppEvent();
+// const EditorCanvas = ({
+//     canvasRef,
+//     selectedFile,
+//     canvasTexts,
+//     editingTextId,
+//     editingValue,
+//     pos,
+//     size,
+//     dragging,
+//     canvasBgColor,
+//     canvasImageBackground,
 
-    const canvasRef = useRef(null);
+//     // handlers
+//     startDrag,
+//     onDrag,
+//     onResize,
+//     stopActions,
+//     startResize,
+//     handleTextClick,
+//     handleTextSave,
+//     setEditingValue
+// }) => {
+//     return (
+//         <div
+//             className="file-preview"
+//             ref={canvasRef}
+//             onMouseMove={(e) => {
+//                 onDrag(e);
+//                 onResize(e);
+//             }}
+//             onMouseUp={stopActions}
+//             onMouseLeave={stopActions}
+//             style={{
+//                 position: "relative",
+//                 width: "400px",
+//                 height: "500px",
+//                 border: "1px solid #ccc",
+//                 overflow: "hidden",
 
-    // STATES
-    let dragging = false;
-    let resizing = false;
-    let currentHandle = null;
-    let offset = { x: 0, y: 0 };
+//                 backgroundColor: canvasBgColor,
+//                 backgroundImage: canvasImageBackground
+//                     ? `url(${canvasImageBackground})`
+//                     : "none",
+//                 backgroundSize: "cover",
+//                 backgroundPosition: "center",
+//             }}
+//         >
+//             {/* IMAGE */}
+//             <img
+//                 src={URL.createObjectURL(selectedFile)}
+//                 alt="preview"
+//                 width={size.width}
+//                 height={size.height}
+//                 onMouseDown={startDrag}
+//                 style={{
+//                     position: "absolute",
+//                     top: pos.y,
+//                     left: pos.x,
+//                     cursor: dragging ? "grabbing" : "grab",
+//                     userSelect: "none",
+//                     zIndex: 10
+//                 }}
+//             />
 
-    if (!selectedFiles || selectedFiles.length === 0) {
-        return <p>No files selected.</p>;
-    }
+//             {/* TEXTS */}
+//             {canvasTexts.map((txt) => (
+//                 <div
+//                     key={txt.id}
+//                     style={{
+//                         position: "absolute",
+//                         top: txt.y,
+//                         left: txt.x,
+//                         zIndex: 50,
+//                         userSelect: "none",
+//                     }}
+//                     onClick={() => handleTextClick(txt)}
+//                 >
+//                     {editingTextId === txt.id ? (
+//                         <input
+//                             autoFocus
+//                             value={editingValue}
+//                             onChange={(e) => setEditingValue(e.target.value)}
+//                             onBlur={handleTextSave}
+//                             onKeyDown={(e) => {
+//                                 if (e.key === "Enter") handleTextSave();
+//                             }}
+//                             style={{
+//                                 padding: "2px 4px",
+//                                 fontSize: "18px",
+//                                 border: "1px solid #ccc",
+//                                 outline: "none",
+//                             }}
+//                         />
+//                     ) : (
+//                         <div className={txt.class}>{txt.label}</div>
+//                     )}
+//                 </div>
+//             ))}
 
-    const startDrag = (e) => {
-        if (resizing) return;
+//             {/* RESIZE HANDLES */}
 
-        dragging = true;
-        const rect = canvasRef.current.getBoundingClientRect();
+//             {/* TL */}
+//             <div
+//                 onMouseDown={(e) => startResize(e, "tl")}
+//                 className="resize-handle"
+//                 style={{
+//                     top: pos.y - 10,
+//                     left: pos.x - 10,
+//                     cursor: "nwse-resize"
+//                 }}
+//             />
 
-        offset = {
-            x: e.clientX - rect.left - pos.x,
-            y: e.clientY - rect.top - pos.y,
-        };
-    };
+//             {/* TR */}
+//             <div
+//                 onMouseDown={(e) => startResize(e, "tr")}
+//                 className="resize-handle"
+//                 style={{
+//                     top: pos.y - 10,
+//                     left: pos.x + size.width - 10,
+//                     cursor: "nesw-resize"
+//                 }}
+//             />
 
-    const onDrag = (e) => {
-        if (!dragging || resizing) return;
+//             {/* BL */}
+//             <div
+//                 onMouseDown={(e) => startResize(e, "bl")}
+//                 className="resize-handle"
+//                 style={{
+//                     top: pos.y + size.height - 10,
+//                     left: pos.x - 10,
+//                     cursor: "nesw-resize"
+//                 }}
+//             />
 
-        const rect = canvasRef.current.getBoundingClientRect();
+//             {/* BR */}
+//             <div
+//                 onMouseDown={(e) => startResize(e, "br")}
+//                 className="resize-handle"
+//                 style={{
+//                     top: pos.y + size.height - 10,
+//                     left: pos.x + size.width - 10,
+//                     cursor: "nwse-resize"
+//                 }}
+//             />
+//         </div>
+//     );
+// };
 
-        let newX = e.clientX - rect.left - offset.x;
-        let newY = e.clientY - rect.top - offset.y;
+// export default EditorCanvas;
 
-        newX = Math.max(0, Math.min(newX, rect.width - size.width));
-        newY = Math.max(0, Math.min(newY, rect.height - size.height));
 
-        setPos({ x: newX, y: newY });
-    };
 
-    const startResize = (e, handle) => {
-        e.stopPropagation();
-        resizing = true;
-        currentHandle = handle;
-    };
 
-    const onResize = (e) => {
-        if (!resizing) return;
 
-        const rect = canvasRef.current.getBoundingClientRect();
 
-        let newWidth = size.width;
-        let newHeight = size.height;
-        let newX = pos.x;
-        let newY = pos.y;
 
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
 
-        if (currentHandle === "br") {
-            newWidth = mouseX - pos.x;
-            newHeight = mouseY - pos.y;
-        }
-        if (currentHandle === "tr") {
-            newWidth = mouseX - pos.x;
-            newHeight = size.height + (pos.y - mouseY);
-            newY = mouseY;
-        }
-        if (currentHandle === "bl") {
-            newWidth = size.width + (pos.x - mouseX);
-            newX = mouseX;
-            newHeight = mouseY - pos.y;
-        }
-        if (currentHandle === "tl") {
-            newWidth = size.width + (pos.x - mouseX);
-            newHeight = size.height + (pos.y - mouseY);
-            newX = mouseX;
-            newY = mouseY;
-        }
 
-        if (newWidth > 50 && newHeight > 50) {
-            setSize({ width: newWidth, height: newHeight });
-            setPos({ x: newX, y: newY });
-        }
-    };
 
-    const stopActions = () => {
-        dragging = false;
-        resizing = false;
-        currentHandle = null;
-    };
 
+
+
+
+
+import React from "react";
+
+const EditorCanvas = ({
+    canvasRef,
+    selectedFile,
+    canvasTexts = [],
+    editingTextId,
+    editingValue,
+    pos = { x: 0, y: 0 },
+    size = { width: 200, height: 200 },
+    dragging,
+    canvasBgColor = "#fff",
+    canvasImageBackground,
+
+    // handlers
+    startDrag,
+    onDrag,
+    onResize,
+    stopActions,
+    startResize,
+    handleTextClick,
+    handleTextSave,
+    setEditingValue
+}) => {
     return (
         <div
+            className="file-preview"
             ref={canvasRef}
             onMouseMove={(e) => {
-                onDrag(e);
-                onResize(e);
+                onDrag && onDrag(e);
+                onResize && onResize(e);
             }}
             onMouseUp={stopActions}
             onMouseLeave={stopActions}
@@ -127,22 +212,24 @@ const EditorCanvas = () => {
                 backgroundPosition: "center",
             }}
         >
-            {/* MAIN IMAGE */}
-            <img
-                src={URL.createObjectURL(selectedFiles[0])}
-                alt="preview"
-                width={size.width}
-                height={size.height}
-                onMouseDown={startDrag}
-                style={{
-                    position: "absolute",
-                    top: pos.y,
-                    left: pos.x,
-                    cursor: "grab",
-                    userSelect: "none",
-                    zIndex: 10,
-                }}
-            />
+            {/* IMAGE */}
+            {selectedFile && (
+                <img
+                    src={URL.createObjectURL(selectedFile)}
+                    alt="preview"
+                    width={size.width}
+                    height={size.height}
+                    onMouseDown={startDrag}
+                    style={{
+                        position: "absolute",
+                        top: pos.y,
+                        left: pos.x,
+                        cursor: dragging ? "grabbing" : "grab",
+                        userSelect: "none",
+                        zIndex: 10
+                    }}
+                />
+            )}
 
             {/* TEXTS */}
             {canvasTexts.map((txt) => (
@@ -155,51 +242,56 @@ const EditorCanvas = () => {
                         zIndex: 50,
                         userSelect: "none",
                     }}
+                    onClick={() => handleTextClick(txt)}
                 >
-                    <div className={txt.class}>{txt.label}</div>
+                    {editingTextId === txt.id ? (
+                        <input
+                            autoFocus
+                            value={editingValue}
+                            onChange={(e) => setEditingValue(e.target.value)}
+                            onBlur={handleTextSave}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") handleTextSave();
+                            }}
+                            style={{
+                                padding: "2px 4px",
+                                fontSize: "18px",
+                                border: "1px solid #ccc",
+                                outline: "none",
+                            }}
+                        />
+                    ) : (
+                        <div className={txt.class}>{txt.label}</div>
+                    )}
                 </div>
             ))}
 
             {/* RESIZE HANDLES */}
-            <div
-                onMouseDown={(e) => startResize(e, "tl")}
-                className="resize-handle"
-                style={{
-                    top: pos.y - 10,
-                    left: pos.x - 10,
-                    cursor: "nwse-resize",
-                }}
-            />
+            {["tl", "tr", "bl", "br"].map((handle) => {
+                let top = pos.y - 10;
+                let left = pos.x - 10;
+                let cursor = "nwse-resize";
 
-            <div
-                onMouseDown={(e) => startResize(e, "tr")}
-                className="resize-handle"
-                style={{
-                    top: pos.y - 10,
-                    left: pos.x + size.width - 10,
-                    cursor: "nesw-resize",
-                }}
-            />
+                if (handle === "tr") {
+                    left = pos.x + size.width - 10;
+                    cursor = "nesw-resize";
+                } else if (handle === "bl") {
+                    top = pos.y + size.height - 10;
+                    cursor = "nesw-resize";
+                } else if (handle === "br") {
+                    top = pos.y + size.height - 10;
+                    left = pos.x + size.width - 10;
+                }
 
-            <div
-                onMouseDown={(e) => startResize(e, "bl")}
-                className="resize-handle"
-                style={{
-                    top: pos.y + size.height - 10,
-                    left: pos.x - 10,
-                    cursor: "nesw-resize",
-                }}
-            />
-
-            <div
-                onMouseDown={(e) => startResize(e, "br")}
-                className="resize-handle"
-                style={{
-                    top: pos.y + size.height - 10,
-                    left: pos.x + size.width - 10,
-                    cursor: "nwse-resize",
-                }}
-            />
+                return (
+                    <div
+                        key={handle}
+                        onMouseDown={(e) => startResize(e, handle)}
+                        className="resize-handle"
+                        style={{ top, left, cursor }}
+                    />
+                );
+            })}
         </div>
     );
 };
