@@ -407,20 +407,19 @@ const ImageDropFile = () => {
         canvasImageBackground,
     } = useAppEvent();
 
-    // REFS
+ 
     const canvasRef = useRef(null);
 
-    // Move State
+   
     const [pos, setPos] = useState({ x: 50, y: 50 });
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-    // Resize State
+
     const [size, setSize] = useState({ width: 200, height: 200 });
     const [resizing, setResizing] = useState(false);
     const [currentHandle, setCurrentHandle] = useState(null);
 
-    // Text Edit State
     const [editingTextId, setEditingTextId] = useState(null);
     const [editingValue, setEditingValue] = useState("");
 
@@ -442,7 +441,6 @@ const ImageDropFile = () => {
         return <p>No files selected.</p>;
     }
 
-    // -------- DRAG LOGIC --------
     const startDrag = (e) => {
         if (resizing) return;
 
@@ -551,11 +549,10 @@ const ImageDropFile = () => {
                 </div>
             </header>
 
-            {/* -------- CANVAS + RIGHT PANEL -------- */}
+
             <div className="ImageDrop-Selected-div">
                 <div className="imageDrop-selected-files">
 
-                    {/* ⭐ NEW CLEAN CANVAS COMPONENT */}
                     <EditorCanvas
                         canvasRef={canvasRef}
                         selectedFile={selectedFiles[0]}
