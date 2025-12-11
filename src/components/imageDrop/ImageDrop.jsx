@@ -23,6 +23,7 @@ import SolidColor from "../../pages/edits/addBackground/solidColor/SolidColor";
 import ImageBackground from "../../pages/edits/addBackground/imageBackground/ImageBackground";
 import Insert from "../../pages/edits/addBackground/insert/Insert";
 import Template from "../../pages/edits/addBackground/template/Template";
+import Resize from "../../pages/edits/resize/Resize";
 
 const iconMap = {
     plus: <Plus />,
@@ -321,6 +322,7 @@ const ImageDropFile = () => {
                     {activeRightPanel === "Background Image" && <ImageBackground />}
                     {activeRightPanel === "Insert" && <Insert />}
                     {activeRightPanel === "Templates" && <Template />}
+                    {activeRightPanel === "Resize" && <Resize />}
                 </div>
             </div>
         </div>
