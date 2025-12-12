@@ -312,7 +312,6 @@
 
 
 
-
 import React, { useState } from "react";
 import { removeBackground } from "@imgly/background-removal";
 
@@ -322,8 +321,8 @@ const EditorCanvas = ({
     canvasTexts = [],
     editingTextId,
     editingValue,
-    pos = { x: 0, y: 0 },
-    size = { width: 200, height: 200 },
+    pos,
+    size,
     dragging,
     canvasBgColor = "#fff",
     canvasImageBackground,
@@ -359,6 +358,9 @@ const EditorCanvas = ({
         processBgRemove();
     }, [selectedFile]);
 
+    // 🔥 Canvas Size
+    const CANVAS_W = 600;
+    const CANVAS_H = 500;
 
     return (
         <div
@@ -372,8 +374,8 @@ const EditorCanvas = ({
             onMouseLeave={stopActions}
             style={{
                 position: "relative",
-                width: "600px",
-                height: "500px",
+                width: CANVAS_W,
+                height: CANVAS_H,
                 border: "1px solid #ccc",
                 overflow: "hidden",
                 backgroundColor: canvasBgColor,
@@ -413,12 +415,19 @@ const EditorCanvas = ({
                         const w = e.target.naturalWidth;
                         const h = e.target.naturalHeight;
 
-                        // scale to fit nicely
+                        // 🔥 scale width = 300
                         const maxWidth = 300;
                         const ratio = maxWidth / w;
 
-                        size.width = w * ratio;
-                        size.height = h * ratio;
+                        const newW = w * ratio;
+                        const newH = h * ratio;
+
+                        size.width = newW;
+                        size.height = newH;
+
+                        // 🔥 CENTER IMAGE INSIDE CANVAS
+                        pos.x = (CANVAS_W - newW) / 2;
+                        pos.y = (CANVAS_H - newH) / 2;
                     }}
                     style={{
                         position: "absolute",
@@ -432,7 +441,6 @@ const EditorCanvas = ({
                     }}
                 />
             )}
-
 
             {/* TEXTS */}
             {canvasTexts.map((txt) => (
@@ -489,12 +497,21 @@ const EditorCanvas = ({
                             key={handle}
                             onMouseDown={(e) => startResize(e, handle)}
                             className="resize-handle"
-                            style={{ top, left }}
+                            style={{
+                                position: "absolute",
+                                width: HANDLE_SIZE,
+                                height: HANDLE_SIZE,
+                                background: "white",
+                                border: "2px solid #222",
+                                borderRadius: "50%",
+                                cursor: "nwse-resize",
+                                top,
+                                left,
+                                zIndex: 200,
+                            }}
                         />
                     );
                 })}
-
-
         </div>
     );
 };
