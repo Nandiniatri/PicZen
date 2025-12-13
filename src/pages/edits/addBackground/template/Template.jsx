@@ -33,7 +33,6 @@ const Template = () => {
                         {templateData?.studio?.map((item) => (
                             <div className="template-card" key={item.id} onClick={() => handleTemplate(item)}>
                                 <img src={item.image} alt={item.title} />
-                                <p>{item.title}</p>
                             </div>
                         ))}
                     </div>

@@ -32,6 +32,7 @@ const AppEventProvider = ({ children }) => {
     const handleTemplate = (item) => {
         // setCanvasBgColor(item.bgColor);
         // setICanvasImageBackground(item.image);
+        alert(`Template Selected: ${item.effect?.target}`);
         if (!item?.effect) return;
 
         // 🔥 BACKGROUND EFFECTS
