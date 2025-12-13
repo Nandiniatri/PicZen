@@ -256,8 +256,6 @@ const AppEventProvider = ({ children }) => {
             newInPiczen,
             classicArrive,
             photoEditingClassics,
-
-            selectedFiles,
             setSelectedFiles,
 
             textStyle,
