@@ -6,7 +6,7 @@
 
 // const Resize = () => {
 //     const { handleModelClose, openModal, selectedFiles, canvasTexts, setCanvasTexts, canvasBgColor, canvasImageBackground } = useAppEvent();
- 
+
 //     const canvasRef = useRef(null);
 
 //     const [pos, setPos] = useState({ x: 50, y: 50 });
@@ -167,10 +167,10 @@ const Resize = () => {
         setCanvasSize(SIZE_PRESETS[type]);
     };
 
-    const startDrag = () => {};
-    const onDrag = () => {};
-    const startResize = () => {};
-    const onResize = () => {};
+    const startDrag = () => { };
+    const onDrag = () => { };
+    const startResize = () => { };
+    const onResize = () => { };
     const stopActions = () => {
         setDragging(false);
         setResizing(false);
@@ -206,6 +206,7 @@ const Resize = () => {
                         style={{ aspectRatio: canvasSize.ratio }}
                     >
                         <EditorCanvas
+                            key={canvasSize.ratio}
                             canvasRef={canvasRef}
                             selectedFile={selectedFiles[0]}
                             canvasTexts={canvasTexts}

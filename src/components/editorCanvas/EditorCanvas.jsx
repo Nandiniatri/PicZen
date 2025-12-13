@@ -312,18 +312,240 @@
 
 
 
-import React, { useState } from "react";
+
+
+
+
+//ye sahi hai jo mai niche kar rahi hu wo practics kare rahi hu......................
+
+// import React, { useState } from "react";
+// import { removeBackground } from "@imgly/background-removal";
+
+// const EditorCanvas = ({
+//     canvasRef,
+//     selectedFile,
+//     canvasTexts = [],
+//     editingTextId,
+//     editingValue,
+//     pos,
+//     size,
+//     dragging,
+//     canvasBgColor = "#fff",
+//     canvasImageBackground,
+
+//     startDrag,
+//     onDrag,
+//     onResize,
+//     stopActions,
+//     startResize,
+//     handleTextClick,
+//     handleTextSave,
+//     setEditingValue
+// }) => {
+
+//     const [processedImg, setProcessedImg] = useState(null);
+//     const [loading, setLoading] = useState(false);
+
+//     React.useEffect(() => {
+//         if (!selectedFile) return;
+
+//         const processBgRemove = async () => {
+//             setLoading(true);
+//             try {
+//                 const blob = await removeBackground(selectedFile);
+//                 const url = URL.createObjectURL(blob);
+//                 setProcessedImg(url);
+//             } catch (error) {
+//                 console.error("BG remove failed:", error);
+//             }
+//             setLoading(false);
+//         };
+
+//         processBgRemove();
+//     }, [selectedFile]);
+
+//     // 🔥 Canvas Size
+//     const CANVAS_W = 600;
+//     const CANVAS_H = 500;
+
+//     return (
+//         <div
+//             className="file-preview"
+//             ref={canvasRef}
+//             onMouseMove={(e) => {
+//                 onDrag && onDrag(e);
+//                 onResize && onResize(e);
+//             }}
+//             onMouseUp={stopActions}
+//             onMouseLeave={stopActions}
+//             style={{
+//                 position: "relative",
+//                 width: CANVAS_W,
+//                 height: CANVAS_H,
+//                 border: "1px solid #ccc",
+//                 overflow: "hidden",
+//                 backgroundColor: canvasBgColor,
+//                 backgroundImage: canvasImageBackground
+//                     ? `url(${canvasImageBackground})`
+//                     : "none",
+//                 backgroundSize: "cover",
+//                 backgroundPosition: "center",
+//             }}
+//         >
+
+//             {/* 🔥 SHOW LOADING */}
+//             {loading && (
+//                 <div
+//                     style={{
+//                         position: "absolute",
+//                         top: "50%",
+//                         left: "50%",
+//                         transform: "translate(-50%, -50%)",
+//                         padding: "10px 20px",
+//                         color: "black",
+//                         borderRadius: "6px",
+//                         zIndex: 200
+//                     }}
+//                 >
+//                     Processing… Please wait.
+//                 </div>
+//             )}
+
+//             {/* 🔥 PROCESSED IMAGE (Background Removed) */}
+//             {processedImg && (
+//                 <img
+//                     src={processedImg}
+//                     alt="processed"
+//                     onMouseDown={startDrag}
+//                     onLoad={(e) => {
+//                         const w = e.target.naturalWidth;
+//                         const h = e.target.naturalHeight;
+
+//                         // 🔥 scale width = 300
+//                         const maxWidth = 300;
+//                         const ratio = maxWidth / w;
+
+//                         const newW = w * ratio;
+//                         const newH = h * ratio;
+
+//                         size.width = newW;
+//                         size.height = newH;
+
+//                         // 🔥 CENTER IMAGE INSIDE CANVAS
+//                         pos.x = (CANVAS_W - newW) / 2;
+//                         pos.y = (CANVAS_H - newH) / 2;
+//                     }}
+//                     style={{
+//                         position: "absolute",
+//                         top: pos.y,
+//                         left: pos.x,
+//                         width: size.width,
+//                         height: size.height,
+//                         cursor: dragging ? "grabbing" : "grab",
+//                         userSelect: "none",
+//                         zIndex: 10
+//                     }}
+//                 />
+//             )}
+
+//             {/* TEXTS */}
+//             {canvasTexts.map((txt) => (
+//                 <div
+//                     key={txt.id}
+//                     style={{
+//                         position: "absolute",
+//                         top: txt.y,
+//                         left: txt.x,
+//                         zIndex: 50,
+//                         userSelect: "none",
+//                     }}
+//                     onClick={() => handleTextClick(txt)}
+//                 >
+//                     {editingTextId === txt.id ? (
+//                         <input
+//                             autoFocus
+//                             value={editingValue}
+//                             onChange={(e) => setEditingValue(e.target.value)}
+//                             onBlur={handleTextSave}
+//                             onKeyDown={(e) => {
+//                                 if (e.key === "Enter") handleTextSave();
+//                             }}
+//                             style={{
+//                                 padding: "2px 4px",
+//                                 fontSize: "18px",
+//                                 border: "1px solid #ccc",
+//                                 outline: "none",
+//                             }}
+//                         />
+//                     ) : (
+//                         <div className={txt.class}>{txt.label}</div>
+//                     )}
+//                 </div>
+//             ))}
+
+//             {/* RESIZE HANDLES */}
+//             {processedImg &&
+//                 ["tl", "tr", "bl", "br"].map((handle) => {
+//                     const HANDLE_SIZE = 12;
+
+//                     let top = pos.y - HANDLE_SIZE / 2;
+//                     let left = pos.x - HANDLE_SIZE / 2;
+
+//                     if (handle === "tr") left = pos.x + size.width - HANDLE_SIZE / 2;
+//                     if (handle === "bl") top = pos.y + size.height - HANDLE_SIZE / 2;
+//                     if (handle === "br") {
+//                         top = pos.y + size.height - HANDLE_SIZE / 2;
+//                         left = pos.x + size.width - HANDLE_SIZE / 2;
+//                     }
+
+//                     return (
+//                         <div
+//                             key={handle}
+//                             onMouseDown={(e) => startResize(e, handle)}
+//                             className="resize-handle"
+//                             style={{
+//                                 position: "absolute",
+//                                 width: HANDLE_SIZE,
+//                                 height: HANDLE_SIZE,
+//                                 background: "white",
+//                                 border: "2px solid #222",
+//                                 borderRadius: "50%",
+//                                 cursor: "nwse-resize",
+//                                 top,
+//                                 left,
+//                                 zIndex: 200,
+//                             }}
+//                         />
+//                     );
+//                 })}
+//         </div>
+//     );
+// };
+
+// export default EditorCanvas;
+
+//End of code..........................................................................
+
+
+
+
+
+
+
+import React, { useEffect, useState } from "react";
 import { removeBackground } from "@imgly/background-removal";
 
 const EditorCanvas = ({
     canvasRef,
     selectedFile,
+
     canvasTexts = [],
     editingTextId,
     editingValue,
-    pos,
-    size,
-    dragging,
+    setEditingValue,
+    handleTextClick,
+    handleTextSave,
+
     canvasBgColor = "#fff",
     canvasImageBackground,
 
@@ -332,103 +554,100 @@ const EditorCanvas = ({
     onResize,
     stopActions,
     startResize,
-    handleTextClick,
-    handleTextSave,
-    setEditingValue
+
+    pos,
+    setPos,
+    size,
+    setSize,
+    dragging
 }) => {
 
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    React.useEffect(() => {
+    /* ---------------- BG REMOVE ---------------- */
+    useEffect(() => {
         if (!selectedFile) return;
 
-        const processBgRemove = async () => {
+        const processImage = async () => {
             setLoading(true);
             try {
                 const blob = await removeBackground(selectedFile);
                 const url = URL.createObjectURL(blob);
                 setProcessedImg(url);
-            } catch (error) {
-                console.error("BG remove failed:", error);
+            } catch (err) {
+                console.error("BG remove error:", err);
             }
             setLoading(false);
         };
 
-        processBgRemove();
+        processImage();
     }, [selectedFile]);
 
-    // 🔥 Canvas Size
-    const CANVAS_W = 600;
-    const CANVAS_H = 500;
+    /* -------- AUTO FIT IMAGE INSIDE CANVAS -------- */
+    useEffect(() => {
+        if (!processedImg || !canvasRef?.current) return;
+
+        const canvas = canvasRef.current;
+        const rect = canvas.getBoundingClientRect();
+
+        const img = new Image();
+        img.src = processedImg;
+
+        img.onload = () => {
+            const scale = Math.min(
+                (rect.width * 0.7) / img.width,
+                (rect.height * 0.7) / img.height
+            );
+
+            const newW = img.width * scale;
+            const newH = img.height * scale;
+
+            setSize({ width: newW, height: newH });
+            setPos({
+                x: (rect.width - newW) / 2,
+                y: (rect.height - newH) / 2
+            });
+        };
+    }, [processedImg, canvasRef]);
 
     return (
         <div
-            className="file-preview"
             ref={canvasRef}
+            className="editor-canvas"
             onMouseMove={(e) => {
-                onDrag && onDrag(e);
-                onResize && onResize(e);
+                onDrag?.(e);
+                onResize?.(e);
             }}
             onMouseUp={stopActions}
             onMouseLeave={stopActions}
             style={{
                 position: "relative",
-                width: CANVAS_W,
-                height: CANVAS_H,
-                border: "1px solid #ccc",
+                width: "100%",
+                height: "100%",
                 overflow: "hidden",
                 backgroundColor: canvasBgColor,
                 backgroundImage: canvasImageBackground
                     ? `url(${canvasImageBackground})`
                     : "none",
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition: "center"
             }}
         >
-
-            {/* 🔥 SHOW LOADING */}
+            {/* Loading */}
             {loading && (
-                <div
-                    style={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        padding: "10px 20px",
-                        color: "black",
-                        borderRadius: "6px",
-                        zIndex: 200
-                    }}
-                >
-                    Processing… Please wait.
+                <div className="canvas-loading">
+                    Processing image...
                 </div>
             )}
 
-            {/* 🔥 PROCESSED IMAGE (Background Removed) */}
+            {/* IMAGE */}
             {processedImg && (
                 <img
                     src={processedImg}
-                    alt="processed"
+                    alt=""
+                    draggable={false}
                     onMouseDown={startDrag}
-                    onLoad={(e) => {
-                        const w = e.target.naturalWidth;
-                        const h = e.target.naturalHeight;
-
-                        // 🔥 scale width = 300
-                        const maxWidth = 300;
-                        const ratio = maxWidth / w;
-
-                        const newW = w * ratio;
-                        const newH = h * ratio;
-
-                        size.width = newW;
-                        size.height = newH;
-
-                        // 🔥 CENTER IMAGE INSIDE CANVAS
-                        pos.x = (CANVAS_W - newW) / 2;
-                        pos.y = (CANVAS_H - newH) / 2;
-                    }}
                     style={{
                         position: "absolute",
                         top: pos.y,
@@ -450,8 +669,7 @@ const EditorCanvas = ({
                         position: "absolute",
                         top: txt.y,
                         left: txt.x,
-                        zIndex: 50,
-                        userSelect: "none",
+                        zIndex: 50
                     }}
                     onClick={() => handleTextClick(txt)}
                 >
@@ -461,15 +679,9 @@ const EditorCanvas = ({
                             value={editingValue}
                             onChange={(e) => setEditingValue(e.target.value)}
                             onBlur={handleTextSave}
-                            onKeyDown={(e) => {
-                                if (e.key === "Enter") handleTextSave();
-                            }}
-                            style={{
-                                padding: "2px 4px",
-                                fontSize: "18px",
-                                border: "1px solid #ccc",
-                                outline: "none",
-                            }}
+                            onKeyDown={(e) =>
+                                e.key === "Enter" && handleTextSave()
+                            }
                         />
                     ) : (
                         <div className={txt.class}>{txt.label}</div>
@@ -480,16 +692,16 @@ const EditorCanvas = ({
             {/* RESIZE HANDLES */}
             {processedImg &&
                 ["tl", "tr", "bl", "br"].map((handle) => {
-                    const HANDLE_SIZE = 12;
+                    const HANDLE = 12;
 
-                    let top = pos.y - HANDLE_SIZE / 2;
-                    let left = pos.x - HANDLE_SIZE / 2;
+                    let top = pos.y - HANDLE / 2;
+                    let left = pos.x - HANDLE / 2;
 
-                    if (handle === "tr") left = pos.x + size.width - HANDLE_SIZE / 2;
-                    if (handle === "bl") top = pos.y + size.height - HANDLE_SIZE / 2;
+                    if (handle === "tr") left = pos.x + size.width - HANDLE / 2;
+                    if (handle === "bl") top = pos.y + size.height - HANDLE / 2;
                     if (handle === "br") {
-                        top = pos.y + size.height - HANDLE_SIZE / 2;
-                        left = pos.x + size.width - HANDLE_SIZE / 2;
+                        top = pos.y + size.height - HANDLE / 2;
+                        left = pos.x + size.width - HANDLE / 2;
                     }
 
                     return (
@@ -499,15 +711,15 @@ const EditorCanvas = ({
                             className="resize-handle"
                             style={{
                                 position: "absolute",
-                                width: HANDLE_SIZE,
-                                height: HANDLE_SIZE,
-                                background: "white",
-                                border: "2px solid #222",
+                                width: HANDLE,
+                                height: HANDLE,
                                 borderRadius: "50%",
+                                background: "#fff",
+                                border: "2px solid #222",
                                 cursor: "nwse-resize",
                                 top,
                                 left,
-                                zIndex: 200,
+                                zIndex: 200
                             }}
                         />
                     );
