@@ -5,7 +5,7 @@ const BackgroundRemoveNew = () => {
     const [inputImg, setInputImg] = useState("");
     const [outputImg, setOutputImg] = useState("");
     const [file, setFile] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false) ;
 
     const handleChange = (e) => {
         const selected = e.target.files[0];
