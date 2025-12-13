@@ -1,12 +1,14 @@
-/* .resize-page {
+.resize-page {
     display: flex;
     height: 81vh;
+    /* background: #fff; */
     border: solid;
 }
 
 .resize-left {
     flex: 1;
     padding-right: 20px;
+    /* border: solid red; */
 } 
 
 .resize-right-panel {
@@ -90,89 +92,4 @@
 }
 
 
- */
 
-
-
-
-
-.resize-page {
-    display: flex;
-    height: 80vh;
-    background: #f3f3f3;
-}
-
-/* LEFT CANVAS AREA */
-.resize-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* CANVAS WRAPPER */
-.canvas-size-wrapper {
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-    max-height: 70vh;
-    /* 🔥 CONTROL SIZE */
-    width: auto;
-}
-
-/* RIGHT PANEL */
-.resize-right-panel {
-    width: 320px;
-    background: #fff;
-    border-left: 1px solid #e4e4e4;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-/* SEARCH */
-.resize-search input {
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-
-/* SECTIONS */
-.resize-section {
-    margin-top: 20px;
-}
-
-.resize-item {
-    background: #fafafa;
-    border: 1px solid #e8e8e8;
-    padding: 12px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.resize-item:hover {
-    background: #f0f0ff;
-    border-color: #c6c6ff;
-}
-
-/* BUTTONS */
-.resize-btn {
-    width: 100%;
-    background: #d1c3ff;
-    border: none;
-    padding: 12px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.cancel-btn {
-    width: 100%;
-    background: #f3f3f3;
-    border: none;
-    padding: 12px;
-    border-radius: 10px;
-    margin-top: 8px;
-}
