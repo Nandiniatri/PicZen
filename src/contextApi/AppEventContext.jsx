@@ -32,12 +32,16 @@ const AppEventProvider = ({ children }) => {
     const handleTemplate = (item) => {
         // setCanvasBgColor(item.bgColor);
         // setICanvasImageBackground(item.image);
-        if (item.effect.target === "background") {
+        if (!item?.effect) return;
+
+        // 🔥 BACKGROUND EFFECTS
+        if (item.effect.type === "blur" || item.effect.type === "dark") {
             setBackgroundFilter(item.effect.value);
             setImageFilter("none");
         }
 
-        if (item.effect.target === "image") {
+        // 🔥 IMAGE EFFECTS
+        if (item.effect.type === "sepia") {
             setImageFilter(item.effect.value);
             setBackgroundFilter("none");
         }
