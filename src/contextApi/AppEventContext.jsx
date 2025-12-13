@@ -30,23 +30,43 @@ const AppEventProvider = ({ children }) => {
     }
 
     const handleTemplate = (item) => {
-        // setCanvasBgColor(item.bgColor);
-        // setICanvasImageBackground(item.image);
-        alert(`Template Selected: ${item.effect?.target}`);
+        console.log("Template Item Selected:", item);
+
         if (!item?.effect) return;
 
-        // 🔥 BACKGROUND EFFECTS
-        if (item.effect.type === "blur" || item.effect.type === "dark") {
-            setBackgroundFilter(item.effect.value);
-            setImageFilter("none");
+        const { target, value, bgColor } = item.effect;
+
+        // 🔥 BACKGROUND TEMPLATE
+        if (target === "background") {
+
+            // background color
+            if (bgColor) {
+                setCanvasBgColor(bgColor);
+            }
+
+            // background filter (blur etc)
+            if (value) {
+                setCanvasBgFilter(value);
+            }
         }
 
-        // 🔥 IMAGE EFFECTS
-        if (item.effect.type === "sepia") {
-            setImageFilter(item.effect.value);
-            setBackgroundFilter("none");
+        // 🔥 background image (template image)
+        if (item.image) {
+            setICanvasImageBackground(item.image);
         }
-    }
+    };
+
+
+    // const handleTemplate = (item) => {
+    //     console.log("Template Item Selected:", item);
+    //     if(item?.effect?.bgColor === "color") {
+
+    //     }
+
+    //     // setCanvasBgColor(item?.effect);
+    //     // setICanvasImageBackground(item.image);
+    // }
+
 
     const fetchTemplateData = async () => {
         try {
