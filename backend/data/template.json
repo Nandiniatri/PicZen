@@ -78,7 +78,7 @@
   "photoEditingClassics": [
     {
       "id": 1,
-      "title": "Editing Classic 1",
+      "title": "Blur",
       "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F024f1033-9efd-45f0-8077-a203ada0d4ec%2Fthumb_1154F6AF-219A-4310-969B-4CBA7C8F7C1B.jpg",
       "effect": {
         "target": "image",
@@ -87,7 +87,7 @@
     },
     {
       "id": 2,
-      "title": "Editing Classic 2",
+      "title": "Color Splash",
       "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F331488cb-d13c-48e2-b5aa-af0f75308576%2Fthumb_A94CC372-5953-4D96-9803-B6B490CA39DB.jpg",
       "effect": {
         "target": "image",
@@ -96,7 +96,7 @@
     },
     {
       "id": 3,
-      "title": "Editing Classic 3",
+      "title": "Black & White",
       "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2F708a18a3-c69d-47ba-b136-1db4ff02dc9f%2Fthumb.jpg",
       "effect": {
         "target": "image",
@@ -105,7 +105,7 @@
     },
     {
       "id": 4,
-      "title": "Editing Classic 4",
+      "title": "Sepia",
       "image": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Ftemplates_v2%2Fa8802826-13e4-4e1c-b034-f1a1e4ae8093%2Fthumb.jpg",
       "effect": {
         "target": "image",
