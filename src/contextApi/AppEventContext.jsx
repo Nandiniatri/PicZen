@@ -30,9 +30,17 @@ const AppEventProvider = ({ children }) => {
     }
 
     const handleTemplate = (item) => {
-        alert("Template clicked");
-        setCanvasBgColor(item.bgColor);
-        setICanvasImageBackground(item.image);
+        // setCanvasBgColor(item.bgColor);
+        // setICanvasImageBackground(item.image);
+        if (item.effect.target === "background") {
+            setBackgroundFilter(item.effect.value);
+            setImageFilter("none");
+        }
+
+        if (item.effect.target === "image") {
+            setImageFilter(item.effect.value);
+            setBackgroundFilter("none");
+        }
     }
 
     const fetchTemplateData = async () => {
@@ -276,8 +284,8 @@ const AppEventProvider = ({ children }) => {
             insertData,
             handleAIGenerate,
             templateData,
-            handleTemplate , 
-            handleModelClose , openModal
+            handleTemplate,
+            handleModelClose, openModal
         }}>
             {children}
 
