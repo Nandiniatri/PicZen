@@ -262,8 +262,6 @@ const AppEventProvider = ({ children }) => {
 
             textStyle,
             setTextStyle,
-
-            activeRightPanel,
             setActiveRightPanel,
 
             canvasTexts,
