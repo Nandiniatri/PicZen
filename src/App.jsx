@@ -5,7 +5,6 @@ import PicZenSendondPage from './pages/piczenSecond/PiczenSecondPage'
 import ImageDropFile from './components/imageDrop/ImageDrop'
 import AddText from './pages/edits/AddText'
 import AiModal from './pages/edits/addBackground/aiModal/AiModal'
-import BackgroundRemoveNew from './backgroundRemoveNew/BackgroundRemoveNew'
 
 
 function App() {
