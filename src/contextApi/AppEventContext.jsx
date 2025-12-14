@@ -285,7 +285,6 @@ const AppEventProvider = ({ children }) => {
             handlePageSecondRoute,
             handleTextInEdit,
             activeRightPanel,
-            textStyle,
             newInPiczen,
             classicArrive,
             photoEditingClassics,
