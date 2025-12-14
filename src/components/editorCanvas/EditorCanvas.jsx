@@ -330,6 +330,7 @@
 //     pos,
 //     size,
 //     dragging,
+//     canvasSize = { width: 600, height: 500 },
 //     canvasBgColor = "#fff",
 //     canvasImageBackground,
 
@@ -365,25 +366,27 @@
 //     }, [selectedFile]);
 
 //     // 🔥 Canvas Size
-//     const CANVAS_W = 600;
-//     const CANVAS_H = 500;
+//     // const CANVAS_W = 600;
+//     // const CANVAS_H = 500;
 
 //     return (
 //         <div
 //             className="file-preview"
 //             ref={canvasRef}
-//             onMouseMove={(e) => {
-//                 onDrag && onDrag(e);
-//                 onResize && onResize(e);
-//             }}
-//             onMouseUp={stopActions}
+//             // onMouseMove={(e) => {
+//             //     onDrag && onDrag(e);
+//             //     onResize && onResize(e);
+//             // }}
+//             onMouseMove={onDrag}
 //             onMouseLeave={stopActions}
+//             onMouseUp={stopActions}
 //             style={{
 //                 position: "relative",
-//                 width: CANVAS_W,
-//                 height: CANVAS_H,
+//                 width: canvasSize.width,
+//                 height: canvasSize.height,
 //                 border: "1px solid #ccc",
 //                 overflow: "hidden",
+//                 position: "relative",
 //                 backgroundColor: canvasBgColor,
 //                 backgroundImage: canvasImageBackground
 //                     ? `url(${canvasImageBackground})`
@@ -417,24 +420,24 @@
 //                     src={processedImg}
 //                     alt="processed"
 //                     onMouseDown={startDrag}
-//                     onLoad={(e) => {
-//                         const w = e.target.naturalWidth;
-//                         const h = e.target.naturalHeight;
+//                     // onLoad={(e) => {
+//                     //     const w = e.target.naturalWidth;
+//                     //     const h = e.target.naturalHeight;
 
-//                         // 🔥 scale width = 300
-//                         const maxWidth = 300;
-//                         const ratio = maxWidth / w;
+//                     //     // 🔥 scale width = 300
+//                     //     const maxWidth = 300;
+//                     //     const ratio = maxWidth / w;
 
-//                         const newW = w * ratio;
-//                         const newH = h * ratio;
+//                     //     const newW = w * ratio;
+//                     //     const newH = h * ratio;
 
-//                         size.width = newW;
-//                         size.height = newH;
+//                     //     size.width = newW;
+//                     //     size.height = newH;
 
-//                         // 🔥 CENTER IMAGE INSIDE CANVAS
-//                         pos.x = (CANVAS_W - newW) / 2;
-//                         pos.y = (CANVAS_H - newH) / 2;
-//                     }}
+//                     //     // 🔥 CENTER IMAGE INSIDE CANVAS
+//                     //     pos.x = (CANVAS_W - newW) / 2;
+//                     //     pos.y = (CANVAS_H - newH) / 2;
+//                     // }}
 //                     style={{
 //                         position: "absolute",
 //                         top: pos.y,
@@ -536,27 +539,22 @@
 
 
 
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { removeBackground } from "@imgly/background-removal";
 
 const EditorCanvas = ({
     canvasRef,
     selectedFile,
-
-    imageFilter = "none",
-    backgroundFilter = "none",
-
     canvasTexts = [],
     editingTextId,
     editingValue,
 
-    pos,
-    setPos,
-    size,
-    setSize,
+    // ✅ defaults to avoid crash
+    pos = { x: 0, y: 0 },
+    size = { width: 200, height: 200 },
 
     dragging,
+    canvasSize = { width: 900, height: 500 },
     canvasBgColor = "#fff",
     canvasImageBackground,
 
@@ -567,61 +565,46 @@ const EditorCanvas = ({
     startResize,
     handleTextClick,
     handleTextSave,
-    setEditingValue
+    setEditingValue,
 }) => {
-
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const initializedRef = useRef(false); // 🔥 IMPORTANT
-
-    /* ===============================
-       BACKGROUND REMOVAL
-    ================================ */
+    /* ================= BACKGROUND REMOVE ================= */
     useEffect(() => {
         if (!selectedFile) return;
-
-        let isMounted = true;
 
         const processBgRemove = async () => {
             setLoading(true);
             try {
                 const blob = await removeBackground(selectedFile);
-                if (!isMounted) return;
                 const url = URL.createObjectURL(blob);
                 setProcessedImg(url);
-                initializedRef.current = false; // reset on new image
             } catch (err) {
-                console.error(err);
+                console.error("BG remove failed:", err);
             }
             setLoading(false);
         };
 
         processBgRemove();
-
-        return () => {
-            isMounted = false;
-        };
     }, [selectedFile]);
-
-    const CANVAS_W = 600;
-    const CANVAS_H = 500;
 
     return (
         <div
             ref={canvasRef}
             className="file-preview"
             onMouseMove={(e) => {
-                onDrag?.(e);
-                onResize?.(e);
+                // ✅ drag & resize conflict FIX
+                if (dragging) onDrag(e);
+                else onResize(e);
             }}
             onMouseUp={stopActions}
             onMouseLeave={stopActions}
             style={{
-                position: "relative",
-                width: CANVAS_W,
-                height: CANVAS_H,
+                width: canvasSize.width,
+                height: canvasSize.height,
                 border: "1px solid #ccc",
+                position: "relative",
                 overflow: "hidden",
                 backgroundColor: canvasBgColor,
                 backgroundImage: canvasImageBackground
@@ -629,52 +612,33 @@ const EditorCanvas = ({
                     : "none",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                filter: backgroundFilter
             }}
         >
-            {/* LOADING */}
+            {/* 🔄 LOADING */}
             {loading && (
-                <div style={{
-                    position: "absolute",
-                    inset: 0,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    zIndex: 100
-                }}>
-                    Processing…
+                <div
+                    style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        zIndex: 300,
+                        background: "#fff",
+                        padding: "8px 14px",
+                        borderRadius: 6,
+                    }}
+                >
+                    Processing… Please wait
                 </div>
             )}
 
-            {/* IMAGE */}
+            {/* 🖼 IMAGE */}
             {processedImg && (
                 <img
                     src={processedImg}
-                    alt=""
+                    alt="processed"
                     draggable={false}
                     onMouseDown={startDrag}
-                    onLoad={(e) => {
-                        if (initializedRef.current) return;
-                        initializedRef.current = true;
-
-                        const w = e.target.naturalWidth;
-                        const h = e.target.naturalHeight;
-
-                        const scale = Math.min(
-                            350 / w,
-                            350 / h,
-                            1
-                        );
-
-                        const newW = w * scale;
-                        const newH = h * scale;
-
-                        setSize({ width: newW, height: newH });
-                        setPos({
-                            x: (CANVAS_W - newW) / 2,
-                            y: (CANVAS_H - newH) / 2
-                        });
-                    }}
                     style={{
                         position: "absolute",
                         top: pos.y,
@@ -682,24 +646,24 @@ const EditorCanvas = ({
                         width: size.width,
                         height: size.height,
                         cursor: dragging ? "grabbing" : "grab",
+                        objectFit: "contain",
                         userSelect: "none",
-                        zIndex: 10,
-                        filter: imageFilter
                     }}
                 />
             )}
 
-            {/* TEXTS */}
+            {/* ✏ TEXTS */}
             {canvasTexts.map((txt) => (
                 <div
                     key={txt.id}
+                    onClick={() => handleTextClick(txt)}
                     style={{
                         position: "absolute",
                         top: txt.y,
                         left: txt.x,
-                        zIndex: 50
+                        zIndex: 50,
+                        userSelect: "none",
                     }}
-                    onClick={() => handleTextClick(txt)}
                 >
                     {editingTextId === txt.id ? (
                         <input
@@ -707,6 +671,13 @@ const EditorCanvas = ({
                             value={editingValue}
                             onChange={(e) => setEditingValue(e.target.value)}
                             onBlur={handleTextSave}
+                            onKeyDown={(e) => e.key === "Enter" && handleTextSave()}
+                            style={{
+                                padding: "2px 4px",
+                                fontSize: 18,
+                                border: "1px solid #ccc",
+                                outline: "none",
+                            }}
                         />
                     ) : (
                         <div className={txt.class}>{txt.label}</div>
@@ -714,33 +685,38 @@ const EditorCanvas = ({
                 </div>
             ))}
 
-            {/* RESIZE HANDLES */}
+            {/* 🔲 RESIZE HANDLES */}
             {processedImg &&
                 ["tl", "tr", "bl", "br"].map((handle) => {
-                    const s = 12;
-                    const x = handle.includes("r")
-                        ? pos.x + size.width
-                        : pos.x;
-                    const y = handle.includes("b")
-                        ? pos.y + size.height
-                        : pos.y;
+                    const HANDLE_SIZE = 12;
+
+                    let top = pos.y - HANDLE_SIZE / 2;
+                    let left = pos.x - HANDLE_SIZE / 2;
+
+                    if (handle === "tr")
+                        left = pos.x + size.width - HANDLE_SIZE / 2;
+                    if (handle === "bl")
+                        top = pos.y + size.height - HANDLE_SIZE / 2;
+                    if (handle === "br") {
+                        top = pos.y + size.height - HANDLE_SIZE / 2;
+                        left = pos.x + size.width - HANDLE_SIZE / 2;
+                    }
 
                     return (
                         <div
                             key={handle}
                             onMouseDown={(e) => startResize(e, handle)}
-                            className="resize-handle"
                             style={{
                                 position: "absolute",
-                                width: s,
-                                height: s,
-                                borderRadius: "50%",
+                                width: HANDLE_SIZE,
+                                height: HANDLE_SIZE,
                                 background: "#fff",
                                 border: "2px solid #222",
-                                left: x - s / 2,
-                                top: y - s / 2,
+                                borderRadius: "50%",
                                 cursor: "nwse-resize",
-                                zIndex: 200
+                                top,
+                                left,
+                                zIndex: 200,
                             }}
                         />
                     );
@@ -750,3 +726,249 @@ const EditorCanvas = ({
 };
 
 export default EditorCanvas;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from "react";
+// import { removeBackground } from "@imgly/background-removal";
+
+// const EditorCanvas = ({
+//     canvasRef,
+//     selectedFile,
+
+//     imageFilter = "none",
+//     backgroundFilter = "none",
+
+//     canvasTexts = [],
+//     editingTextId,
+//     editingValue,
+
+//     pos,
+//     setPos,
+//     size,
+//     setSize,
+
+//     dragging,
+//     canvasBgColor = "#fff",
+//     canvasImageBackground,
+
+//     startDrag,
+//     onDrag,
+//     onResize,
+//     stopActions,
+//     startResize,
+//     handleTextClick,
+//     handleTextSave,
+//     setEditingValue
+// }) => {
+
+//     const [processedImg, setProcessedImg] = useState(null);
+//     const [loading, setLoading] = useState(false);
+
+//     const initializedRef = useRef(false); // 🔥 IMPORTANT
+
+//     /* ===============================
+//        BACKGROUND REMOVAL
+//     ================================ */
+//     useEffect(() => {
+//         if (!selectedFile) return;
+
+//         let isMounted = true;
+
+//         const processBgRemove = async () => {
+//             setLoading(true);
+//             try {
+//                 const blob = await removeBackground(selectedFile);
+//                 if (!isMounted) return;
+//                 const url = URL.createObjectURL(blob);
+//                 setProcessedImg(url);
+//                 initializedRef.current = false; // reset on new image
+//             } catch (err) {
+//                 console.error(err);
+//             }
+//             setLoading(false);
+//         };
+
+//         processBgRemove();
+
+//         return () => {
+//             isMounted = false;
+//         };
+//     }, [selectedFile]);
+
+//     const CANVAS_W = 600;
+//     const CANVAS_H = 500;
+
+//     return (
+//         <div
+//             ref={canvasRef}
+//             className="file-preview"
+//             onMouseMove={(e) => {
+//                 onDrag?.(e);
+//                 onResize?.(e);
+//             }}
+//             onMouseUp={stopActions}
+//             onMouseLeave={stopActions}
+//             style={{
+//                 position: "relative",
+//                 width: CANVAS_W,
+//                 height: CANVAS_H,
+//                 border: "1px solid #ccc",
+//                 overflow: "hidden",
+//                 backgroundColor: canvasBgColor,
+//                 backgroundImage: canvasImageBackground
+//                     ? `url(${canvasImageBackground})`
+//                     : "none",
+//                 backgroundSize: "cover",
+//                 backgroundPosition: "center",
+//                 filter: backgroundFilter
+//             }}
+//         >
+//             {/* LOADING */}
+//             {loading && (
+//                 <div style={{
+//                     position: "absolute",
+//                     inset: 0,
+//                     display: "flex",
+//                     alignItems: "center",
+//                     justifyContent: "center",
+//                     zIndex: 100
+//                 }}>
+//                     Processing…
+//                 </div>
+//             )}
+
+//             {/* IMAGE */}
+//             {processedImg && (
+//                 <img
+//                     src={processedImg}
+//                     alt=""
+//                     draggable={false}
+//                     onMouseDown={startDrag}
+//                     onLoad={(e) => {
+//                         if (initializedRef.current) return;
+//                         initializedRef.current = true;
+
+//                         const w = e.target.naturalWidth;
+//                         const h = e.target.naturalHeight;
+
+//                         const scale = Math.min(
+//                             350 / w,
+//                             350 / h,
+//                             1
+//                         );
+
+//                         const newW = w * scale;
+//                         const newH = h * scale;
+
+//                         setSize({ width: newW, height: newH });
+//                         setPos({
+//                             x: (CANVAS_W - newW) / 2,
+//                             y: (CANVAS_H - newH) / 2
+//                         });
+//                     }}
+//                     style={{
+//                         position: "absolute",
+//                         top: pos.y,
+//                         left: pos.x,
+//                         width: size.width,
+//                         height: size.height,
+//                         cursor: dragging ? "grabbing" : "grab",
+//                         userSelect: "none",
+//                         zIndex: 10,
+//                         filter: imageFilter
+//                     }}
+//                 />
+//             )}
+
+//             {/* TEXTS */}
+//             {canvasTexts.map((txt) => (
+//                 <div
+//                     key={txt.id}
+//                     style={{
+//                         position: "absolute",
+//                         top: txt.y,
+//                         left: txt.x,
+//                         zIndex: 50
+//                     }}
+//                     onClick={() => handleTextClick(txt)}
+//                 >
+//                     {editingTextId === txt.id ? (
+//                         <input
+//                             autoFocus
+//                             value={editingValue}
+//                             onChange={(e) => setEditingValue(e.target.value)}
+//                             onBlur={handleTextSave}
+//                         />
+//                     ) : (
+//                         <div className={txt.class}>{txt.label}</div>
+//                     )}
+//                 </div>
+//             ))}
+
+//             {/* RESIZE HANDLES */}
+//             {processedImg &&
+//                 ["tl", "tr", "bl", "br"].map((handle) => {
+//                     const s = 12;
+//                     const x = handle.includes("r")
+//                         ? pos.x + size.width
+//                         : pos.x;
+//                     const y = handle.includes("b")
+//                         ? pos.y + size.height
+//                         : pos.y;
+
+//                     return (
+//                         <div
+//                             key={handle}
+//                             onMouseDown={(e) => startResize(e, handle)}
+//                             className="resize-handle"
+//                             style={{
+//                                 position: "absolute",
+//                                 width: s,
+//                                 height: s,
+//                                 borderRadius: "50%",
+//                                 background: "#fff",
+//                                 border: "2px solid #222",
+//                                 left: x - s / 2,
+//                                 top: y - s / 2,
+//                                 cursor: "nwse-resize",
+//                                 zIndex: 200
+//                             }}
+//                         />
+//                     );
+//                 })}
+//         </div>
+//     );
+// };
+
+// export default EditorCanvas;
