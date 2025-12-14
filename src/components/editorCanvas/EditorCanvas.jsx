@@ -554,7 +554,7 @@ const EditorCanvas = ({
     size = { width: 200, height: 200 },
 
     dragging,
-    canvasSize = { width: 900, height: 500 },
+    canvasSize = { width: 900, height: 700 },
     canvasBgColor = "#fff",
     canvasImageBackground,
 
@@ -722,7 +722,7 @@ const EditorCanvas = ({
                     );
                 })}
         </div>
-    );
+    );  
 };
 
 export default EditorCanvas;
