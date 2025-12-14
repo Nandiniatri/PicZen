@@ -288,6 +288,7 @@ const Resize = () => {
         setCanvasTexts,
         canvasBgColor,
         canvasImageBackground,
+        setCanvasSize
     } = useAppEvent();
 
     const canvasRef = useRef(null);
@@ -327,17 +328,38 @@ const Resize = () => {
         setCurrentHandle(handle);
     };
 
+    // const onResize = (e) => {
+    //     if (!resizing) return;
+
+    //     const dx = e.movementX;
+    //     const dy = e.movementY;
+
+    //     setSize((prev) => ({
+    //         width: Math.max(50, prev.width + dx),
+    //         height: Math.max(50, prev.height + dy),
+    //     }));
+    // };
+
     const onResize = (e) => {
         if (!resizing) return;
 
         const dx = e.movementX;
         const dy = e.movementY;
 
-        setSize((prev) => ({
-            width: Math.max(50, prev.width + dx),
-            height: Math.max(50, prev.height + dy),
-        }));
+        setSize((prev) => {
+            const newWidth = Math.max(50, prev.width + dx);
+            const newHeight = Math.max(50, prev.height + dy);
+
+            // ✅ agar image size canvas se bada ho gaya, canvas ko bada karo
+            setCanvasSize((prevCanvas) => ({
+                width: Math.max(prevCanvas.width, newWidth + pos.x),
+                height: Math.max(prevCanvas.height, newHeight + pos.y),
+            }));
+
+            return { width: newWidth, height: newHeight };
+        });
     };
+
 
     const stopActions = () => {
         setDragging(false);
@@ -377,6 +399,11 @@ const Resize = () => {
             x: (canvasSize.width - newW) / 2,
             y: (canvasSize.height - newH) / 2,
         });
+
+        setCanvasSize((prev) => ({
+            ...prev,
+            height: Math.max(prev.height, newH + 50), // +50 for padding/margin agar chahiye
+        }));
     };
 
     if (!selectedFiles?.length) return null;

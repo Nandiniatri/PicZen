@@ -603,7 +603,7 @@ const EditorCanvas = ({
             style={{
                 width: canvasSize.width,
                 height: canvasSize.height,
-                border: "1px solid #ccc",
+                border: "1px solid black",
                 position: "relative",
                 overflow: "hidden",
                 backgroundColor: canvasBgColor,
@@ -648,6 +648,8 @@ const EditorCanvas = ({
                         cursor: dragging ? "grabbing" : "grab",
                         objectFit: "contain",
                         userSelect: "none",
+                        border: "2px solid #e5e7eb",
+                        background: "white"
                     }}
                 />
             )}
