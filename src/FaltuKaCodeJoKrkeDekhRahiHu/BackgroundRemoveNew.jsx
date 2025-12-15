@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import { removeBackground } from "@imgly/background-removal";
- 
+
 // const BackgroundRemoveNew = () => {
 //     const [inputImg, setInputImg] = useState("");
 //     const [outputImg, setOutputImg] = useState("");
@@ -83,36 +83,41 @@
 
 import { useState } from "react";
 
-const BackgroundOnly = () => {
-  const [image, setImage] = useState(null);
-  const [result, setResult] = useState(null);
+function BackgroundOnly() {
+    const [outputImg, setOutputImg] = useState(null);
 
-  const handleUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const handleUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
 
-    setImage(URL.createObjectURL(file));
+        const formData = new FormData();
+        formData.append("image", file);
 
-    const formData = new FormData();
-    formData.append("image", file);
+        const res = await fetch("http://localhost:4000/remove-subject", {
+            method: "POST",
+            body: formData,
+        });
 
-    const res = await fetch("http://localhost:4000/remove-subject", {
-      method: "POST",
-      body: formData,
-    });
+        const blob = await res.blob();
+        setOutputImg(URL.createObjectURL(blob));
+    };
 
-    const blob = await res.blob();
-    setResult(URL.createObjectURL(blob));
-  };
-
-  return (
-    <div>
-      <input type="file" onChange={handleUpload} />
-      {image && <img src={image} width={250} />}
-      {result && <img src={result} width={250} />}
-    </div>
-  );
-};
+    return (
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h1>Subject Removal Demo</h1>
+            <input type="file" onChange={handleUpload} />
+            {outputImg && (
+                <div style={{ marginTop: "20px" }}>
+                    <h3>Processed Image:</h3>
+                    <img src={outputImg} alt="Processed" style={{ maxWidth: "400px" }} />
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default BackgroundOnly;
+
+
+// export default BackgroundOnly;
 
