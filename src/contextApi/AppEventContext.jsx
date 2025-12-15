@@ -22,39 +22,22 @@ const AppEventProvider = ({ children }) => {
     const [imageBackground, setImageBackground] = useState(null);
     const [canvasImageBackground, setICanvasImageBackground] = useState('');
     const [insertData, setInsertData] = useState(null);
-    const [templateData, setTemplateData] = useState([]);
     const [openModal, setOpenModal] = useState(true);
+
+    const [templateData, setTemplateData] = useState([]);
+    const [canvasTemplateEffect, setCanvasTemplateEffect] = useState(null);
+
+
+    const handleTemplate = (item) => {
+        console.log("Template Item Selected:", item);
+        setCanvasTemplateEffect(item?.effect);
+    };
+
 
     const handleModelClose = () => {
         setOpenModal(false);
     }
 
-    const handleTemplate = (item) => {
-        console.log("Template Item Selected:", item);
-
-        if (!item?.effect) return;
-
-        const { target, value, bgColor } = item.effect;
-
-        // 🔥 BACKGROUND TEMPLATE
-        if (target === "background") {
-
-            // background color
-            if (bgColor) {
-                setCanvasBgColor(bgColor);
-            }
-
-            // background filter (blur etc)
-            if (value) {
-                setCanvasBgFilter(value);
-            }
-        }
-
-        // 🔥 background image (template image)
-        if (item.image) {
-            setICanvasImageBackground(item.image);
-        }
-    };
 
 
     // const handleTemplate = (item) => {
@@ -309,7 +292,8 @@ const AppEventProvider = ({ children }) => {
             handleAIGenerate,
             templateData,
             handleTemplate,
-            handleModelClose, openModal
+            handleModelClose, openModal ,
+            canvasTemplateEffect
         }}>
             {children}
 
