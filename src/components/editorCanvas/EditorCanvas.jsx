@@ -566,30 +566,13 @@ const EditorCanvas = ({
     handleTextClick,
     handleTextSave,
     setEditingValue,
-    hideSubject
+    hideSubject,
+    lightOn
 }) => {
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
     /*BACKGROUND REMOVE */
-    // useEffect(() => {
-    //     if (!selectedFile) return;
-
-    //     const processBgRemove = async () => {
-    //         setLoading(true);
-    //         try {
-    //             const blob = await removeBackground(selectedFile);
-    //             const url = URL.createObjectURL(blob);
-    //             setProcessedImg(url);
-    //         } catch (err) {
-    //             console.error("BG remove failed:", err);
-    //         }
-    //         setLoading(false);
-    //     };
-
-    //     processBgRemove();
-    // }, [selectedFile]);
-
     useEffect(() => {
         if (!selectedFile || processedImg) return; // ⭐ IMPORTANT
 
@@ -678,30 +661,14 @@ const EditorCanvas = ({
                         objectFit: "contain",
                         userSelect: "none",
                         border: "2px solid #e5e7eb",
+                        filter: lightOn
+                            ? "brightness(1.15) contrast(1.1) saturate(1.1)"
+                            : "none",
+
+                        transition: "filter 0.25s ease"
                     }}
                 />
             )}
-
-            {/* {processedImg && !hideSubject && (
-                <img
-                    src={processedImg}
-                    alt="processed"
-                    draggable={false}
-                    onMouseDown={startDrag}
-                    style={{
-                        position: "absolute",
-                        top: pos.y,
-                        left: pos.x,
-                        width: size.width,
-                        height: size.height,
-                        cursor: dragging ? "grabbing" : "grab",
-                        objectFit: "contain",
-                        userSelect: "none",
-                        border: "2px solid #e5e7eb",
-                    }}
-                />
-            )} */}
-
 
             {/* ✏ TEXTS */}
             {canvasTexts.map((txt) => (

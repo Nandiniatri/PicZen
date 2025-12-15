@@ -28,6 +28,12 @@ const AppEventProvider = ({ children }) => {
     const [canvasBgColor, setCanvasBgColor] = useState('transparent');
     const [hideSubject, setHideSubject] = useState(false);
 
+    const [lightOn, setLightOn] = useState(false);
+
+    const handleLight = () => {
+        setLightOn(prev => !prev);
+    }
+
 
 
     const handleTemplate = (item) => {
@@ -304,7 +310,8 @@ const AppEventProvider = ({ children }) => {
             templateData,
             handleTemplate,
             handleModelClose, openModal,
-            hideSubject
+            hideSubject,
+            lightOn, setLightOn , handleLight
         }}>
             {children}
 
@@ -322,4 +329,4 @@ const AppEventProvider = ({ children }) => {
 
 export const useAppEvent = () => useContext(AppEventContext);
 
-export default AppEventProvider; 
+export default AppEventProvider;  

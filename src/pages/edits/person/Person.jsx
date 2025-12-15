@@ -1,7 +1,8 @@
+import { useAppEvent } from "../../../contextApi/AppEventContext";
 import "./Person.css";
 
 const Person = () => {
-    // if (!selected) return null;
+    const {lightOn, setLightOn , handleLight} = useAppEvent();   
 
     return (
         <div className="person-panel">
@@ -13,7 +14,7 @@ const Person = () => {
             <div className="person-actions">
                 <button className="action-btn">Replace</button>
                 <button className="action-btn">Retouch</button>
-                <button className="action-btn">Light On</button>
+                <button className="action-btn" onClick={handleLight}>Light On</button>
             </div>
 
             <div className="section">

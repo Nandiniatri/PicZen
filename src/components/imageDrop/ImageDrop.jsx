@@ -406,12 +406,13 @@ const ImageDropFile = () => {
         setCanvasTexts,
         canvasBgColor,
         canvasImageBackground,
+        lightOn
     } = useAppEvent();
 
- 
+
     const canvasRef = useRef(null);
 
-   
+
     const [pos, setPos] = useState({ x: 50, y: 50 });
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -555,6 +556,7 @@ const ImageDropFile = () => {
                 <div className="imageDrop-selected-files">
 
                     <EditorCanvas
+                        lightOn={lightOn}
                         canvasRef={canvasRef}
                         selectedFile={selectedFiles[0]}
                         canvasTexts={canvasTexts}
