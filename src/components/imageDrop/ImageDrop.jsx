@@ -383,6 +383,7 @@ import Template from "../../pages/edits/addBackground/template/Template";
 import Resize from "../../pages/edits/resize/Resize";
 
 import EditorCanvas from "../editorCanvas/EditorCanvas";
+import Person from "../../pages/edits/person/Person";
 
 const iconMap = {
     plus: <Plus />,
@@ -577,6 +578,8 @@ const ImageDropFile = () => {
                 </div>
 
                 <div>
+                    <Person />
+                    
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                     {activeRightPanel === "Solid color" && <SolidColor />}
