@@ -590,26 +590,25 @@ const EditorCanvas = ({
         processBgRemove();
     }, [selectedFile]);
 
-    const imageEffectStyle =
-        canvasTemplateEffect?.target === "image"
-            ? { filter: canvasTemplateEffect.value }
-            : {};
+    //  const imageEffectStyle =
+    //     canvasTemplateEffect?.target === "image"
+    //         ? { filter: canvasTemplateEffect.value }
+    //         : {};
 
-
-    // 🎨 BACKGROUND EFFECT
-    const backgroundEffectStyle =
-        canvasTemplateEffect?.target === "background"
-            ? {
-                backgroundColor:
-                    canvasTemplateEffect.bgColor || canvasBgColor,
-                filter: canvasTemplateEffect.value,
-            }
-            : {
-                backgroundColor: canvasBgColor,
-                backgroundImage: canvasImageBackground
-                    ? `url(${canvasImageBackground})`
-                    : "none",
-            };
+    // // 🎨 BACKGROUND EFFECT
+    // const backgroundEffectStyle =
+    //     canvasTemplateEffect?.target === "background"
+    //         ? {
+    //               backgroundColor:
+    //                   canvasTemplateEffect.bgColor || canvasBgColor,
+    //               filter: canvasTemplateEffect.value,
+    //           }
+    //         : {
+    //               backgroundColor: canvasBgColor,
+    //               backgroundImage: canvasImageBackground
+    //                   ? `url(${canvasImageBackground})`
+    //                   : "none",
+    //           };
 
     return (
         <div
@@ -634,7 +633,6 @@ const EditorCanvas = ({
                     : "none",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                ...backgroundEffectStyle,
             }}
         >
             {/* 🔄 LOADING */}
@@ -672,7 +670,6 @@ const EditorCanvas = ({
                         objectFit: "contain",
                         userSelect: "none",
                         border: "2px solid #e5e7eb",
-                        ...imageEffectStyle,
                     }}
                 />
             )}
@@ -747,7 +744,7 @@ const EditorCanvas = ({
                     );
                 })}
         </div>
-    );
+    );  
 };
 
 export default EditorCanvas;

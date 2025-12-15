@@ -18,19 +18,25 @@ const AppEventProvider = ({ children }) => {
     const [photoEditingClassics, setPhotoEditingClassics] = useState([]);
     const [canvasTexts, setCanvasTexts] = useState([]);
     const [solidColor, setSolidColor] = useState(null);
-    const [canvasBgColor, setCanvasBgColor] = useState('');
     const [imageBackground, setImageBackground] = useState(null);
-    const [canvasImageBackground, setICanvasImageBackground] = useState('');
     const [insertData, setInsertData] = useState(null);
     const [openModal, setOpenModal] = useState(true);
-
     const [templateData, setTemplateData] = useState([]);
-    const [canvasTemplateEffect, setCanvasTemplateEffect] = useState(null);
+
+
+    const [canvasImageBackground, setICanvasImageBackground] = useState(null);
+    const [canvasBgColor, setCanvasBgColor] = useState('transparent');
 
 
     const handleTemplate = (item) => {
         console.log("Template Item Selected:", item);
-        setCanvasTemplateEffect(item?.effect);
+        setICanvasImageBackground(item.image);
+
+        if (item?.effect?.bgColor) {
+            setCanvasBgColor(item.effect.bgColor.toLowerCase());
+        } else {
+            setCanvasBgColor("transparent");
+        }
     };
 
 
@@ -292,8 +298,7 @@ const AppEventProvider = ({ children }) => {
             handleAIGenerate,
             templateData,
             handleTemplate,
-            handleModelClose, openModal ,
-            canvasTemplateEffect
+            handleModelClose, openModal,
         }}>
             {children}
 
