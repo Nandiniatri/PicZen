@@ -37,7 +37,7 @@ const AppEventProvider = ({ children }) => {
 
         // if (item?.effect?.bgColor) {
         //     setCanvasBgColor(item.effect.bgColor.toLowerCase());
-        // } else {
+        // } else {a
         //     setCanvasBgColor("transparent");
         // }
 

@@ -579,7 +579,7 @@ const ImageDropFile = () => {
 
                 <div>
                     <Person />
-                    
+
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                     {activeRightPanel === "Solid color" && <SolidColor />}
