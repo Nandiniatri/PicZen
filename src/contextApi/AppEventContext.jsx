@@ -33,15 +33,15 @@ const AppEventProvider = ({ children }) => {
     const handleTemplate = (item) => {
         console.log("Template Item Selected:", item);
 
-        setICanvasImageBackground(item.image);
+        // setICanvasImageBackground(item.image);
 
-        if (item?.effect?.bgColor) {
-            setCanvasBgColor(item.effect.bgColor.toLowerCase());
-        } else {
-            setCanvasBgColor("transparent");
-        }
+        // if (item?.effect?.bgColor) {
+        //     setCanvasBgColor(item.effect.bgColor.toLowerCase());
+        // } else {
+        //     setCanvasBgColor("transparent");
+        // }
 
-        setHideSubject(true);
+        // setHideSubject(true);
     };
 
 

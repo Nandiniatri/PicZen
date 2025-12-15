@@ -539,7 +539,7 @@
 
 
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { removeBackground } from "@imgly/background-removal";
 
 const EditorCanvas = ({
@@ -571,8 +571,7 @@ const EditorCanvas = ({
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
-
-    /* ================= BACKGROUND REMOVE ================= */
+    /*BACKGROUND REMOVE */
     useEffect(() => {
         if (!selectedFile) return;
 
@@ -635,27 +634,7 @@ const EditorCanvas = ({
             )}
 
             {/* 🖼 IMAGE */}
-            {/* {processedImg && (
-                <img
-                    src={processedImg}
-                    alt="processed"
-                    draggable={false}
-                    onMouseDown={startDrag}
-                    style={{
-                        position: "absolute",
-                        top: pos.y,
-                        left: pos.x,
-                        width: size.width,
-                        height: size.height,
-                        cursor: dragging ? "grabbing" : "grab",
-                        objectFit: "contain",
-                        userSelect: "none",
-                        border: "2px solid #e5e7eb",
-                    }}
-                />
-            )} */}
-
-            {processedImg && !hideSubject && (
+            {processedImg && (
                 <img
                     src={processedImg}
                     alt="processed"
@@ -674,6 +653,26 @@ const EditorCanvas = ({
                     }}
                 />
             )}
+
+            {/* {processedImg && !hideSubject && (
+                <img
+                    src={processedImg}
+                    alt="processed"
+                    draggable={false}
+                    onMouseDown={startDrag}
+                    style={{
+                        position: "absolute",
+                        top: pos.y,
+                        left: pos.x,
+                        width: size.width,
+                        height: size.height,
+                        cursor: dragging ? "grabbing" : "grab",
+                        objectFit: "contain",
+                        userSelect: "none",
+                        border: "2px solid #e5e7eb",
+                    }}
+                />
+            )} */}
 
 
             {/* ✏ TEXTS */}
