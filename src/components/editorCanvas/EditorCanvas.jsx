@@ -748,7 +748,7 @@ const EditorCanvas = ({
         </div>
     );
 };
-a
+
 export default EditorCanvas;
 
 

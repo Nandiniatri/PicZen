@@ -82,55 +82,34 @@
 
 
 import { useState } from "react";
-import { removeBackground } from "@imgly/background-removal";
 
 const BackgroundOnly = () => {
-  const [inputImg, setInputImg] = useState(null);
-  const [outputImg, setOutputImg] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(null);
+  const [result, setResult] = useState(null);
 
-  const handleChange = async (e) => {
+  const handleUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    setInputImg(URL.createObjectURL(file));
-    setLoading(true);
+    setImage(URL.createObjectURL(file));
 
-    try {
-      const resultBlob = await removeBackground(file);
-      const bgUrl = URL.createObjectURL(resultBlob);
-      setOutputImg(bgUrl);
-    } catch (err) {
-      console.error("Error:", err);
-      alert("Background remove failed");
-    } finally {
-      setLoading(false);
-    }
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const res = await fetch("http://localhost:4000/remove-subject", {
+      method: "POST",
+      body: formData,
+    });
+
+    const blob = await res.blob();
+    setResult(URL.createObjectURL(blob));
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Remove Person & Get Background</h2>
-
-      <input type="file" accept="image/*" onChange={handleChange} />
-
-      <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
-        {inputImg && (
-          <div>
-            <p>Original Image</p>
-            <img src={inputImg} alt="" width="250" />
-          </div>
-        )}
-
-        {loading && <p>Processing...</p>}
-
-        {outputImg && (
-          <div>
-            <p>Background Only</p>
-            <img src={outputImg} alt="" width="250" />
-          </div>
-        )}
-      </div>
+    <div>
+      <input type="file" onChange={handleUpload} />
+      {image && <img src={image} width={250} />}
+      {result && <img src={result} width={250} />}
     </div>
   );
 };
