@@ -11,14 +11,14 @@ function App() {
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<PicZen />} />
         <Route path='/second' element={<PicZenSendondPage />} />
         <Route path='/imageDrop' element={<ImageDropFile />} />
         <Route path='/aiModal' element={<AiModal />} />
-      </Routes>
+      </Routes> */}
 
-      {/* <BackgroundRemoveNew /> */}
+      <BackgroundRemoveNew />
     </>
   )
 }

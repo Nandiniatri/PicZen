@@ -566,10 +566,11 @@ const EditorCanvas = ({
     handleTextClick,
     handleTextSave,
     setEditingValue,
-    canvasTemplateEffect
+    hideSubject
 }) => {
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
+
 
     /* ================= BACKGROUND REMOVE ================= */
     useEffect(() => {
@@ -589,26 +590,6 @@ const EditorCanvas = ({
 
         processBgRemove();
     }, [selectedFile]);
-
-    //  const imageEffectStyle =
-    //     canvasTemplateEffect?.target === "image"
-    //         ? { filter: canvasTemplateEffect.value }
-    //         : {};
-
-    // // 🎨 BACKGROUND EFFECT
-    // const backgroundEffectStyle =
-    //     canvasTemplateEffect?.target === "background"
-    //         ? {
-    //               backgroundColor:
-    //                   canvasTemplateEffect.bgColor || canvasBgColor,
-    //               filter: canvasTemplateEffect.value,
-    //           }
-    //         : {
-    //               backgroundColor: canvasBgColor,
-    //               backgroundImage: canvasImageBackground
-    //                   ? `url(${canvasImageBackground})`
-    //                   : "none",
-    //           };
 
     return (
         <div
@@ -654,7 +635,27 @@ const EditorCanvas = ({
             )}
 
             {/* 🖼 IMAGE */}
-            {processedImg && (
+            {/* {processedImg && (
+                <img
+                    src={processedImg}
+                    alt="processed"
+                    draggable={false}
+                    onMouseDown={startDrag}
+                    style={{
+                        position: "absolute",
+                        top: pos.y,
+                        left: pos.x,
+                        width: size.width,
+                        height: size.height,
+                        cursor: dragging ? "grabbing" : "grab",
+                        objectFit: "contain",
+                        userSelect: "none",
+                        border: "2px solid #e5e7eb",
+                    }}
+                />
+            )} */}
+
+            {processedImg && !hideSubject && (
                 <img
                     src={processedImg}
                     alt="processed"
@@ -673,6 +674,7 @@ const EditorCanvas = ({
                     }}
                 />
             )}
+
 
             {/* ✏ TEXTS */}
             {canvasTexts.map((txt) => (
@@ -744,9 +746,9 @@ const EditorCanvas = ({
                     );
                 })}
         </div>
-    );  
+    );
 };
-
+a
 export default EditorCanvas;
 
 

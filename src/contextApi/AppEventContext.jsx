@@ -26,10 +26,13 @@ const AppEventProvider = ({ children }) => {
 
     const [canvasImageBackground, setICanvasImageBackground] = useState(null);
     const [canvasBgColor, setCanvasBgColor] = useState('transparent');
+    const [hideSubject, setHideSubject] = useState(false);
+
 
 
     const handleTemplate = (item) => {
         console.log("Template Item Selected:", item);
+
         setICanvasImageBackground(item.image);
 
         if (item?.effect?.bgColor) {
@@ -37,6 +40,8 @@ const AppEventProvider = ({ children }) => {
         } else {
             setCanvasBgColor("transparent");
         }
+
+        setHideSubject(true);
     };
 
 
@@ -299,6 +304,7 @@ const AppEventProvider = ({ children }) => {
             templateData,
             handleTemplate,
             handleModelClose, openModal,
+            hideSubject
         }}>
             {children}
 
