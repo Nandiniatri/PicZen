@@ -551,7 +551,7 @@ const EditorCanvas = ({
 
     // ✅ defaults to avoid crash
     pos = { x: 0, y: 0 },
-    size = { width: 200, height: 200 },
+    size = { width: 400, height: 400 },
 
     dragging,
     canvasSize = { width: 900, height: 700 },
@@ -649,7 +649,6 @@ const EditorCanvas = ({
                         objectFit: "contain",
                         userSelect: "none",
                         border: "2px solid #e5e7eb",
-                        background: "white"
                     }}
                 />
             )}

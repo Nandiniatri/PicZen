@@ -288,7 +288,8 @@ const Resize = () => {
         setCanvasTexts,
         canvasBgColor,
         canvasImageBackground,
-        setCanvasSize
+        setCanvasSize ,
+        setCanvasBgColorState
     } = useAppEvent();
 
     const canvasRef = useRef(null);
