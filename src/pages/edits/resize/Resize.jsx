@@ -309,6 +309,8 @@ const Resize = () => {
     const [editingTextId, setEditingTextId] = useState(null);
     const [editingValue, setEditingValue] = useState("");
 
+    const [canvasBGColorState , setCanvasBGColorState] = useState("#fff");
+
     /* ===================== DRAG ===================== */
     const startDrag = () => setDragging(true);
 
@@ -423,7 +425,8 @@ const Resize = () => {
                         size={size}
                         dragging={dragging}
                         canvasSize={canvasSize}
-                        canvasBgColor={canvasBgColor}
+                        canvasBgColor={canvasBGColorState}
+                        setCanvasBgColorState={setCanvasBgColorState}
                         canvasImageBackground={canvasImageBackground}
                         startDrag={startDrag}
                         onDrag={onDrag}
