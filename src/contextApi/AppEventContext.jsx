@@ -149,7 +149,7 @@ const AppEventProvider = ({ children }) => {
 
     const fetchPhotoEditingClassics = async () => {
         try {
-            const response = await fetch('cphotoEditingClassicsData');
+            const response = await fetch('http://localhost:4000/api/photoEditingClassicsData');
             const result = await response.json();
             // console.log('new In PhotoEditingClassics', result);
             setPhotoEditingClassics(result);
