@@ -5,6 +5,7 @@ import PicZenSendondPage from './pages/piczenSecond/PiczenSecondPage'
 import ImageDropFile from './components/imageDrop/ImageDrop'
 import AddText from './pages/edits/AddText'
 import AiModal from './pages/edits/addBackground/aiModal/AiModal'
+import BackgroundOnly from './FaltuKaCodeJoKrkeDekhRahiHu/BackgroundRemoveNew'
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path='/aiModal' element={<AiModal />} />
       </Routes> */}
 
-      <BackgroundRemoveNew />
+      <BackgroundOnly />
     </>
   )
 }

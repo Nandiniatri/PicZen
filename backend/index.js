@@ -1,11 +1,30 @@
 import express from "express";
 import cors from "cors";
 import fs from "fs";
+import { removeBackground } from "rembg-node";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+//ye image ke subject remove krke background transparent krdega
+const upload = multer({ dest: "uploads/" });
+
+app.post("/remove-subject", upload.single("image"), async (req, res) => {
+  try {
+    const inputPath = req.file.path;
+    const outputPath = `output/${Date.now()}.png`;
+
+    const result = await removeBackground(inputPath);
+    fs.writeFileSync(outputPath, result);
+
+    res.sendFile(process.cwd() + "/" + outputPath);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Background removal failed" });
+  }
+});
+//end
 
 app.get("/api/menus", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/menus.json", "utf-8"));
