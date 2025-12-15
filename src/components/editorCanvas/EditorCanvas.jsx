@@ -567,7 +567,8 @@ const EditorCanvas = ({
     handleTextSave,
     setEditingValue,
     hideSubject,
-    lightOn
+    lightOn,
+    shadowOn
 }) => {
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -661,10 +662,10 @@ const EditorCanvas = ({
                         objectFit: "contain",
                         userSelect: "none",
                         border: "2px solid #e5e7eb",
-                        filter: lightOn
-                            ? "brightness(1.15) contrast(1.1) saturate(1.1)"
-                            : "none",
-
+                        filter: `
+                            ${lightOn ? "brightness(1.15) contrast(1.1) saturate(1.1)" : ""}
+                            ${shadowOn ? " drop-shadow(0 18px 35px rgba(0,0,0,0.35))" : ""}
+                            `,
                         transition: "filter 0.25s ease"
                     }}
                 />
