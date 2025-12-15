@@ -572,23 +572,51 @@ const EditorCanvas = ({
     const [loading, setLoading] = useState(false);
 
     /*BACKGROUND REMOVE */
+    // useEffect(() => {
+    //     if (!selectedFile) return;
+
+    //     const processBgRemove = async () => {
+    //         setLoading(true);
+    //         try {
+    //             const blob = await removeBackground(selectedFile);
+    //             const url = URL.createObjectURL(blob);
+    //             setProcessedImg(url);
+    //         } catch (err) {
+    //             console.error("BG remove failed:", err);
+    //         }
+    //         setLoading(false);
+    //     };
+
+    //     processBgRemove();
+    // }, [selectedFile]);
+
     useEffect(() => {
-        if (!selectedFile) return;
+        if (!selectedFile || processedImg) return; // ⭐ IMPORTANT
+
+        let isMounted = true;
+        setLoading(true);
 
         const processBgRemove = async () => {
-            setLoading(true);
             try {
                 const blob = await removeBackground(selectedFile);
+                if (!isMounted) return;
+
                 const url = URL.createObjectURL(blob);
                 setProcessedImg(url);
             } catch (err) {
                 console.error("BG remove failed:", err);
+            } finally {
+                if (isMounted) setLoading(false);
             }
-            setLoading(false);
         };
 
         processBgRemove();
-    }, [selectedFile]);
+
+        return () => {
+            isMounted = false;
+        };
+    }, [selectedFile]); // ✅ ONLY selectedFile
+
 
     return (
         <div
