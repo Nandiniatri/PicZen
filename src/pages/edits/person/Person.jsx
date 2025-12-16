@@ -2,7 +2,7 @@ import { useAppEvent } from "../../../contextApi/AppEventContext";
 import "./Person.css";
 
 const Person = () => {
-    const {lightOn, setLightOn , handleLight , handleShadow} = useAppEvent();   
+    const {lightOn, setLightOn , handleLight , handleShadow , handleOutline} = useAppEvent();   
 
     return (
         <div className="person-panel">
@@ -37,7 +37,7 @@ const Person = () => {
             <div className="section">
                 <h4>Effects</h4>
                 <div className="effect-item" onClick={handleShadow}>Shadows</div>
-                <div className="effect-item">Outline</div>
+                <div className="effect-item" onClick={handleOutline}>Outline</div>
                 <div className="effect-item">Reflection</div>
             </div>
 

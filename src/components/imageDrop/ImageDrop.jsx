@@ -407,7 +407,8 @@ const ImageDropFile = () => {
         canvasBgColor,
         canvasImageBackground,
         lightOn,
-        shadowOn
+        shadowOn,
+        outlineOn
     } = useAppEvent();
 
 
@@ -557,6 +558,7 @@ const ImageDropFile = () => {
                 <div className="imageDrop-selected-files">
 
                     <EditorCanvas
+                        outlineOn={outlineOn}
                         shadowOn={shadowOn}
                         lightOn={lightOn}
                         canvasRef={canvasRef}

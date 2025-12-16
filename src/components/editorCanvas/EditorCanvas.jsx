@@ -568,7 +568,8 @@ const EditorCanvas = ({
     setEditingValue,
     hideSubject,
     lightOn,
-    shadowOn
+    shadowOn , 
+    outlineOn
 }) => {
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -664,7 +665,13 @@ const EditorCanvas = ({
                         border: "2px solid #e5e7eb",
                         filter: `
                             ${lightOn ? "brightness(1.15) contrast(1.1) saturate(1.1)" : ""}
-                            ${shadowOn ? " drop-shadow(0 18px 35px rgba(0,0,0,0.35))" : ""}
+                            ${shadowOn ? " drop-shadow(0 18px 35px rgba(4, 2, 2, 0.74))" : ""}
+                            ${outlineOn &&
+                                `drop-shadow(2px 0 0 red)
+                                 drop-shadow(-2px 0 0 red)
+                                 drop-shadow(0 2px 0 red)
+                                 drop-shadow(0 -2px 0 red)`
+                            }
                             `,
                         transition: "filter 0.25s ease"
                     }}

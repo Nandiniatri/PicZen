@@ -30,6 +30,11 @@ const AppEventProvider = ({ children }) => {
 
     const [lightOn, setLightOn] = useState(false);
     const [shadowOn, setShadowOn] = useState(false);
+    const [outlineOn, setOutlineOn] = useState(false);
+
+    const handleOutline = () => {
+        setOutlineOn(prev => !prev);
+    }
 
 
     const handleShadow = () => {
@@ -317,7 +322,7 @@ const AppEventProvider = ({ children }) => {
             handleTemplate,
             handleModelClose, openModal,
             hideSubject,
-            lightOn, setLightOn , handleLight , handleShadow , shadowOn
+            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline
         }}>
             {children}
 
