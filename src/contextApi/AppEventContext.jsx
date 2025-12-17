@@ -36,7 +36,16 @@ const AppEventProvider = ({ children }) => {
     //     lightEffect : false,
     //     shadowEffect : false,
     //     outlineEffect : false,
+    //     blurOn: false
     // });
+
+    const [blurOn, setBlurOn] = useState(false);
+
+    const handleBlur = () => {
+        alert('blur clicked')
+        setBlurOn(prev => !prev);
+    };
+
 
     const handleOutline = () => {
         setOutlineOn(prev => !prev);
@@ -328,7 +337,7 @@ const AppEventProvider = ({ children }) => {
             handleTemplate,
             handleModelClose, openModal,
             hideSubject,
-            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline
+            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline , blurOn , handleBlur
         }}>
             {children}
 
