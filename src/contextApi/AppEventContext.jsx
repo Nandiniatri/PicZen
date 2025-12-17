@@ -32,6 +32,12 @@ const AppEventProvider = ({ children }) => {
     const [shadowOn, setShadowOn] = useState(false);
     const [outlineOn, setOutlineOn] = useState(false);
 
+    // const [allEffects , setAllEffects] = useState({
+    //     lightEffect : false,
+    //     shadowEffect : false,
+    //     outlineEffect : false,
+    // });
+
     const handleOutline = () => {
         setOutlineOn(prev => !prev);
     }
