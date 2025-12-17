@@ -544,7 +544,7 @@ const EditorCanvas = ({
          drop-shadow(-2px 0 0 red)
          drop-shadow(0 2px 0 red)
          drop-shadow(0 -2px 0 red)`,
-        blurOn && "blur(5px)"
+        blurOn && "blur(2px)"
     ]
         .filter(Boolean)
         .join(" ");
