@@ -6,6 +6,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
+  border: solid;
 }
 
 .person-header {

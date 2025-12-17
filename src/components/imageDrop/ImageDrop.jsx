@@ -585,7 +585,7 @@ const ImageDropFile = () => {
                     />
                 </div>
 
-                <div>
+                <div className="">
                     <Person />
 
                     {activeRightPanel === "Add text" && <AddText />}

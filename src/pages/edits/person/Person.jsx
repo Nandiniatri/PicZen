@@ -2,7 +2,7 @@ import { useAppEvent } from "../../../contextApi/AppEventContext";
 import "./Person.css";
 
 const Person = () => {
-    const {lightOn, setLightOn , handleLight , handleShadow , handleOutline , handleBlur} = useAppEvent();   
+    const {handleLight , handleShadow , handleOutline , handleBlur} = useAppEvent();   
 
     return (
         <div className="person-panel">
