@@ -546,8 +546,8 @@ const EditorCanvas = ({
          drop-shadow(0 2px 0 red)
          drop-shadow(0 -2px 0 red)`,
         blurOn && "blur(2px)",
-        filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
-        textureOn && "brightness(0.97) contrast(0.95) saturate(0.85)"
+        // filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
+        textureOn && "brightness(0.80) contrast(0.90) saturate(0.86)"
     ]
         .filter(Boolean)
         .join(" ");
