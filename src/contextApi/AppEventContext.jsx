@@ -5,6 +5,8 @@ import { useState } from "react";
 const AppEventContext = createContext();
 
 const AppEventProvider = ({ children }) => {
+    const [pos, setPos] = useState({ x: 50, y: 50 });
+    const [size, setSize] = useState({ width: 200, height: 200 });
     const navigate = useNavigate();
     const [menus, setMenus] = useState([]);
     const [contents, setContents] = useState([]);
@@ -42,6 +44,14 @@ const AppEventProvider = ({ children }) => {
     const [blurOn, setBlurOn] = useState(false);
     const [textureOn, setTextureOn] = useState(false);
     const [filterOn, setFilterOn] = useState(false);
+    // const [handleCenter, setHandleCenter] = useState(false);
+
+    const handleCenterOn = () => {
+        setPos((prev) => ({
+        ...prev,
+        x: (canvasSize.width - size.width) / 2
+    }));
+    }
 
     const handleFilterOn = () => {
         setFilterOn(prev => !prev);
@@ -55,11 +65,9 @@ const AppEventProvider = ({ children }) => {
         setBlurOn(prev => !prev);
     };
 
-
     const handleOutline = () => {
         setOutlineOn(prev => !prev);
     }
-
 
     const handleShadow = () => {
         setShadowOn(prev => !prev);
@@ -73,35 +81,12 @@ const AppEventProvider = ({ children }) => {
 
     const handleTemplate = (item) => {
         console.log("Template Item Selected:", item);
-
-        // setICanvasImageBackground(item.image);
-
-        // if (item?.effect?.bgColor) {
-        //     setCanvasBgColor(item.effect.bgColor.toLowerCase());
-        // } else {a
-        //     setCanvasBgColor("transparent");
-        // }
-
-        // setHideSubject(true);
     };
 
 
     const handleModelClose = () => {
         setOpenModal(false);
     }
-
-
-
-    // const handleTemplate = (item) => {
-    //     console.log("Template Item Selected:", item);
-    //     if(item?.effect?.bgColor === "color") {
-
-    //     }
-
-    //     // setCanvasBgColor(item?.effect);
-    //     // setICanvasImageBackground(item.image);
-    // }
-
 
     const fetchTemplateData = async () => {
         try {
@@ -310,6 +295,7 @@ const AppEventProvider = ({ children }) => {
 
     return (
         <AppEventContext.Provider value={{
+            pos, setPos , size, setSize,
             handleTryItFree,
             menus,
             contents,
@@ -346,7 +332,7 @@ const AppEventProvider = ({ children }) => {
             handleTemplate,
             handleModelClose, openModal,
             hideSubject,
-            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline , blurOn , handleBlur , textureOn , handleTexture , filterOn , handleFilterOn
+            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline , blurOn , handleBlur , textureOn , handleTexture , filterOn , handleFilterOn , handleCenterOn
         }}>
             {children}
 

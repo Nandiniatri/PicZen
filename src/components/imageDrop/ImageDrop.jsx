@@ -397,6 +397,7 @@ const iconMap = {
 
 const ImageDropFile = () => {
     const {
+        pos, setPos, size, setSize,
         selectedFiles,
         editHeaderData,
         handleEditPageHome,
@@ -418,12 +419,10 @@ const ImageDropFile = () => {
     const canvasRef = useRef(null);
 
 
-    const [pos, setPos] = useState({ x: 50, y: 50 });
+    // const [pos, setPos] = useState({ x: 50, y: 50 });
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
-
-
-    const [size, setSize] = useState({ width: 200, height: 200 });
+    // const [size, setSize] = useState({ width: 200, height: 200 });
     const [resizing, setResizing] = useState(false);
     const [currentHandle, setCurrentHandle] = useState(null);
 
