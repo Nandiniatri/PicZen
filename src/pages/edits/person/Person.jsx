@@ -2,7 +2,7 @@ import { useAppEvent } from "../../../contextApi/AppEventContext";
 import "./Person.css";
 
 const Person = () => {
-    const {handleLight , handleShadow , handleOutline , handleBlur , handleTexture , handleFilterOn , handleCenterOn} = useAppEvent();   
+    const { handleLight, handleShadow, handleOutline, handleBlur, handleTexture, handleFilterOn, handleCenterOn, handleMiddleOn } = useAppEvent();
 
     return (
         <div className="person-panel">
@@ -21,7 +21,7 @@ const Person = () => {
                 <h4>Align to canvas</h4>
                 <div className="align-buttons">
                     <button onClick={handleCenterOn}>Center</button>
-                    <button>Middle</button>
+                    <button onClick={handleMiddleOn}>Middle</button>
                 </div>
             </div>
 
