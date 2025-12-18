@@ -41,6 +41,11 @@ const AppEventProvider = ({ children }) => {
 
     const [blurOn, setBlurOn] = useState(false);
     const [textureOn, setTextureOn] = useState(false);
+    const [filterOn, setFilterOn] = useState(false);
+
+    const handleFilterOn = () => {
+        setFilterOn(prev => !prev);
+    }
 
     const handleTexture = () => {
         setTextureOn(prev => !prev);
@@ -341,7 +346,7 @@ const AppEventProvider = ({ children }) => {
             handleTemplate,
             handleModelClose, openModal,
             hideSubject,
-            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline , blurOn , handleBlur , textureOn , handleTexture
+            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline , blurOn , handleBlur , textureOn , handleTexture , filterOn , handleFilterOn
         }}>
             {children}
 
