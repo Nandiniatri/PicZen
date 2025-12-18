@@ -26,15 +26,15 @@ const AppEventProvider = ({ children }) => {
     const [insertData, setInsertData] = useState(null);
     const [openModal, setOpenModal] = useState(true);
     const [templateData, setTemplateData] = useState([]);
-
-
     const [canvasImageBackground, setICanvasImageBackground] = useState(null);
     const [canvasBgColor, setCanvasBgColor] = useState('transparent');
     const [hideSubject, setHideSubject] = useState(false);
-
     const [lightOn, setLightOn] = useState(false);
     const [shadowOn, setShadowOn] = useState(false);
     const [outlineOn, setOutlineOn] = useState(false);
+    const [blurOn, setBlurOn] = useState(false);
+    const [textureOn, setTextureOn] = useState(false);
+    const [filterOn, setFilterOn] = useState(false);
 
     // const [allEffects , setAllEffects] = useState({
     //     lightEffect : false,
@@ -42,9 +42,6 @@ const AppEventProvider = ({ children }) => {
     //     outlineEffect : false,
     //     blurOn: false
     // });
-    const [blurOn, setBlurOn] = useState(false);
-    const [textureOn, setTextureOn] = useState(false);
-    const [filterOn, setFilterOn] = useState(false);
 
     const imageFilter = [
         lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
