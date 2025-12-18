@@ -409,7 +409,8 @@ const ImageDropFile = () => {
         lightOn,
         shadowOn,
         outlineOn , 
-        blurOn
+        blurOn , 
+        textureOn
     } = useAppEvent();
 
 
@@ -559,7 +560,8 @@ const ImageDropFile = () => {
                 <div className="imageDrop-selected-files">
 
                     <EditorCanvas
-                    blurOn={blurOn}
+                        textureOn={textureOn}
+                        blurOn={blurOn}
                         outlineOn={outlineOn}
                         shadowOn={shadowOn}
                         lightOn={lightOn}

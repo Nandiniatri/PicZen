@@ -492,7 +492,8 @@ const EditorCanvas = ({
     lightOn,
     shadowOn,
     outlineOn,
-    blurOn
+    blurOn,
+    textureOn
 }) => {
     const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -544,7 +545,9 @@ const EditorCanvas = ({
          drop-shadow(-2px 0 0 red)
          drop-shadow(0 2px 0 red)
          drop-shadow(0 -2px 0 red)`,
-        blurOn && "blur(2px)"
+        blurOn && "blur(2px)",
+        filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
+        textureOn && "brightness(0.97) contrast(0.95) saturate(0.85)"
     ]
         .filter(Boolean)
         .join(" ");

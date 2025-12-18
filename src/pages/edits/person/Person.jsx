@@ -43,7 +43,7 @@ const Person = () => {
             <div className="section">
                 <div className="effect-item" onClick={handleBlur}>Blur</div>
                 <div className="effect-item" onClick={handleOutline}>Filter</div>
-                <div className="effect-item" onClick={handleOutline}>Texture</div>
+                <div className="effect-item" onClick={handleTexture}>Texture</div>
             </div>
 
             <button className="delete-btn">Delete</button>
