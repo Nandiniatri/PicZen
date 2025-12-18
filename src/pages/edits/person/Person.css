@@ -1,13 +1,13 @@
 .person-panel {
   width: 320px;
-  height: 89vh;
+  height: 88.5vh;
   background: #ffffff;
   border-left: 1px solid #e5e5e5;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  border: solid;
-  background-color: #ff4d4d;
+  /* border: solid; */
+  overflow-y: scroll;
 }
 
 .person-header {

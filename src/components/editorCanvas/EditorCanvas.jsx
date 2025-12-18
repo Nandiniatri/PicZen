@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { removeBackground } from "@imgly/background-removal";
+import { useAppEvent } from "../../contextApi/AppEventContext";
 
 const EditorCanvas = ({
     canvasRef,
@@ -24,19 +25,24 @@ const EditorCanvas = ({
     handleTextClick,
     handleTextSave,
     setEditingValue,
+    imageFilter,
 
     lightOn,
     shadowOn,
     outlineOn,
     blurOn,
-    textureOn ,
+    textureOn,
     filterOn
 }) => {
-    const [processedImg, setProcessedImg] = useState(null);
+    // const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
     // 🔒 prevents infinite loop
     const processedRef = useRef(false);
+    
+    const { processedImg, setProcessedImg } = useAppEvent();
+    console.log("processedImg", processedImg);
+
 
     /* 🔥 BACKGROUND REMOVE (SAFE) */
     useEffect(() => {
@@ -74,20 +80,20 @@ const EditorCanvas = ({
     }, [selectedFile]);
 
     /* 🎨 IMAGE FILTERS */
-    const imageFilter = [
-        lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
-        shadowOn && "drop-shadow(0 18px 35px rgba(0,0,0,0.35))",
-        outlineOn &&
-        `drop-shadow(2px 0 0 red)
-         drop-shadow(-2px 0 0 red)
-         drop-shadow(0 2px 0 red)
-         drop-shadow(0 -2px 0 red)`,
-        blurOn && "blur(2px)",
-        filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
-        textureOn && "brightness(0.80) contrast(0.90) saturate(0.86)"
-    ]
-        .filter(Boolean)
-        .join(" ");
+    // const imageFilter = [
+    //     lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
+    //     shadowOn && "drop-shadow(0 18px 35px rgba(0,0,0,0.35))",
+    //     outlineOn &&
+    //     `drop-shadow(2px 0 0 red)
+    //      drop-shadow(-2px 0 0 red)
+    //      drop-shadow(0 2px 0 red)
+    //      drop-shadow(0 -2px 0 red)`,
+    //     blurOn && "blur(2px)",
+    //     filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
+    //     textureOn && "brightness(0.80) contrast(0.90) saturate(0.86)"
+    // ]
+    //     .filter(Boolean)
+    //     .join(" ");
 
 
     return (

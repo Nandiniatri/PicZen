@@ -8,7 +8,7 @@ const AppEventProvider = ({ children }) => {
     const [pos, setPos] = useState({ x: 50, y: 50 });
     const [size, setSize] = useState({ width: 200, height: 200 });
     const [canvasSize] = useState({ width: 900, height: 700 });
-
+    const [processedImg, setProcessedImg] = useState(null);
     const navigate = useNavigate();
     const [menus, setMenus] = useState([]);
     const [contents, setContents] = useState([]);
@@ -42,10 +42,111 @@ const AppEventProvider = ({ children }) => {
     //     outlineEffect : false,
     //     blurOn: false
     // });
-
     const [blurOn, setBlurOn] = useState(false);
     const [textureOn, setTextureOn] = useState(false);
     const [filterOn, setFilterOn] = useState(false);
+
+    const imageFilter = [
+        lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
+        filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
+        textureOn && "brightness(0.80) contrast(0.90) saturate(0.86)",
+        blurOn && "blur(2px)",
+        shadowOn && "drop-shadow(0 18px 35px rgba(0,0,0,0.35))",
+        outlineOn &&
+        "drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 red) drop-shadow(0 2px 0 red) drop-shadow(0 -2px 0 red)"
+    ]
+    .filter(Boolean)
+    .join(" ");
+
+    const handleDownload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = canvasSize.width;
+        canvas.height = canvasSize.height;
+
+        const ctx = canvas.getContext("2d");
+
+        /* 1️⃣ CANVAS BACKGROUND COLOR */
+        if (canvasBgColor && canvasBgColor !== "transparent") {
+            ctx.fillStyle = canvasBgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        /* 2️⃣ CANVAS BACKGROUND IMAGE */
+        if (canvasImageBackground) {
+            const bgImg = new Image();
+            bgImg.crossOrigin = "anonymous";
+            bgImg.src = canvasImageBackground;
+
+            bgImg.onload = () => {
+                ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+                drawSubject(); // continue flow
+            };
+        } else {
+            drawSubject();
+        }
+
+        /* 3️⃣ SUBJECT IMAGE (background removed) */
+        function drawSubject() {
+            if (!processedImg) {
+                drawTexts();
+                return;
+            }
+
+            const subjectImg = new Image();
+            subjectImg.crossOrigin = "anonymous";
+            subjectImg.src = processedImg;
+
+            subjectImg.onload = () => {
+                ctx.filter = imageFilter || "none"; // 🔥 APPLY FILTERS
+                ctx.drawImage(
+                    subjectImg,
+                    pos.x,
+                    pos.y,
+                    size.width,
+                    size.height
+                );
+                ctx.filter = "none";
+                drawTexts();
+            };
+        }
+
+        /* 4️⃣ TEXTS */
+        function drawTexts() {
+            canvasTexts.forEach((txt) => {
+                ctx.font = "24px Arial";
+                ctx.fillStyle = "#000";
+                ctx.fillText(txt.label, txt.x, txt.y + 24);
+            });
+
+            downloadImage();
+        }
+
+        /* 5️⃣ DOWNLOAD */
+        function downloadImage() {
+            const link = document.createElement("a");
+            link.download = "piczen-edit.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+        }
+    };
+
+
+    // const handleDownload = () => {  
+    //     const canvas = document.createElement('canvas');
+    //     canvas.width = canvasSize.width;
+    //     canvas.height = canvasSize.height;
+    //     const ctx = canvas.getContext('2d');
+    //     const img = new Image();
+    //     img.src = URL.createObjectURL(selectedFiles[0]);
+    //     img.onload = () => {
+    //         ctx.drawImage(img, pos.x, pos.y, size.width, size.height);
+    //         const link = document.createElement('a');
+    //         link.download = 'canvas-image.png';
+    //         link.href = canvas.toDataURL();
+    //         link.click();
+    //     };
+    // };
+
 
     const handleMiddleOn = () => {
         setPos((prev) => ({
@@ -341,7 +442,8 @@ const AppEventProvider = ({ children }) => {
             handleTemplate,
             handleModelClose, openModal,
             hideSubject,
-            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline, blurOn, handleBlur, textureOn, handleTexture, filterOn, handleFilterOn, handleCenterOn , handleMiddleOn
+            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline, blurOn, handleBlur, textureOn, handleTexture, filterOn, handleFilterOn, handleCenterOn, handleMiddleOn, handleDownload,
+            processedImg, setProcessedImg, imageFilter
         }}>
             {children}
 

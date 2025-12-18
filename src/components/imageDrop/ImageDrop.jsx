@@ -56,7 +56,8 @@ const ImageDropFile = () => {
         outlineOn,
         blurOn,
         textureOn,
-        filterOn
+        filterOn , 
+        handleDownload
     } = useAppEvent();
 
 
@@ -194,11 +195,11 @@ const ImageDropFile = () => {
                 </div>
 
                 <div className="header-right">
-                    <Button className="header-btn"><Download size={18} /> Download</Button>
+                    <Button className="header-btn" onClick={handleDownload}><Download size={18} /> Download</Button>
                     <Button className="header-btn share-btn"><Share size={18} /> Share</Button>
                 </div>
             </header>
-
+ 
 
             <div className="ImageDrop-Selected-div">
                 <div className="imageDrop-selected-files">

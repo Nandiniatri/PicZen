@@ -11,7 +11,7 @@ const Header = () => {
       </div>
 
       <nav className="nav">
-        <a href="#">Home</a>
+        <a href="#">Home</a> 
         <a href="#">Explore</a>
         <a href="#">AI Avatar</a>
       </nav>
