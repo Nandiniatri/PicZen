@@ -7,6 +7,8 @@ const AppEventContext = createContext();
 const AppEventProvider = ({ children }) => {
     const [pos, setPos] = useState({ x: 50, y: 50 });
     const [size, setSize] = useState({ width: 200, height: 200 });
+    const [canvasSize] = useState({ width: 900, height: 700 });
+
     const navigate = useNavigate();
     const [menus, setMenus] = useState([]);
     const [contents, setContents] = useState([]);
@@ -47,10 +49,10 @@ const AppEventProvider = ({ children }) => {
     // const [handleCenter, setHandleCenter] = useState(false);
 
     const handleCenterOn = () => {
-        setPos((prev) => ({
-        ...prev,
-        x: (canvasSize.width - size.width) / 2
-    }));
+        setPos({
+            x: (canvasSize.width - size.width) / 2,
+            y: (canvasSize.height - size.height) / 2
+        });
     }
 
     const handleFilterOn = () => {
@@ -295,7 +297,7 @@ const AppEventProvider = ({ children }) => {
 
     return (
         <AppEventContext.Provider value={{
-            pos, setPos , size, setSize,
+            pos, setPos, size, setSize, canvasSize ,
             handleTryItFree,
             menus,
             contents,
@@ -332,7 +334,7 @@ const AppEventProvider = ({ children }) => {
             handleTemplate,
             handleModelClose, openModal,
             hideSubject,
-            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline , blurOn , handleBlur , textureOn , handleTexture , filterOn , handleFilterOn , handleCenterOn
+            lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline, blurOn, handleBlur, textureOn, handleTexture, filterOn, handleFilterOn, handleCenterOn
         }}>
             {children}
 
