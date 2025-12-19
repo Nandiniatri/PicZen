@@ -52,21 +52,21 @@ const EditorCanvas = ({
         let isMounted = true;
         setLoading(true);
 
-        // const processBgRemove = async () => {
-        //     try {
-        //         const blob = await removeBackground(selectedFile);
-        //         if (!isMounted) return;
+        const processBgRemove = async () => {
+            try {
+                const blob = await removeBackground(selectedFile);
+                if (!isMounted) return;
 
-        //         const url = URL.createObjectURL(blob);
-        //         setProcessedImg(url);
-        //     } catch (err) {
-        //         console.error("BG remove failed:", err);
-        //     } finally {
-        //         if (isMounted) setLoading(false);
-        //     }
-        // };
+                const url = URL.createObjectURL(blob);
+                setProcessedImg(url);
+            } catch (err) {
+                console.error("BG remove failed:", err);
+            } finally {
+                if (isMounted) setLoading(false);
+            }
+        };
 
-        // processBgRemove();
+        processBgRemove();
 
         return () => {
             isMounted = false;
