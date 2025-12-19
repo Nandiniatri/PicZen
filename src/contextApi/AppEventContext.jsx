@@ -23,7 +23,6 @@ const AppEventProvider = ({ children }) => {
     const [canvasTexts, setCanvasTexts] = useState([]);
     const [solidColor, setSolidColor] = useState(null);
     const [imageBackground, setImageBackground] = useState(null);
-    const [insertData, setInsertData] = useState(null);
     const [openModal, setOpenModal] = useState(true);
     const [templateData, setTemplateData] = useState([]);
     const [canvasImageBackground, setICanvasImageBackground] = useState(null);
@@ -35,13 +34,25 @@ const AppEventProvider = ({ children }) => {
     const [blurOn, setBlurOn] = useState(false);
     const [textureOn, setTextureOn] = useState(false);
     const [filterOn, setFilterOn] = useState(false);
-
+    
+    const [insertData, setInsertData] = useState(null);
+    
     // const [allEffects , setAllEffects] = useState({
     //     lightEffect : false,
     //     shadowEffect : false,
     //     outlineEffect : false,
     //     blurOn: false
     // });
+
+    const fetchInsertData = async () => {
+        try {
+            const response = await fetch('http://localhost:4000/api/insert');
+            const data = await response.json();
+            setInsertData(data);
+        }   catch (error) {         
+            console.error("Error fetching JSON:", error);
+        }
+    }
 
     const imageFilter = [
         lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
@@ -335,7 +346,8 @@ const AppEventProvider = ({ children }) => {
         fetchPhotoEditingClassics();
         handleSolidColorAPI();
         handleImageBackgroundAPI();
-        fetchTemplateData()
+        fetchTemplateData();
+        fetchInsertData();
     }, [])
 
 
@@ -423,7 +435,8 @@ const AppEventProvider = ({ children }) => {
             handleModelClose, openModal,
             hideSubject,
             lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline, blurOn, handleBlur, textureOn, handleTexture, filterOn, handleFilterOn, handleCenterOn, handleMiddleOn, handleDownload,
-            processedImg, setProcessedImg, imageFilter
+            processedImg, setProcessedImg, imageFilter ,
+            fetchInsertData
         }}>
             {children}
 

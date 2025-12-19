@@ -1,0 +1,19 @@
+{
+  "ai": {
+    "title": "Generate an image with AI",
+    "icon": "✨"
+  },
+  "shapes": [
+    { "title": "Classics", "items": ["●", "▲", "■", "★"] },
+    { "title": "Stickers", "items": ["◐", "◑", "◒", "◓"] },
+    { "title": "Blobs", "items": ["⬤", "⬟", "⬢", "⬣"] },
+    { "title": "Wired", "items": ["◎", "✧", "✺", "◌"] },
+    { "title": "Loops", "items": ["↺", "↻", "➰", "➿"] }
+  ],
+  "graphics": [
+    { "title": "Frames", "items": ["▢", "▣", "▤"] },
+    { "title": "Arrows", "items": ["➜", "➤", "➝", "➞"] },
+    { "title": "Measurements", "items": ["—", "│", "╱"] },
+    { "title": "Sizes", "items": ["XS", "S", "M", "L"] }
+  ]
+}
