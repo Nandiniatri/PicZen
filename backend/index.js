@@ -111,12 +111,6 @@ app.get("/api/imageBackground", (req, res) => {
   res.json(data);
 });
 
-
-app.get("/api/insertPanelData", (req, res) => {
-  const data = JSON.parse(fs.readFileSync("./data/insertPanelData.json", "utf-8"));
-  res.json(data);
-});
-
 app.get("/api/template", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/template.json", "utf-8"));
   res.json(data);

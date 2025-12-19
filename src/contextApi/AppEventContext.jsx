@@ -35,7 +35,7 @@ const AppEventProvider = ({ children }) => {
     const [textureOn, setTextureOn] = useState(false);
     const [filterOn, setFilterOn] = useState(false);
 
-    const [insertData, setInsertData] = useState(null);
+    const [insertData, setInsertData] = useState([]);
     
     // const [allEffects , setAllEffects] = useState({
     //     lightEffect : false,
@@ -48,6 +48,7 @@ const AppEventProvider = ({ children }) => {
         try {
             const response = await fetch('http://localhost:4000/api/insert');
             const data = await response.json();
+
             setInsertData(data);
         }   catch (error) {         
             console.error("Error fetching JSON:", error);
