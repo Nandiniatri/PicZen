@@ -237,8 +237,6 @@ const ImageDropFile = () => {
 
                 <div className="imageDrop-right-panel">
                     {!activeRightPanel && <Person />}
-                    {/* <Person /> */}
-
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                     {activeRightPanel === "Solid color" && <SolidColor />}

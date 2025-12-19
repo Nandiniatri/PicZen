@@ -1,14 +1,19 @@
-.template-container{
-  /* border: solid;s */
+.template-container {
+  /* border: solid; */
   padding: 2px;
+  width: 310px;
+  height: 88.3vh;
+  overflow-y: scroll;
 }
-.template-container h2{
+
+.template-container h2 {
   margin-left: 20px;
 }
+
 .template-wrapper {
-  width: 330px;
-  height: 82.7vh;
-  overflow-y: auto;
+  /* width: 330px; */
+  /* height: 88.5vh; */
+  /* overflow-y: auto; */
   background: #fff;
   padding: 20px;
   border-left: 1px solid #e5e5e5;

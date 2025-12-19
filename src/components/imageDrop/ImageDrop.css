@@ -6,9 +6,15 @@
   justify-content: center;
 } */
 
-.image-drop-container{
+/* .image-drop-container{
   border: solid red;
-}
+} */
+
+/* .imageDrop-right-panel{
+  border: solid;
+  height: 20vh !important;
+} */
+ 
 .header-container {
   display: flex;
   align-items: center;
