@@ -76,7 +76,7 @@ const AppEventProvider = ({ children }) => {
 
             bgImg.onload = () => {
                 ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-                drawSubject(); // continue flow
+                drawSubject();
             };
         } else {
             drawSubject();

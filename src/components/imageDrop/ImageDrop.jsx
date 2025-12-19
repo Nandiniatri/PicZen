@@ -236,13 +236,14 @@ const ImageDropFile = () => {
                 </div>
 
                 <div className="imageDrop-right-panel">
-                    <Person />
+                    {!activeRightPanel && <Person />}
+                    {/* <Person /> */}
 
                     {activeRightPanel === "Add text" && <AddText />}
                     {activeRightPanel === "Backgrounds" && <BackgroundMenu />}
                     {activeRightPanel === "Solid color" && <SolidColor />}
                     {activeRightPanel === "Background Image" && <ImageBackground />}
-                    {activeRightPanel === "Insert" && <Insert />}
+                    {/* {activeRightPanel === "Insert" && <Insert />} */}
                     {activeRightPanel === "Templates" && <Template />}
                     {activeRightPanel === "Resize" && <Resize />}
                 </div>
