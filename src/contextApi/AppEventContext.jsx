@@ -34,7 +34,7 @@ const AppEventProvider = ({ children }) => {
     const [blurOn, setBlurOn] = useState(false);
     const [textureOn, setTextureOn] = useState(false);
     const [filterOn, setFilterOn] = useState(false);
-    
+
     const [insertData, setInsertData] = useState(null);
     
     // const [allEffects , setAllEffects] = useState({
@@ -204,19 +204,19 @@ const AppEventProvider = ({ children }) => {
         navigate('/aiModal');
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("http://localhost:4000/api/insertPanelData");
-                const data = await response.json();
-                setInsertData(data);
-            } catch (error) {
-                console.error("Error fetching JSON:", error);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch("http://localhost:4000/api/insertPanelData");
+    //             const data = await response.json();
+    //             setInsertData(data);
+    //         } catch (error) {
+    //             console.error("Error fetching JSON:", error);
+    //         }
+    //     };
 
-        fetchData();
-    }, []);
+    //     fetchData();
+    // }, []);
 
 
     const handleImageBackground = (item) => {
