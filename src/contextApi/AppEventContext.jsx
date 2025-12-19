@@ -128,23 +128,6 @@ const AppEventProvider = ({ children }) => {
     };
 
 
-    // const handleDownload = () => {  
-    //     const canvas = document.createElement('canvas');
-    //     canvas.width = canvasSize.width;
-    //     canvas.height = canvasSize.height;
-    //     const ctx = canvas.getContext('2d');
-    //     const img = new Image();
-    //     img.src = URL.createObjectURL(selectedFiles[0]);
-    //     img.onload = () => {
-    //         ctx.drawImage(img, pos.x, pos.y, size.width, size.height);
-    //         const link = document.createElement('a');
-    //         link.download = 'canvas-image.png';
-    //         link.href = canvas.toDataURL();
-    //         link.click();
-    //     };
-    // };
-
-
     const handleMiddleOn = () => {
         setPos((prev) => ({
             ...prev,
