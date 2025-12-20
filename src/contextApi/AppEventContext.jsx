@@ -36,7 +36,8 @@ const AppEventProvider = ({ children }) => {
     const [filterOn, setFilterOn] = useState(false);
 
     const [insertData, setInsertData] = useState([]);
-    
+    const [dragging, setDragging] = useState(false);
+
     // const [allEffects , setAllEffects] = useState({
     //     lightEffect : false,
     //     shadowEffect : false,
@@ -44,9 +45,22 @@ const AppEventProvider = ({ children }) => {
     //     blurOn: false
     // });
 
-    const handleClassis = () => {
-        alert('Classics Shape Clicked');
-    }
+    const [canvasShapes, setCanvasShapes] = useState([]);
+
+    const addShapeToCanvas = (img) => {
+        setCanvasShapes((prev) => [
+            ...prev,
+            {
+                id: Date.now(),
+                src: img,
+                x: 200,
+                y: 150,
+                width: 220,
+                height: 220
+            }
+        ]);
+    };
+
 
     const fetchInsertData = async () => {
         try {
@@ -54,7 +68,7 @@ const AppEventProvider = ({ children }) => {
             const data = await response.json();
 
             setInsertData(data);
-        }   catch (error) {         
+        } catch (error) {
             console.error("Error fetching JSON:", error);
         }
     }
@@ -68,8 +82,8 @@ const AppEventProvider = ({ children }) => {
         outlineOn &&
         "drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 red) drop-shadow(0 2px 0 red) drop-shadow(0 -2px 0 red)"
     ]
-    .filter(Boolean)
-    .join(" ");
+        .filter(Boolean)
+        .join(" ");
 
     const handleDownload = () => {
         const canvas = document.createElement("canvas");
@@ -440,9 +454,12 @@ const AppEventProvider = ({ children }) => {
             handleModelClose, openModal,
             hideSubject,
             lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline, blurOn, handleBlur, textureOn, handleTexture, filterOn, handleFilterOn, handleCenterOn, handleMiddleOn, handleDownload,
-            processedImg, setProcessedImg, imageFilter ,
-            fetchInsertData , 
-            handleClassis
+            processedImg, setProcessedImg, imageFilter,
+            fetchInsertData,
+            canvasShapes,
+            setCanvasShapes,
+            addShapeToCanvas,
+            dragging, setDragging
         }}>
             {children}
 

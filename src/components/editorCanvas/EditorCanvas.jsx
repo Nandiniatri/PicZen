@@ -11,8 +11,8 @@ const EditorCanvas = ({
 
     pos = { x: 0, y: 0 },
     size = { width: 400, height: 400 },
-
     dragging,
+
     canvasSize = { width: 900, height: 700 },
     canvasBgColor = "#fff",
     canvasImageBackground,
@@ -26,23 +26,12 @@ const EditorCanvas = ({
     handleTextSave,
     setEditingValue,
     imageFilter,
-
-    lightOn,
-    shadowOn,
-    outlineOn,
-    blurOn,
-    textureOn,
-    filterOn
 }) => {
-    // const [processedImg, setProcessedImg] = useState(null);
+
     const [loading, setLoading] = useState(false);
-
+    const { processedImg, setProcessedImg, canvasShapes} = useAppEvent();
+        console.log("processedImg", processedImg);
     const processedRef = useRef(false);
-    
-    const { processedImg, setProcessedImg } = useAppEvent();
-    console.log("processedImg", processedImg);
-
-
 
     useEffect(() => {
         if (!selectedFile || processedRef.current) return;
@@ -76,21 +65,6 @@ const EditorCanvas = ({
         processedRef.current = false;
         setProcessedImg(null);
     }, [selectedFile]);
-
-    // const imageFilter = [
-    //     lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
-    //     shadowOn && "drop-shadow(0 18px 35px rgba(0,0,0,0.35))",
-    //     outlineOn &&
-    //     `drop-shadow(2px 0 0 red)
-    //      drop-shadow(-2px 0 0 red)
-    //      drop-shadow(0 2px 0 red)
-    //      drop-shadow(0 -2px 0 red)`,
-    //     blurOn && "blur(2px)",
-    //     filterOn && "grayscale(1) contrast(1.25) brightness(0.98)",
-    //     textureOn && "brightness(0.80) contrast(0.90) saturate(0.86)"
-    // ]
-    //     .filter(Boolean)
-    //     .join(" ");
 
 
     return (
@@ -153,7 +127,26 @@ const EditorCanvas = ({
                 />
             )}
 
-        
+            {canvasShapes.map((shape) => (
+                <img
+                    key={shape.id}
+                    src={shape?.src?.img}
+                    draggable={false}
+                    onMouseDown={(e) => startShapeDrag(e, shape.id)}
+                    style={{
+                        position: "absolute",
+                        top: shape.y,
+                        left: shape.x,
+                        width: shape.width,
+                        height: shape.height,
+                        objectFit: "contain",
+                        cursor: "grab",
+                        zIndex: 120,
+                        userSelect: "none",
+                    }}
+                />
+            ))}
+
             {canvasTexts.map((txt) => (
                 <div
                     key={txt.id}
@@ -217,3 +210,8 @@ const EditorCanvas = ({
 };
 
 export default EditorCanvas;
+
+
+
+
+

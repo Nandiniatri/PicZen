@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useAppEvent } from "../../../../contextApi/AppEventContext";
 
 const Insert = () => {
-    const { insertData, handleClassis } = useAppEvent();
+    const { insertData, handleClassis , addShapeToCanvas } = useAppEvent();
     const [activeGroup, setActiveGroup] = useState(null);
 
     if (!insertData) return null;
@@ -42,7 +42,7 @@ const Insert = () => {
                                 <div
                                     key={item.id}
                                     className="item-box"
-                                    onClick={() => handleClassis(item)}
+                                    onClick={() => addShapeToCanvas(item)}
                                 >
                                     <img src={item.img} alt="" />
                                 </div>
