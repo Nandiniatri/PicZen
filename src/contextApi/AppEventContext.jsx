@@ -44,6 +44,10 @@ const AppEventProvider = ({ children }) => {
     //     blurOn: false
     // });
 
+    const handleClassis = () => {
+        alert('Classics Shape Clicked');
+    }
+
     const fetchInsertData = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/insert');
@@ -437,7 +441,8 @@ const AppEventProvider = ({ children }) => {
             hideSubject,
             lightOn, setLightOn, handleLight, handleShadow, shadowOn, outlineOn, handleOutline, blurOn, handleBlur, textureOn, handleTexture, filterOn, handleFilterOn, handleCenterOn, handleMiddleOn, handleDownload,
             processedImg, setProcessedImg, imageFilter ,
-            fetchInsertData
+            fetchInsertData , 
+            handleClassis
         }}>
             {children}
 

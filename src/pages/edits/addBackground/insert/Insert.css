@@ -8,16 +8,12 @@
   font-family: Inter, sans-serif;
 }
 
+
 .panel-title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 16px;
   color: #111827;
-}
-
-
-.insert-section {
-  margin-bottom: 24px;
 }
 
 .section-title {
@@ -53,8 +49,20 @@
 
 
 .group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  padding: 10px;
+  border-radius: 14px;
+  transition: background 0.2s ease;
 }
+
+.clickable-group {
+  cursor: pointer;
+}
+
+.clickable-group:hover {
+  background: #f9fafb;
+}
+
 
 .group-title {
   font-size: 13px;
@@ -63,20 +71,23 @@
   color: #374151;
 }
 
-
-.group-title.clickable {
-  cursor: pointer;
-}
-
-.group-title.clickable:hover {
-  text-decoration: underline;
-}
-
-
 .items-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.preview-grid {
+  pointer-events: none;
+}
+
+.clickable-group:hover .items-grid {
+  background: #f3f4f6;
+  border-color: #d1d5db;
 }
 
 
@@ -92,23 +103,16 @@
   transition: all 0.2s ease;
 }
 
+
 .item-box:hover {
   background: #eef2ff;
   border-color: #6366f1;
 }
 
-
 .item-box img {
   width: 28px;
   height: 28px;
   object-fit: contain;
-}
-
-
-.text-item {
-  font-size: 13px;
-  font-weight: 600;
-  color: #111827;
 }
 
 
@@ -124,7 +128,7 @@
   background: none;
   font-size: 18px;
   cursor: pointer;
-  padding: 2px 6px;
+  padding: 4px 8px;
   border-radius: 6px;
 }
 
