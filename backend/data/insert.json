@@ -4,7 +4,27 @@
     "icon": "✨"
   },
   "shapes": [
-    { "title": "Classics", "items": ["●", "▲", "■", "★"] },
+    { "title": "Classics", "items": [
+      {"id": 1 , "img":"https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_classics_20241030%2F01_Classics_thumb.png"},
+      {"id": 2, "img":"https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_classics_20241030%2F02_Classics_thumb.png"},
+      {"id": 3, "img":"https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_classics_20241030%2F03_Classics_thumb.png"},
+      {"id": 4, "img":""},
+      {"id": 5, "img":""},
+      {"id": 6, "img":""},
+      {"id": 7, "img":""},
+      {"id": 8, "img":""},
+      {"id": 9, "img":""},
+      {"id": 10, "img":""},
+      {"id": 11, "img":""},
+      {"id": 12, "img":""},
+      {"id": 13, "img":""},
+      {"id": 14, "img":""},
+      {"id": 15, "img":""},
+      {"id": 16, "img":""},
+      {"id": 17, "img":""},
+      {"id": 18, "img":""}
+    ] },
+
     { "title": "Stickers", "items": ["◐", "◑", "◒", "◓"] },
     { "title": "Blobs", "items": ["⬤", "⬟", "⬢", "⬣"] },
     { "title": "Wired", "items": ["◎", "✧", "✺", "◌"] },

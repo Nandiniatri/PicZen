@@ -37,14 +37,13 @@ const EditorCanvas = ({
     // const [processedImg, setProcessedImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    // 🔒 prevents infinite loop
     const processedRef = useRef(false);
     
     const { processedImg, setProcessedImg } = useAppEvent();
     console.log("processedImg", processedImg);
 
 
-    /* 🔥 BACKGROUND REMOVE (SAFE) */
+
     useEffect(() => {
         if (!selectedFile || processedRef.current) return;
 
@@ -73,13 +72,11 @@ const EditorCanvas = ({
         };
     }, [selectedFile]);
 
-    /* 🔁 RESET when new image selected */
     useEffect(() => {
         processedRef.current = false;
         setProcessedImg(null);
     }, [selectedFile]);
 
-    /* 🎨 IMAGE FILTERS */
     // const imageFilter = [
     //     lightOn && "brightness(1.15) contrast(1.1) saturate(1.1)",
     //     shadowOn && "drop-shadow(0 18px 35px rgba(0,0,0,0.35))",
@@ -117,7 +114,7 @@ const EditorCanvas = ({
                 backgroundPosition: "center"
             }}
         >
-            {/* ⏳ LOADING */}
+
             {loading && (
                 <div
                     style={{
@@ -135,7 +132,6 @@ const EditorCanvas = ({
                 </div>
             )}
 
-            {/* 🖼 SUBJECT IMAGE */}
             {processedImg && (
                 <img
                     src={processedImg}
@@ -157,7 +153,7 @@ const EditorCanvas = ({
                 />
             )}
 
-            {/* ✏ TEXTS */}
+        
             {canvasTexts.map((txt) => (
                 <div
                     key={txt.id}
@@ -183,7 +179,6 @@ const EditorCanvas = ({
                 </div>
             ))}
 
-            {/* 🔲 RESIZE HANDLES */}
             {processedImg &&
                 ["tl", "tr", "bl", "br"].map((handle) => {
                     const HANDLE_SIZE = 12;
