@@ -35,6 +35,7 @@ const EditorCanvas = ({
     const { processedImg, setProcessedImg, canvasShapes, setCanvasShapes } =
         useAppEvent();
 
+    //ye mene drag kiya hai yha se shapes ke liye
     const [activeShapeId, setActiveShapeId] = useState(null);
     const [shapeOffset, setShapeOffset] = useState({ x: 0, y: 0 });
 
