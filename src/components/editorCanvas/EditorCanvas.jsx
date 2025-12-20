@@ -29,9 +29,44 @@ const EditorCanvas = ({
 }) => {
 
     const [loading, setLoading] = useState(false);
-    const { processedImg, setProcessedImg, canvasShapes} = useAppEvent();
-        console.log("processedImg", processedImg);
+    // console.log("processedImg", processedImg);
     const processedRef = useRef(false);
+
+    const { processedImg, setProcessedImg, canvasShapes, setCanvasShapes } =
+        useAppEvent();
+
+    const [activeShapeId, setActiveShapeId] = useState(null);
+    const [shapeOffset, setShapeOffset] = useState({ x: 0, y: 0 });
+
+    const startShapeDrag = (e, shape) => {
+        e.stopPropagation();
+        setActiveShapeId(shape.id);
+
+        const rect = canvasRef.current.getBoundingClientRect();
+        setShapeOffset({
+            x: e.clientX - rect.left - shape.x,
+            y: e.clientY - rect.top - shape.y
+        });
+    };
+
+    const onShapeDrag = (e) => {
+        if (!activeShapeId) return;
+
+        const rect = canvasRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left - shapeOffset.x;
+        const y = e.clientY - rect.top - shapeOffset.y;
+
+        setCanvasShapes((prev) =>
+            prev.map((s) =>
+                s.id === activeShapeId ? { ...s, x, y } : s
+            )
+        );
+    };
+
+    const stopShapeDrag = () => {
+        setActiveShapeId(null);
+    };
+
 
     useEffect(() => {
         if (!selectedFile || processedRef.current) return;
@@ -71,9 +106,22 @@ const EditorCanvas = ({
         <div
             ref={canvasRef}
             className="file-preview"
-            onMouseMove={(e) => (dragging ? onDrag(e) : onResize(e))}
-            onMouseUp={stopActions}
-            onMouseLeave={stopActions}
+            // onMouseMove={(e) => (dragging ? onDrag(e) : onResize(e))}
+            // onMouseUp={stopActions}
+            // onMouseLeave={stopActions}
+            onMouseMove={(e) => {
+                if (activeShapeId) onShapeDrag(e);
+                else if (dragging) onDrag(e);
+                else onResize(e);
+            }}
+            onMouseUp={() => {
+                stopActions();
+                stopShapeDrag();
+            }}
+            onMouseLeave={() => {
+                stopActions();
+                stopShapeDrag();
+            }}
             style={{
                 width: canvasSize.width,
                 height: canvasSize.height,
@@ -130,9 +178,9 @@ const EditorCanvas = ({
             {canvasShapes.map((shape) => (
                 <img
                     key={shape.id}
-                    src={shape?.src?.img}
+                    src={shape.src.img}
                     draggable={false}
-                    onMouseDown={(e) => startShapeDrag(e, shape.id)}
+                    onMouseDown={(e) => startShapeDrag(e, shape)}
                     style={{
                         position: "absolute",
                         top: shape.y,
@@ -140,9 +188,9 @@ const EditorCanvas = ({
                         width: shape.width,
                         height: shape.height,
                         objectFit: "contain",
-                        cursor: "grab",
-                        zIndex: 120,
+                        // cursor: dragging ? "grabbing" : "grab",
                         userSelect: "none",
+                        zIndex: 120,
                     }}
                 />
             ))}

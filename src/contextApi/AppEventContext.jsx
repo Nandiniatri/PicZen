@@ -47,16 +47,16 @@ const AppEventProvider = ({ children }) => {
 
     const [canvasShapes, setCanvasShapes] = useState([]);
 
-    const addShapeToCanvas = (img) => {
+    const addShapeToCanvas = (item) => {
         setCanvasShapes((prev) => [
             ...prev,
             {
                 id: Date.now(),
-                src: img,
-                x: 200,
-                y: 150,
-                width: 220,
-                height: 220
+                src: item,
+                x: 100,
+                y: 100,
+                width: 120,
+                height: 120
             }
         ]);
     };
