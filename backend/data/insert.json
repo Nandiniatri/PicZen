@@ -84,37 +84,184 @@
     {
       "title": "Stickers",
       "items": [
-        "◐",
-        "◑",
-        "◒",
-        "◓"
+        {
+          "id": 1,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_02_thumb.png"
+        },
+        {
+          "id": 2,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_03_thumb.png"
+        },
+        {
+          "id": 3,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_04_thumb.png"
+        },
+        {
+          "id": 4,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_06_thumb.png"
+        },
+        {
+          "id": 5,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_07_thumb.png"
+        },
+        {
+          "id": 6,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_08_thumb.png"
+        },
+        {
+          "id": 7,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_09_thumb.png"
+        },
+        {
+          "id": 8,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_stickers%2Fshape_stickers_10_thumb.png"
+        }
       ]
     },
     {
       "title": "Blobs",
       "items": [
-        "⬤",
-        "⬟",
-        "⬢",
-        "⬣"
+        {
+          "id": 1,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_02_thumb.png"
+        },
+        {
+          "id": 2,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_03_thumb.png"
+        },
+        {
+          "id": 3,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_04_thumb.png"
+        },
+        {
+          "id": 4,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_05_thumb.png"
+        },
+        {
+          "id": 5,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_06_thumb.png"
+        },
+        {
+          "id": 6,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_07_thumb.png"
+        },
+        {
+          "id": 7,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_blobs%2Fshape_blobs_08_thumb.png"
+        }
       ]
     },
     {
       "title": "Wired",
       "items": [
-        "◎",
-        "✧",
-        "✺",
-        "◌"
+        {
+          "id": 1,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_02_thumb.png"
+        },
+        {
+          "id": 2,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_03_thumb.png"
+        },
+        {
+          "id": 3,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_04_thumb.png"
+        },
+        {
+          "id": 4,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_05_thumb.png"
+        },
+        {
+          "id": 5,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_06_thumb.png"
+        },
+        {
+          "id": 6,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_07_thumb.png"
+        },
+        {
+          "id": 7,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_08_thumb.png"
+        },
+        {
+          "id": 8,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_09_thumb.png"
+        },
+        {
+          "id": 9,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_10_thumb.png"
+        },
+        {
+          "id": 10,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_11_thumb.png"
+        },
+        {
+          "id": 11,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_12_thumb.png"
+        },
+        {
+          "id": 12,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_wired%2Fshape_wired_13_thumb.png"
+        }
       ]
     },
     {
       "title": "Loops",
       "items": [
-        "↺",
-        "↻",
-        "➰",
-        "➿"
+        {
+          "id": 1,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_loops%2Fshape_loops_02_thumb.png"
+        },
+        {
+          "id": 2,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_loops%2Fshape_loops_03_thumb.png"
+        },
+        {
+          "id": 3,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_loops%2Fshape_loops_04_thumb.png"
+        },
+        {
+          "id": 4,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fshapes%2Fshapes_loops%2Fshape_loops_05_thumb.png"
+        }
+      ]
+    }
+  ],
+  "Graphics": [
+    {
+      "title": "Frames",
+      "items": [
+        {
+          "id": 1,
+          "img": "https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fgraphics%2Fframes_20240611%2F001_frame_thumb.png"
+        },
+        {
+          "id": 2,
+          "img":" https://cdn.photoroom.com/v2/image-cache?path=gs%3A%2F%2Fbackground-7ef44.appspot.com%2Fobjects_v4%2Fgraphics%2Fframes_20240611%2F002_frame_thumb.png"
+        },
+        {
+          "id": 3,
+          "img": ""
+        },
+        {
+          "id": 4,
+          "img": ""
+        },
+        {
+          "id": 5,
+          "img": ""
+        },
+        {
+          "id": 6,
+          "img": ""
+        },
+        {
+          "id": 7,
+          "img": ""
+        },
+        {
+          "id": 8,
+          "img": ""
+        }
       ]
     }
   ]
