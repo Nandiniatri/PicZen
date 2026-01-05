@@ -171,7 +171,8 @@ const EditorCanvas = ({
                         cursor: dragging ? "grabbing" : "grab",
                         userSelect: "none",
                         filter: imageFilter,
-                        transition: "filter 0.25s ease"
+                        transition: "filter 0.25s ease",
+                        border: "1px solid black",
                     }}
                 />
             )}
