@@ -2,16 +2,19 @@ import "./Insert.css";
 import { useState } from "react";
 import { useAppEvent } from "../../../../contextApi/AppEventContext";
 import Button from "../../../../components/Button";
+import Modal from "../../../../components/modal/Modal";
 
  
 const Insert = () => {
     const { insertData, handleClassis , addShapeToCanvas } = useAppEvent();
     const [activeGroup, setActiveGroup] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     if (!insertData) return null;
 
     const handleAIGenrateImage = () => {    
         alert("aiImageGeneration");
+        setShowModal(true);
     }
 
     return (
@@ -76,6 +79,14 @@ const Insert = () => {
                     ))
                 )}
             </div>
+
+            <Modal open={showModal} onClose={() => setShowModal(false)} >
+                <div className="ai-modal-content">
+                    <h2>AI Image Generation</h2>    
+                    <p>This is a placeholder for the AI image generation feature.</p>
+                    <Button className="close-modal-btn" onClick={() => setShowModal(false)}>Close</Button>
+                </div>
+            </Modal>    
         </div>
     );
 };
