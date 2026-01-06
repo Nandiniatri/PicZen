@@ -1,12 +1,18 @@
 import "./Insert.css";
 import { useState } from "react";
 import { useAppEvent } from "../../../../contextApi/AppEventContext";
+import Button from "../../../../components/Button";
 
+ 
 const Insert = () => {
     const { insertData, handleClassis , addShapeToCanvas } = useAppEvent();
     const [activeGroup, setActiveGroup] = useState(null);
 
     if (!insertData) return null;
+
+    const handleAIGenrateImage = () => {    
+        alert("aiImageGeneration");
+    }
 
     return (
         <div className="insert-panel">
@@ -14,10 +20,10 @@ const Insert = () => {
 
             {/* AI */}
             <div className="insert-section">
-                <button className="ai-btn">
+                <Button className="ai-btn" onClick={handleAIGenrateImage}>
                     <span className="ai-icon">{insertData.ai.icon}</span>
                     {insertData.ai.title}
-                </button>
+                </Button>
             </div>
 
             {/* ================= SHAPES ================= */}
@@ -28,12 +34,12 @@ const Insert = () => {
                 {activeGroup ? (
                     <>
                         <div className="detail-header">
-                            <button
+                            <Button
                                 className="back-btn"
                                 onClick={() => setActiveGroup(null)}
                             >
                                 ←
-                            </button>
+                            </Button>
                             <span className="detail-title">{activeGroup.title}</span>
                         </div>
 
