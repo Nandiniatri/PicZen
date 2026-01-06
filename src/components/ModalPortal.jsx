@@ -7,4 +7,4 @@ const ModalPortal = ({ children }) => {
     )
 }  
 
-export default ModalPortal;
+export default ModalPortal; 

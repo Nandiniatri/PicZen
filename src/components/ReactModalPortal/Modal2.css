@@ -1,0 +1,12 @@
+.overlay {
+    /* position: fixed; */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.loginModal {
+    background: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+}

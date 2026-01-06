@@ -2,17 +2,18 @@ import "./Insert.css";
 import { useState } from "react";
 import { useAppEvent } from "../../../../contextApi/AppEventContext";
 import Button from "../../../../components/Button";
-import Modal from "../../../../components/modal/Modal";
+import ModalPortal from "../../../../components/ModalPortal";
+import Modal2 from "../../../../components/ReactModalPortal/Modal2";
 
- 
+
 const Insert = () => {
-    const { insertData, handleClassis , addShapeToCanvas } = useAppEvent();
+    const { insertData, handleClassis, addShapeToCanvas } = useAppEvent();
     const [activeGroup, setActiveGroup] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
     if (!insertData) return null;
 
-    const handleAIGenrateImage = () => {    
+    const handleAIGenrateImage = () => {
         alert("aiImageGeneration");
         setShowModal(true);
     }
@@ -80,13 +81,7 @@ const Insert = () => {
                 )}
             </div>
 
-            <Modal open={showModal} onClose={() => setShowModal(false)} >
-                <div className="ai-modal-content">
-                    
-                    
-                    <Button className="close-modal-btn" onClick={() => setShowModal(false)}>Close</Button>
-                </div>
-            </Modal>    
+            {showModal && <Modal2 onclose={() => setShowModal(false)} />}
         </div>
     );
 };
