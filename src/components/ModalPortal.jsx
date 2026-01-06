@@ -5,6 +5,6 @@ const ModalPortal = ({ children }) => {
         children,
         document.getElementById('model2')
     )
-}
+}  
 
 export default ModalPortal;
