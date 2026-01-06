@@ -82,8 +82,8 @@ const Insert = () => {
 
             <Modal open={showModal} onClose={() => setShowModal(false)} >
                 <div className="ai-modal-content">
-                    <h2>AI Image Generation</h2>    
-                    <p>This is a placeholder for the AI image generation feature.</p>
+                    
+                    
                     <Button className="close-modal-btn" onClick={() => setShowModal(false)}>Close</Button>
                 </div>
             </Modal>    
