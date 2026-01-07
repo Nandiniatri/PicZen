@@ -3,7 +3,6 @@ import "./Modal2.css";
 import { useAppEvent } from "../contextApi/AppEventContext";
 
 
-
 const Modal2 = ({ open, onClose }) => {
     const { generateAIImageData } = useAppEvent();
 
