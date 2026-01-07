@@ -480,7 +480,7 @@ const AppEventProvider = ({ children }) => {
                 type="file"
                 ref={fileInputRef}
                 style={{ display: "none" }}
-                multiple
+                multiple 
                 accept="image/*"
                 onChange={handleImageSelect}
             />

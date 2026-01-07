@@ -1,6 +1,7 @@
 import ModalPortal from "../ModalPortal";
 import "./Modal2.css";
-import { useAppEvent } from "../contextApi/AppEventContext";
+import { useAppEvent } from "../../contextApi/AppEventContext";
+
 
 
 const Modal2 = ({ open, onClose }) => {
