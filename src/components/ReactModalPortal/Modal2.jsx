@@ -5,7 +5,7 @@ const Modal2 = ({ open, onClose, children }) => {
 
     return (
         <ModalPortal>
-            <div className="overlay">
+            <div className="overlay" onclick={onClose}>
                 <div className="loginModal">
                     <h2>Login</h2>
                     <button onClick={onClose}>Close</button>
