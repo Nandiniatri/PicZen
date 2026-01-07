@@ -46,6 +46,18 @@ const AppEventProvider = ({ children }) => {
     // });
 
     const [canvasShapes, setCanvasShapes] = useState([]);
+    const [generateAIImageData, SetGenerateAIImageData] = useState([]);
+
+    const fetchGenerateAIData = async() => {
+        try {
+            const response = await fetch('http://localhost:4000/api/generateAIImageData');
+            const data = await response.json();
+
+            SetGenerateAIImageData(data);
+        } catch (error) {
+            console.error("Error fetching JSON:", error);
+        }
+    }
 
     const addShapeToCanvas = (item) => {
         setCanvasShapes((prev) => [
@@ -459,7 +471,8 @@ const AppEventProvider = ({ children }) => {
             canvasShapes,
             setCanvasShapes,
             addShapeToCanvas,
-            dragging, setDragging
+            dragging, setDragging , 
+            generateAIImageData
         }}>
             {children}
 
