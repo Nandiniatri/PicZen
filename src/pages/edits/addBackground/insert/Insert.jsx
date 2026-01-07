@@ -14,7 +14,6 @@ const Insert = () => {
     if (!insertData) return null;
 
     const handleAIGenrateImage = () => {
-        alert("aiImageGeneration");
         setShowModal(true);
     }
 
@@ -81,7 +80,7 @@ const Insert = () => {
                 )}
             </div>
 
-            {showModal && <Modal2 onclose={() => setShowModal(false)} />}
+            {showModal && <Modal2 open={showModal} onClose={() => setShowModal(false)} />}
         </div>
     );
 };
