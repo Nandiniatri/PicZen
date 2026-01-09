@@ -14,6 +14,8 @@ const Insert = () => {
     if (!insertData) return null;
 
     const handleAIGenrateImage = () => {
+        console.log('modal show');
+        
         setShowModal(true);
     }
 
@@ -33,7 +35,7 @@ const Insert = () => {
             <div className="insert-section">
                 <h3 className="section-title">Shapes</h3>
 
-                {/* DETAIL VIEW */}
+                {/* DETAIL */}
                 {activeGroup ? (
                     <>
                         <div className="detail-header">
@@ -80,7 +82,7 @@ const Insert = () => {
                 )}
             </div>
 
-            {showModal && <Modal2 open={showModal} onClose={() => setShowModal(false)} />}
+            {showModal && <Modal2 open={showModal} />}
         </div>
     );
 };
