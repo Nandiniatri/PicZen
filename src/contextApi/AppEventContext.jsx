@@ -379,6 +379,7 @@ const AppEventProvider = ({ children }) => {
         handleImageBackgroundAPI();
         fetchTemplateData();
         fetchInsertData();
+        fetchGenerateAIData();
     }, [])
 
 
