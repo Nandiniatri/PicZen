@@ -5,7 +5,7 @@ import { useAppEvent } from "../../contextApi/AppEventContext";
 
 const Modal2 = ({ open, onClose }) => {
     const { generateAIImageData } = useAppEvent();
-    console.log(generateAIImageData);
+    console.log("generateAIImageData" , generateAIImageData);
     
 
     if (!open) return null;
