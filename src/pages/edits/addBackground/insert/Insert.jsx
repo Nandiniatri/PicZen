@@ -82,7 +82,7 @@ const Insert = () => {
                 )}
             </div>
 
-            {/* {showModal && <Modal2 open={showModal} />} */}
+            {showModal && <Modal2 open={showModal} />}
         </div>
     );
 };
