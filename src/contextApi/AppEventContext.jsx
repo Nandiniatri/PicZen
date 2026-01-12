@@ -50,9 +50,10 @@ const AppEventProvider = ({ children }) => {
 
     const fetchGenerateAIData = async() => {
         try {
-            const response = await fetch('http://localhost:4000/api/generateAIImageData');
+            const response = await fetch('http://localhost:4000/api/generateimageData');
             const data = await response.json();
-
+            console.log(data);
+            
             SetGenerateAIImageData(data);
         } catch (error) {
             console.error("Error fetching JSON:", error);
