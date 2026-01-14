@@ -15,7 +15,6 @@ const Insert = () => {
 
     const handleAIGenrateImage = () => {
         console.log('modal show');
-        
         setShowModal(true);
     }
 
