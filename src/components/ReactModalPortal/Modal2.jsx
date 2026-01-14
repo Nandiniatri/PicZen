@@ -74,8 +74,8 @@ const Modal2 = ({ open, onClose }) => {
                     <div className="modal2-grid">
                         {generateAIImageData.createImage.map((item) => (
                             <div className="modal2-card" key={item.id}>
-                                <img src={item.image} alt={item.title} />
                                 <p>{item.title}</p>
+                                <img src={item.image} alt={item.title} />
                             </div>
                         ))}
                     </div>

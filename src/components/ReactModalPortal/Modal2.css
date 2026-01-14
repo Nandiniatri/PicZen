@@ -1,4 +1,4 @@
-.modal2-overlay {
+/* .modal2-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: center;
     z-index: 999;
-    /* border: solid red; */
 }
 
 .modal2-container {
@@ -46,7 +45,6 @@
 
 .modal2-grid {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(200px, 2fr)); */
     gap: 20px;
     border: solid;
     grid-template-columns: auto auto auto auto;
@@ -69,7 +67,6 @@
 
 .modal2-card img {
     width: 100%;
-    /* height: 140px; */
     object-fit: cover;
     border-radius: 10px;
 }
@@ -78,4 +75,111 @@
     margin-top: 10px;
     font-size: 15px;
     font-weight: 500;
+} */
+
+
+
+.modal2-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
 }
+
+.modal2-container {
+    background: #ffffff;
+    width: 92%;
+    max-width: 1200px;
+    max-height: 90vh;
+    border-radius: 16px;
+    padding: 28px;
+    overflow-y: auto;
+}
+
+.modal2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal2-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.modal2-close-btn {
+    background: #f2f2f2;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal2-sub-title {
+    margin: 8px 0 24px;
+    font-size: 15px;
+    color: #6b6b6b;
+}
+
+.modal2-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+
+.modal2-card {
+    background: #f6f7fb;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: solid;
+    display: flex;
+
+}
+
+.modal2-card:hover {
+    background: #eef0ff;
+    transform: translateY(-3px);
+}
+
+.modal2-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #fff;
+    padding: 10px;
+}
+
+.modal2-card p {
+    margin-top: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+@media (max-width: 1024px) {
+    .modal2-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal2-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal2-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
