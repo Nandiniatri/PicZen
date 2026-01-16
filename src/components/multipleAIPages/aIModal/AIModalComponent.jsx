@@ -1,16 +1,19 @@
 import ModalPortal from "../../ModalPortal";
-import "./AIModalComponent.css";
+// import "./AIModalComponent.css";
+import "./Modal2.css";
 
-const Modal2 = ({ open, onClose }) => {
+const AIModalComponent = ({ open, onClose }) => {
 
     if (!open) return null;
 
     return (
         <ModalPortal>
-            <h1>Hello</h1>
+            <div className="modal2-overlay" onClick={onClose}>
+                <h1>Hello</h1>
+            </div>
         </ModalPortal>
     );
 };
 
-export default Modal2;
+export default AIModalComponent;
 

@@ -5,6 +5,10 @@ import { useAppEvent } from "../../contextApi/AppEventContext";
 const Modal2 = ({ open, onClose }) => {
     const { generateAIImageData } = useAppEvent();
 
+    const handleModalCard = (id) => {
+        alert('Hello' , id)
+    }
+
     if (!open) return null;
 
     return (
@@ -25,7 +29,7 @@ const Modal2 = ({ open, onClose }) => {
 
                     <div className="modal2-grid">
                         {generateAIImageData.createImage.map((item) => (
-                            <div className="modal2-card" key={item.id}>
+                            <div className="modal2-card" key={item.id} onClick={() => handleModalCard(item.id)}>
                                 <p>{item.title}</p>
                                 <img src={item.image} alt={item.title} />
                             </div>
