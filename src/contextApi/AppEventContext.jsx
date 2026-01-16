@@ -47,13 +47,21 @@ const AppEventProvider = ({ children }) => {
 
     const [canvasShapes, setCanvasShapes] = useState([]);
     const [generateAIImageData, SetGenerateAIImageData] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
-    const fetchGenerateAIData = async() => {
+    //AI modal Open and data fetch:
+     const handleModalCard = (item) => {
+        alert(item.title);
+        setShowModal(true);
+    }
+    //End 
+
+    const fetchGenerateAIData = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/generateimageData');
             const data = await response.json();
             console.log(data);
-            
+
             SetGenerateAIImageData(data);
         } catch (error) {
             console.error("Error fetching JSON:", error);
@@ -473,8 +481,10 @@ const AppEventProvider = ({ children }) => {
             canvasShapes,
             setCanvasShapes,
             addShapeToCanvas,
-            dragging, setDragging , 
-            generateAIImageData
+            dragging, setDragging,
+            generateAIImageData , 
+            showModal, setShowModal ,
+            handleModalCard
         }}>
             {children}
 
@@ -482,7 +492,7 @@ const AppEventProvider = ({ children }) => {
                 type="file"
                 ref={fileInputRef}
                 style={{ display: "none" }}
-                multiple 
+                multiple
                 accept="image/*"
                 onChange={handleImageSelect}
             />

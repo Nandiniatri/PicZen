@@ -1,13 +1,14 @@
 import ModalPortal from "../ModalPortal";
 import "./Modal2.css";
 import { useAppEvent } from "../../contextApi/AppEventContext";
+import AIModalComponent from "../multipleAIPages/AIModal/AIModalComponent";
 
 const Modal2 = ({ open, onClose }) => {
-    const { generateAIImageData } = useAppEvent();
+    const { generateAIImageData, handleModalCard , showModal, setShowModal} = useAppEvent();
 
-    const handleModalCard = (id) => {
-        alert('Hello' , id)
-    }
+    // const handleModalCard = (item) => {
+    //     alert(item.title);
+    // }
 
     if (!open) return null;
 
@@ -29,7 +30,7 @@ const Modal2 = ({ open, onClose }) => {
 
                     <div className="modal2-grid">
                         {generateAIImageData.createImage.map((item) => (
-                            <div className="modal2-card" key={item.id} onClick={() => handleModalCard(item.id)}>
+                            <div className="modal2-card" key={item.id} onClick={() => handleModalCard(item)}>
                                 <p>{item.title}</p>
                                 <img src={item.image} alt={item.title} />
                             </div>
@@ -37,6 +38,8 @@ const Modal2 = ({ open, onClose }) => {
                     </div>
                 </div>
             </div>
+
+            {showModal && <AIModalComponent open={showModal}/>}
         </ModalPortal>
     );
 };
