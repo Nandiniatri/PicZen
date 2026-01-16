@@ -48,11 +48,13 @@ const AppEventProvider = ({ children }) => {
     const [canvasShapes, setCanvasShapes] = useState([]);
     const [generateAIImageData, SetGenerateAIImageData] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [selectedGenItem , setSelectedGenItem] = useState(null);
 
     //AI modal Open and data fetch:
      const handleModalCard = (item) => {
-        alert(item.title);
+        // alert(item.title);
         setShowModal(true);
+        setSelectedGenItem(item.title);
     }
     //End 
 
@@ -484,7 +486,8 @@ const AppEventProvider = ({ children }) => {
             dragging, setDragging,
             generateAIImageData , 
             showModal, setShowModal ,
-            handleModalCard
+            handleModalCard,
+            selectedGenItem
         }}>
             {children}
 

@@ -1,0 +1,28 @@
+.AImodal-overlay {
+    border: solid;
+    background-color: red;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.AIModal-container {
+    background: #ffffff;
+    width: 92%;
+    max-width: 1200px;
+    /* max-height: 90vh; */
+    border-radius: 16px;
+    padding: 28px;
+    overflow-y: auto;
+    text-align: center;
+    /* display: flex; */
+    border: solid;
+}
+
+.AIModal-header{
+    
+}
