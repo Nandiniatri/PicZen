@@ -14,15 +14,15 @@
     background: #ffffff;
     width: 92%;
     max-width: 1200px;
-    /* max-height: 90vh; */
+    height: 90vh;
     border-radius: 16px;
     padding: 28px;
     overflow-y: auto;
     text-align: center;
     /* display: flex; */
-    border: solid;
+    border: solid red;
 }
 
 .AIModal-header{
-    
+    border: solid;
 }

@@ -50,13 +50,16 @@ const AppEventProvider = ({ children }) => {
     const [showModal, setShowModal] = useState(false);
     const [selectedGenItem , setSelectedGenItem] = useState(null);
 
+    
+    
     //AI modal Open and data fetch:
-     const handleModalCard = (item) => {
-        // alert(item.title);
+    const handleModalCard = (item) => {
+        // console.log(item);
+        setSelectedGenItem(item);
         setShowModal(true);
-        setSelectedGenItem(item.title);
     }
     //End 
+    console.log(selectedGenItem);
 
     const fetchGenerateAIData = async () => {
         try {
