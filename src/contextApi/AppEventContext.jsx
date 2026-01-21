@@ -48,24 +48,28 @@ const AppEventProvider = ({ children }) => {
     const [canvasShapes, setCanvasShapes] = useState([]);
     const [generateAIImageData, SetGenerateAIImageData] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    const [selectedGenItem , setSelectedGenItem] = useState(null);
+    const [selectedGenItem, setSelectedGenItem] = useState(null);
 
-    
-    
+
+
     //AI modal Open and data fetch:
     const handleModalCard = () => {
         setSelectedGenItem(generateAIImageData.createImage);
         setShowModal(true);
     }
     //End 
-    console.log(selectedGenItem);
-    
+    // console.log(selectedGenItem);
+
+    useEffect(() => {
+        handleModalCard();
+    }, [generateAIImageData])
+
 
     const fetchGenerateAIData = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/generateimageData');
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
 
             SetGenerateAIImageData(data);
         } catch (error) {
@@ -487,8 +491,8 @@ const AppEventProvider = ({ children }) => {
             setCanvasShapes,
             addShapeToCanvas,
             dragging, setDragging,
-            generateAIImageData , 
-            showModal, setShowModal ,
+            generateAIImageData,
+            showModal, setShowModal,
             handleModalCard,
             selectedGenItem
         }}>

@@ -3,6 +3,7 @@ import ModalPortal from "../../ModalPortal";
 import "./AIModalComponent.css";
 // import "./Modal2.css";
 import { useAppEvent } from "../../../contextApi/AppEventContext";
+import Button from "../../Button";
 
 const AIModalComponent = ({ open, onClose }) => {
     const { selectedGenItem } = useAppEvent();
@@ -25,10 +26,14 @@ const AIModalComponent = ({ open, onClose }) => {
                     </div>
 
                     <div>
-                        {/* {selectedGenItem && selectedGenItem.map((AIItem) => {
+                        {selectedGenItem && selectedGenItem.map((AIItem) => {
                             console.log(AIItem);
-                            
-                        })} */}
+                            return (
+                                <div>
+                                    <Button>{AIItem.title}</Button>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
