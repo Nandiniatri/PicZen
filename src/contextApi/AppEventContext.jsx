@@ -53,13 +53,13 @@ const AppEventProvider = ({ children }) => {
     
     
     //AI modal Open and data fetch:
-    const handleModalCard = (item) => {
-        // console.log(item);
-        setSelectedGenItem(item);
+    const handleModalCard = () => {
+        setSelectedGenItem(generateAIImageData.createImage);
         setShowModal(true);
     }
     //End 
     console.log(selectedGenItem);
+    
 
     const fetchGenerateAIData = async () => {
         try {
