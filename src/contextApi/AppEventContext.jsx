@@ -58,11 +58,7 @@ const AppEventProvider = ({ children }) => {
         setShowModal(true);
     }
     //End 
-    // console.log(selectedGenItem);
-
-    useEffect(() => {
-        handleModalCard();
-    }, [generateAIImageData])
+    // console.log(selectedGenItem)
 
 
     const fetchGenerateAIData = async () => {

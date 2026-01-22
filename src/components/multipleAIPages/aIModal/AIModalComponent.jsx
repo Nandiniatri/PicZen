@@ -1,40 +1,58 @@
-import { useState } from "react";
 import ModalPortal from "../../ModalPortal";
 import "./AIModalComponent.css";
-// import "./Modal2.css";
 import { useAppEvent } from "../../../contextApi/AppEventContext";
-import Button from "../../Button";
 
 const AIModalComponent = ({ open, onClose }) => {
     const { selectedGenItem } = useAppEvent();
-    console.log(selectedGenItem);
-    
 
-    if (!open) return null;
-    // if(!selectedGenItem) {
-    //     return null;
-    // }
+    if (!open || !selectedGenItem) return null;
 
     return (
         <ModalPortal>
             <div className="AImodal-overlay" onClick={onClose}>
-                <div className="AIModal-container" onClick={(e) => e.stopPropagation()}>
+                <div
+                    className="AIModal-container"
+                    onClick={(e) => e.stopPropagation()}
+                >
+
                     <div className="AIModal-header">
-                        <button className="modal2-close-btn" onClick={onClose}>
-                            ✕
-                        </button>
+                        <button className="close-btn" onClick={onClose}>✕</button>
                     </div>
 
-                    <div>
-                        {selectedGenItem && selectedGenItem.map((AIItem) => {
-                            console.log(AIItem);
-                            return (
-                                <div>
-                                    <Button>{AIItem.title}</Button>
-                                </div>
-                            )
-                        })}
+
+                    <div className="ai-tabs-wrapper">
+                        <div className="ai-tabs">
+                            {selectedGenItem.map((item) => (
+                                <button
+                                    key={item.id}
+                                    className="ai-tab"
+                                >
+                                    {item.title}
+                                </button>
+                            ))}
+                        </div>
                     </div>
+
+
+                    <div className="ai-content-placeholder">
+                        <div className="prompt-wrapper">
+                            <input
+                                type="text"
+                                placeholder="Describe an image"
+                                className="prompt-input"
+                            />
+
+                            <div className="prompt-options">
+                                <span className="option-pill">Style <b>Random</b></span>
+                                <span className="option-pill">Size <b>Square</b></span>
+                            </div>
+
+                            <button className="prompt-send-btn">
+                                ↑
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </ModalPortal>
@@ -42,4 +60,3 @@ const AIModalComponent = ({ open, onClose }) => {
 };
 
 export default AIModalComponent;
-

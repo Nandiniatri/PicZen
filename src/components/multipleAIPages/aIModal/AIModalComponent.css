@@ -1,28 +1,82 @@
 .AImodal-overlay {
-    border: solid;
-    background-color: red;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 999;
 }
 
 .AIModal-container {
-    background: #ffffff;
-    width: 92%;
-    max-width: 1200px;
-    height: 90vh;
-    border-radius: 16px;
-    padding: 28px;
-    overflow-y: auto;
-    text-align: center;
-    /* display: flex; */
-    border: solid red;
+    background: #fff;
+    width: 95%;
+    max-width: 1270px;
+    height: 95vh;
+    border-radius: 18px;
+    padding: 24px 28px;
+    overflow: hidden;
 }
 
-.AIModal-header{
-    border: solid;
+.AIModal-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn {
+    border: none;
+    background-color: black !important;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    /* border: solid red; */
+}
+
+.ai-tabs-wrapper {
+    margin-top: 12px;
+    overflow-x: auto;
+}
+.ai-tabs-wrapper::-webkit-scrollbar {
+    height: 6px;
+    display: none;
+}
+
+.ai-tabs-wrapper::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.ai-tabs {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 8px;
+    width: max-content;
+}
+
+.ai-tab {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    background: #f4f4f5;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.ai-tab:hover {
+    background: #e5e5e5;
+}
+.ai-tab.active {
+    background: #000;
+    color: #fff;
+}
+
+.ai-content-placeholder {
+    margin-top: 40px;
+    height: 100%;
 }
