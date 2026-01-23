@@ -78,13 +78,6 @@
     color: #fff;
 }
 
-/* .ai-content-placeholder {
-    margin-top: 40px;
-    height: 100%;
-} */
-
-
-
 .ai-content-placeholder {
     position: absolute;
     bottom: 24px;
@@ -95,7 +88,7 @@
     justify-content: center;
     pointer-events: none;
     /* overlay safe */
-    border: solid;
+    /* border: solid; */
 }
 
 
@@ -106,9 +99,9 @@
     max-width: calc(100% - 32px);
     background: #ffffff;
     border-radius: 22px;
-    padding: 16px 20px 58px;
+    padding: 16px 20px 20px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    border: solid;
+    border: solid 1px blueviolet;
 }
 
 .prompt-input {
@@ -127,8 +120,11 @@
 .prompt-options {
     display: flex;
     gap: 10px;
-    margin-top: 14px;
+    margin-top: 30px;
     flex-wrap: wrap;
+    /* border: solid; */
+    width: 100%;
+    /* position: relative; */
 }
 
 .option-pill {
