@@ -7,6 +7,10 @@ const AIModalComponent = ({ open, onClose }) => {
 
     if (!open || !selectedGenItem) return null;
 
+    const handleAISelectedDataTitle = (item) => {
+        // alert(item.title)
+    }
+
     return (
         <ModalPortal>
             <div className="AImodal-overlay" onClick={onClose}>
@@ -26,6 +30,7 @@ const AIModalComponent = ({ open, onClose }) => {
                                 <button
                                     key={item.id}
                                     className="ai-tab"
+                                    onClick={handleAISelectedDataTitle(item)}
                                 >
                                     {item.title}
                                 </button>
