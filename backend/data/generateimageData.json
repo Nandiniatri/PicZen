@@ -7,97 +7,113 @@
             "id": 1,
             "title": "Create any image",
             "image": "https://serverless-api.photoroom.com/mini_app/images/expert.jpg",
-            "type": "ai_create"
+            "type": "ai_create",
+            "file":"createImg"
         },
         {
             "id": 2,
             "title": "Recolor",
             "image": "https://serverless-api.photoroom.com/mini_app/images/recolor.webp",
-            "type": "recolor"
+            "type": "recolor",
+            "file":"reColor"
         },
         {
             "id": 3,
             "title": "Product Beautifier",
             "image": "https://serverless-api.photoroom.com/mini_app/images/pro-shot.jpg",
-            "type": "product_beautifier"
+            "type": "product_beautifier",
+            "file":"productBeautifier"
         },
         {
             "id": 4,
             "title": "Virtual Model",
             "image": "https://serverless-api.photoroom.com/mini_app/images/virtual-tryon.jpg",
-            "type": "virtual_model"
+            "type": "virtual_model",
+            "file":"virtualModel"
         },
         {
             "id": 5,
             "title": "Product Staging",
             "image": "https://serverless-api.photoroom.com/mini_app/images/lifestyle-shot.jpg",
-            "type": "product_staging"
+            "type": "product_staging",
+            "file":"productStaging"
         },
         {
             "id": 6,
             "title": "Describe any change",
             "image": "https://serverless-api.photoroom.com/mini_app/images/describe-a-change.webp",
-            "type": "describe_change"
+            "type": "describe_change",
+            "file":"describeAnyChange"
         },
         {
             "id": 7,
             "title": "Flat lay",
             "image": "https://serverless-api.photoroom.com/mini_app/images/flat-lay.jpg",
-            "type": "flat_lay"
+            "type": "flat_lay",
+            "file":"flatLay"
         },
         {
             "id": 8,
             "title": "Ghost Mannequin",
             "image": "https://serverless-api.photoroom.com/mini_app/images/ghost-mannequin.jpg",
-            "type": "ghost_mannequin"
+            "type": "ghost_mannequin",
+            "file":"ghostMannequin"
         },
         {
             "id": 9,
             "title": "Logo",
             "image": "https://serverless-api.photoroom.com/mini_app/images/logo.jpg",
-            "type": "logo"
+            "type": "logo",
+            "file":""
         },
         {
             "id": 10,
             "title": "Text",
             "image": "https://serverless-api.photoroom.com/mini_app/images/text.jpg",
-            "type": "text"
+            "type": "text",
+            "file":""
         },
         {
             "id": 11,
             "title": "Instagram story",
             "image": "https://serverless-api.photoroom.com/mini_app/images/instagram-story.jpg",
-            "type": "instagram_story"
+            "type": "instagram_story",
+            "file":""
         },
         {
             "id": 12,
             "title": "Background",
             "image": "https://serverless-api.photoroom.com/mini_app/images/background.jpg",
-            "type": "background"
+            "type": "background",
+            "file":""
         },
         {
             "id": 13,
             "title": "3D illustration",
             "image": "https://serverless-api.photoroom.com/mini_app/images/3d-illustrations.jpg",
-            "type": "3d_illustration"
+            "type": "3d_illustration",
+            "file":""
         },
         {
             "id": 14,
             "title": "Product photography",
             "image": "https://serverless-api.photoroom.com/mini_app/images/product.jpg",
-            "type": "product_photography"
+            "type": "product_photography",
+            "file":""
         },
         {
             "id": 15,
             "title": "Architecture photography",
             "image": "https://serverless-api.photoroom.com/mini_app/images/architecture-stock.jpg",
-            "type": "architecture_photography"
+            "type": "architecture_photography",
+            "file":""
         },
         {
             "id": 16,
             "title": "People photography",
             "image": "https://serverless-api.photoroom.com/mini_app/images/people-stock.jpg",
-            "type": "people_photography"
+            "type": "people_photography",
+            "file":""
         }
     ]
 }
