@@ -8,7 +8,7 @@
             "title": "Create any image",
             "image": "https://serverless-api.photoroom.com/mini_app/images/expert.jpg",
             "type": "ai_create",
-            "file":"createImg"
+            "file":"createImg.json"
         },
         {
             "id": 2,
