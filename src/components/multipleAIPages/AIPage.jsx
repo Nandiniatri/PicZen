@@ -10,4 +10,4 @@ const AIPage = () => {
     )
 }
 
-export default AIPage;
+export default AIPage; 
