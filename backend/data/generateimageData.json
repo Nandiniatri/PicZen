@@ -15,35 +15,35 @@
             "title": "Recolor",
             "image": "https://serverless-api.photoroom.com/mini_app/images/recolor.webp",
             "type": "recolor",
-            "file":"reColor"
+            "file":"reColor.json"
         },
         {
             "id": 3,
             "title": "Product Beautifier",
             "image": "https://serverless-api.photoroom.com/mini_app/images/pro-shot.jpg",
             "type": "product_beautifier",
-            "file":"productBeautifier"
+            "file":"productBeautifier.json"
         },
         {
             "id": 4,
             "title": "Virtual Model",
             "image": "https://serverless-api.photoroom.com/mini_app/images/virtual-tryon.jpg",
             "type": "virtual_model",
-            "file":"virtualModel"
+            "file":"virtualModel.json"
         },
         {
             "id": 5,
             "title": "Product Staging",
             "image": "https://serverless-api.photoroom.com/mini_app/images/lifestyle-shot.jpg",
             "type": "product_staging",
-            "file":"productStaging"
+            "file":"productStaging,json"
         },
         {
             "id": 6,
             "title": "Describe any change",
             "image": "https://serverless-api.photoroom.com/mini_app/images/describe-a-change.webp",
             "type": "describe_change",
-            "file":"describeAnyChange"
+            "file":"describeAnyChange.json"
         },
         {
             "id": 7,
