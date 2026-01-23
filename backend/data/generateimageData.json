@@ -36,7 +36,7 @@
             "title": "Product Staging",
             "image": "https://serverless-api.photoroom.com/mini_app/images/lifestyle-shot.jpg",
             "type": "product_staging",
-            "file":"productStaging,json"
+            "file":"productStaging.json"
         },
         {
             "id": 6,
@@ -50,14 +50,14 @@
             "title": "Flat lay",
             "image": "https://serverless-api.photoroom.com/mini_app/images/flat-lay.jpg",
             "type": "flat_lay",
-            "file":"flatLay"
+            "file":"flatLay.json"
         },
         {
             "id": 8,
             "title": "Ghost Mannequin",
             "image": "https://serverless-api.photoroom.com/mini_app/images/ghost-mannequin.jpg",
             "type": "ghost_mannequin",
-            "file":"ghostMannequin"
+            "file":"ghostMannequin.json"
         },
         {
             "id": 9,

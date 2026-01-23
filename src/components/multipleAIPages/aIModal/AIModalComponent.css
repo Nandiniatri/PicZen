@@ -171,6 +171,18 @@
     transform: scale(0.95);
 }
 
+.ai-selected-title {
+    margin: 16px 0;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ai-tab.active {
+    background: #000;
+    color: #fff;
+}
+
 
 @media (max-width: 768px) {
     .prompt-wrapper {
