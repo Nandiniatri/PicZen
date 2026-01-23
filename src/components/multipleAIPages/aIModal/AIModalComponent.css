@@ -39,6 +39,7 @@
     margin-top: 12px;
     overflow-x: auto;
 }
+
 .ai-tabs-wrapper::-webkit-scrollbar {
     height: 6px;
     display: none;
@@ -71,12 +72,123 @@
 .ai-tab:hover {
     background: #e5e5e5;
 }
+
 .ai-tab.active {
     background: #000;
     color: #fff;
 }
 
-.ai-content-placeholder {
+/* .ai-content-placeholder {
     margin-top: 40px;
     height: 100%;
+} */
+
+
+
+.ai-content-placeholder {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    /* overlay safe */
+    border: solid;
+}
+
+
+.prompt-wrapper {
+    pointer-events: auto;
+    position: relative;
+    width: 720px;
+    max-width: calc(100% - 32px);
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 16px 20px 58px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border: solid;
+}
+
+.prompt-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #111;
+    background: transparent;
+}
+
+.prompt-input::placeholder {
+    color: #9ca3af;
+}
+
+.prompt-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.option-pill {
+    background: #f3f4f6;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.option-pill:hover {
+    background: #e5e7eb;
+}
+
+
+.prompt-send-btn {
+    position: absolute;
+    right: 16px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #a78bfa;
+    /* Photoroom-like purple */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.prompt-send-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(167, 139, 250, 0.4);
+}
+
+.prompt-send-btn:active {
+    transform: scale(0.95);
+}
+
+
+@media (max-width: 768px) {
+    .prompt-wrapper {
+        padding: 14px 16px 56px;
+        border-radius: 18px;
+    }
+
+    .prompt-input {
+        font-size: 15px;
+    }
+
+    .prompt-send-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
 }
