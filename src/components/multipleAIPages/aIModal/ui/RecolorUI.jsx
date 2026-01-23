@@ -1,23 +1,27 @@
 const RecolorUI = () => {
-  return (
-    <div className="ai-content-placeholder">
-      <p className="ai-helper-text">
-        Change your product's color.
-      </p>
+    return (
+        <div className="ai-content-placeholder">
+            <div>
+                <img src="https://serverless-api.photoroom.com/mini_app/images/placeholders/recolor.webp" />
+            </div>
 
-      <div className="upload-box">
-        Drop a file or <span>select an image</span>
-      </div>
+            <p className="ai-helper-text">
+                Change your product's color.
+            </p>
 
-      <div className="prompt-options">
-        <span className="option-pill">+ Product</span>
-        <span className="option-pill">4D3DE3</span>
-        <span className="option-pill">Square</span>
-      </div>
+            <div className="upload-box">
+                Drop a file or <span>select an image</span>
+            </div>
 
-      <button className="prompt-send-btn">↑</button>
-    </div>
-  );
+            <div className="prompt-options">
+                <span className="option-pill">+ Product</span>
+                <span className="option-pill">4D3DE3</span>
+                <span className="option-pill">Square</span>
+            </div>
+
+            <button className="prompt-send-btn">↑</button>
+        </div>
+    );
 };
 
 export default RecolorUI;
