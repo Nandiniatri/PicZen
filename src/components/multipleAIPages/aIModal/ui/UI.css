@@ -163,13 +163,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 70px;
-    border: solid;
+    padding-top: 20px;
+    /* border: solid; */
 }
 
 .pb-image-area img {
-    width: 260px;
+    width: 360px;
     border-radius: 16px;
+    /* border: solid; */
 }
 
 .pb-helper-text {
@@ -185,7 +186,8 @@
     max-width: 620px;
     background: #ffffff;
     border-radius: 18px;
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     position: relative;
 }
@@ -213,6 +215,7 @@
     margin-top: 14px;
     display: flex;
     gap: 10px;
+    /* border: solid;/ */
 }
 
 .pb-pill {
@@ -228,8 +231,8 @@
     position: absolute;
     right: 18px;
     bottom: 18px;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: none;
     background: #a78bfa;
