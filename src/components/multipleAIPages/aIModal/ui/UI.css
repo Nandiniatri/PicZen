@@ -1,46 +1,46 @@
 .recolor-wrapper {
-  min-height: 100vh;
-  background: #ffffff;
+    min-height: 100vh;
+    background: #ffffff;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  padding: 32px 20px 140px;
-  gap: 28px;
-  box-sizing: border-box;
+    padding: 32px 20px 140px;
+    gap: 28px;
+    box-sizing: border-box;
 }
 
 .recolor-preview {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .preview-card {
-  width: 460px;
-  max-width: 100%;
-  border-radius: 18px;
-  display: flex;
-  justify-content: center;
+    width: 460px;
+    max-width: 100%;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
 }
 
 .preview-card img {
-  width: 360px;
-  max-width: 100%;
+    width: 360px;
+    max-width: 100%;
 }
 
 .recolor-helper-text {
-  font-size: 15px;
-  color: #6b7280;
-  text-align: center;
-  max-width: 420px;
-  line-height: 1.6;
+    font-size: 15px;
+    color: #6b7280;
+    text-align: center;
+    max-width: 420px;
+    line-height: 1.6;
 }
 
 
 .recolor-upload-box {
-  /* width: 100%;
+    /* width: 100%;
   max-width: 560px;
 
   border: 2px dashed #e5e7eb;
@@ -53,7 +53,7 @@
   cursor: pointer;
 
   transition: all 0.2s ease; */
-      width: 100%;
+    width: 100%;
     max-width: 560px;
     border: 2px dashed #e5e7eb;
     border-radius: 18px;
@@ -64,93 +64,176 @@
     transition: all 0.2s ease;
     position: absolute;
     bottom: 36px;
-    
+
 }
 
 .recolor-upload-box:hover {
-  background: #f5f5f5;
-  border-color: #c7c7c7;
+    background: #f5f5f5;
+    border-color: #c7c7c7;
 }
 
 .upload-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .upload-link {
-  color: #6d5dfc;
-  font-weight: 500;
-  cursor: pointer;
+    color: #6d5dfc;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .recolor-prompt-bar {
-  position: sticky;
-  bottom: 24px;
+    position: sticky;
+    bottom: 24px;
 
-  width: 100%;
-  max-width: 560px;
+    width: 100%;
+    max-width: 560px;
 
-  background: #ffffff;
-  border-radius: 20px;
+    background: #ffffff;
+    border-radius: 20px;
 
-  padding: 14px 16px;
+    padding: 14px 16px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-  z-index: 50;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    z-index: 50;
 }
 
 .prompt-options {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .option-pill {
-  padding: 7px 14px;
-  background: #f3f4f6;
-  border-radius: 999px;
+    padding: 7px 14px;
+    background: #f3f4f6;
+    border-radius: 999px;
 
-  font-size: 13px;
-  font-weight: 500;
+    font-size: 13px;
+    font-weight: 500;
 
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .color-pill {
-  background: #eef2ff;
+    background: #eef2ff;
 }
 
 .color-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #4d3de3;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4d3de3;
 }
 
 /* ===== SEND BUTTON ===== */
 .prompt-send-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
 
-  background: #c4b5fd;
-  border: none;
+    background: #c4b5fd;
+    border: none;
 
-  color: #ffffff;
-  font-size: 18px;
+    color: #ffffff;
+    font-size: 18px;
 
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .prompt-send-btn:hover {
-  transform: scale(1.05);
-  background: #a78bfa;
+    transform: scale(1.05);
+    background: #a78bfa;
+}
+
+
+/* ProductBeautifierBottom */
+
+
+.pb-bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+    border: solid;
+}
+
+.pb-image-area img {
+    width: 260px;
+    border-radius: 16px;
+}
+
+.pb-helper-text {
+    margin-top: 22px;
+    font-size: 16px;
+    color: #6b7280;
+    text-align: center;
+}
+
+.pb-input-box {
+    margin-top: 36px;
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    position: relative;
+}
+
+.pb-drop-area {
+    border: 2px dashed #e5e7eb;
+    border-radius: 14px;
+    padding: 26px;
+    text-align: center;
+}
+
+.pb-cloud {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.pb-drop-area span {
+    color: #6d5dfc;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.pb-pill-row {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.pb-pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: none;
+    background: #f3f4f6;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.pb-send {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #a78bfa;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
 }
