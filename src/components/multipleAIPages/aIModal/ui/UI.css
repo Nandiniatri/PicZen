@@ -15,23 +15,24 @@
 }
 
 .preview-card {
-  width: 160px;
-  height: 160px;
+  width: 500px;
+  height: 220px;
   border-radius: 18px;
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  /* background: #ffffff; */
+  /* box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08); */
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-4deg);
+  /* transform: rotate(-4deg); */
+  /* border: solid; */
 }
 
-.preview-card:last-child {
+/* .preview-card:last-child {
   transform: rotate(4deg);
-}
+} */
 
 .preview-card img {
-  width: 120px;
+  width: 400px;
 }
 
 .preview-arrow {
@@ -52,7 +53,7 @@
   max-width: 560px;
   border: 2px dashed #e5e7eb;
   border-radius: 18px;
-  padding: 34px;
+  padding: 21px;
   text-align: center;
   cursor: pointer;
   background: #fafafa;

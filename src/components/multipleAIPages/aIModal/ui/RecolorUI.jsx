@@ -38,6 +38,7 @@ const RecolorUI = () => {
           <img
             src="https://serverless-api.photoroom.com/mini_app/images/placeholders/recolor.webp"
             alt="before"
+            className="recolor-img"
           />
         </div>
       </div>
