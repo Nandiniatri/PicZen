@@ -32,7 +32,7 @@ import "./UI.css";
 const RecolorUI = () => {
   return (
     <div className="recolor-wrapper">
-  
+
       <div className="recolor-preview">
         <div className="preview-card">
           <img
@@ -56,7 +56,7 @@ const RecolorUI = () => {
         </p>
       </div>
 
-      <div className="recolor-prompt-bar">
+      {/* <div className="recolor-prompt-bar">
         <div className="prompt-options">
           <span className="option-pill">＋ Product</span>
 
@@ -69,7 +69,7 @@ const RecolorUI = () => {
         </div>
 
         <button className="prompt-send-btn">↑</button>
-      </div>
+      </div> */}
     </div>
   );
 };
