@@ -1,7 +1,7 @@
 const CreateImageUI = ({ title }) => {
   return (
     <div className="ai-content-placeholder">
-      <p className="ai-helper-text">Need some inspiration?</p>
+      {/* <p className="ai-helper-text">Need some inspiration?</p> */}
 
       <div className="prompt-wrapper">
         <input
