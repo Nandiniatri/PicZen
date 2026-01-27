@@ -31,9 +31,9 @@ const VirtualModal = () => {
                     <button className="vm-chip">Pose</button>
                     <button className="vm-chip">Portrait (2:3)</button>
                     <button className="vm-chip disabled">Brand</button>
+                    <button className="vm-send">↑</button>
                 </div>
 
-                <button className="vm-send">↑</button>
             </div>
         </div>
     );
