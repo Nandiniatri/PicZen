@@ -91,6 +91,8 @@ import CreateImageUI from "./ui/CreateImageUI";
 import RecolorUI from "./ui/RecolorUI";
 import ProductBeautifierUI from "./ui/ProductBeautifierUI";
 import VirtualModal from "./ui/VirtualModal";
+import ProductStaging from "./ui/ProductStaging";
+import Logo from "./ui/Logo";
 
 const AIModalComponent = ({ open, onClose }) => {
     const { selectedGenItem } = useAppEvent();
@@ -113,6 +115,12 @@ const AIModalComponent = ({ open, onClose }) => {
 
             case "virtual_model":
                 return <VirtualModal />
+            
+            case "product_staging":
+                return <ProductStaging />
+            
+            case "logo":
+                return <Logo />
 
             default:
                 return <CreateImageUI />;

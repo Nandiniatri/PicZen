@@ -40,10 +40,10 @@
         },
         {
             "id": 6,
-            "title": "Describe any change",
+            "title": "Logo",
             "image": "https://serverless-api.photoroom.com/mini_app/images/describe-a-change.webp",
-            "type": "describe_change",
-            "file":"describeAnyChange.json"
+            "type": "logo",
+            "file":"logo.json"
         },
         {
             "id": 7,
