@@ -90,6 +90,7 @@ import { useAppEvent } from "../../../contextApi/AppEventContext";
 import CreateImageUI from "./ui/CreateImageUI";
 import RecolorUI from "./ui/RecolorUI";
 import ProductBeautifierUI from "./ui/ProductBeautifierUI";
+import VirtualModal from "./ui/VirtualModal";
 
 const AIModalComponent = ({ open, onClose }) => {
     const { selectedGenItem } = useAppEvent();
@@ -109,6 +110,9 @@ const AIModalComponent = ({ open, onClose }) => {
 
             case "product_beautifier":
                 return <ProductBeautifierUI />;
+
+            case "virtual_model":
+                return <VirtualModal />
 
             default:
                 return <CreateImageUI />;
