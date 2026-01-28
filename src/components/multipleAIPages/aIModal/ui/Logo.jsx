@@ -4,16 +4,18 @@ const Logo = () => {
     return (
         <div className="logo-ui-wrapper">
 
-            <p className="logo-help-text">Need some inspiration?</p>
+            <div className="logo-div1">
+                <p className="logo-help-text">Need some inspiration?</p>
 
-            <div className="logo-suggestions">
-                <span>"kay" - we sell organic soap</span>
-                <span>"june" - we sell fresh fruits and vegetables</span>
-                <span>"enzo" - I'm a rapper</span>
-                <span>"jay" - I'm a ux design consultant</span>
+                <div className="logo-suggestions">
+                    <span>"kay" - we sell organic soap</span>
+                    <span>"june" - we sell fresh fruits and vegetables</span>
+                    <span>"enzo" - I'm a rapper</span>
+                    <span>"jay" - I'm a ux design consultant</span>
+                </div>
             </div>
 
-            {/* Input Card */}
+
             <div className="logo-input-card">
                 <input
                     type="text"

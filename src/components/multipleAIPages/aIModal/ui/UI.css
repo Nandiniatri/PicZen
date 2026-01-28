@@ -361,8 +361,8 @@
 /* logo */
 .logo-ui-wrapper {
   width: 100%;
-  min-height: 100vh;
-  padding-top: 120px;
+  min-height: 80vh;
+  padding-top: 110px;
 
   display: flex;
   flex-direction: column;
@@ -372,39 +372,55 @@
   background: #ffffff;
 }
 
+.logo-div1 {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
 .logo-help-text {
   font-size: 14px;
   color: #444;
-  margin-bottom: 12px;
 }
 
 .logo-suggestions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  max-width: 900px;
-  justify-content: center;
-  margin-bottom: 28px;
 }
 
 .logo-suggestions span {
-  background: #f2efff;
+  background: #f3f0ff;
   color: #4b3cff;
   font-size: 13px;
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
   white-space: nowrap;
+  transition: background 0.2s ease;
 }
 
-.logo-input-card {
-  width: 90%;
-  max-width: 720px;
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 18px 20px;
+.logo-suggestions span:hover {
+  background: #ebe7ff;
+}
 
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+/* ===== Input Card ===== */
+.logo-input-card {
+  width: 100%;
+  max-width: 720px;
+
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 20px 22px;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .logo-input-card input {
@@ -413,7 +429,6 @@
   outline: none;
   font-size: 16px;
   color: #333;
-  margin-bottom: 16px;
 }
 
 .logo-input-card input::placeholder {
@@ -427,7 +442,7 @@
 }
 
 .logo-chip {
-  background: #f1f1f1;
+  background: #f2f2f2;
   border: none;
   padding: 8px 14px;
   border-radius: 999px;
@@ -437,21 +452,23 @@
   display: flex;
   align-items: center;
   gap: 6px;
+
+  transition: background 0.2s ease;
+}
+
+.logo-chip:hover {
+  background: #e8e8e8;
 }
 
 .logo-chip b {
   font-weight: 600;
 }
 
-.logo-chip:hover {
-  background: #e6e6e6;
-}
-
 .logo-send {
   margin-left: auto;
 
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
 
@@ -463,6 +480,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: background 0.2s ease;
 }
 
 .logo-send:hover {
