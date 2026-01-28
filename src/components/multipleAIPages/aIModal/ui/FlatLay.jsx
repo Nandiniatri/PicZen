@@ -1,6 +1,6 @@
 import "./UI.css";
 
-const ProductStaging = () => {
+const FlatLay = () => {
     return ( 
         <div className="vm-root">
 
@@ -34,4 +34,4 @@ const ProductStaging = () => {
     );
 };
 
-export default ProductStaging;
+export default FlatLay;
