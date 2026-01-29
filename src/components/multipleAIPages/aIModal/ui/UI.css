@@ -378,7 +378,7 @@
     flex-direction: column;
     gap: 14px;
     margin-top: 130px;
-    border: solid red;
+    /* border: solid red; */
 }
 
 .logo-help-text {

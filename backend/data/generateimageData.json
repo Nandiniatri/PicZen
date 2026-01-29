@@ -61,7 +61,7 @@
         },
         {
             "id": 9,
-            "title": "Logo",
+            "title": "Edit with AI",
             "image": "https://serverless-api.photoroom.com/mini_app/images/logo.jpg",
             "type": "logo",
             "file":""
