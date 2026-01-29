@@ -15,7 +15,7 @@ const InstagramStory = () => {
                 </div>
             </div>
 
-
+ 
             <div className="logo-input-card">
                 <input
                     type="text"
