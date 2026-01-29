@@ -9,6 +9,7 @@ import ProductBeautifierUI from "./ui/ProductBeautifierUI";
 import VirtualModal from "./ui/VirtualModal";
 import ProductStaging from "./ui/ProductStaging";
 import Logo from "./ui/Logo";
+import InstagramStory from "./ui/InstagramStory";
 
 const AIModalComponent = ({ open, onClose }) => {
     const { selectedGenItem } = useAppEvent();
@@ -37,6 +38,9 @@ const AIModalComponent = ({ open, onClose }) => {
             
             case "logo":
                 return <Logo />
+
+            case "instagram_story":
+                return <InstagramStory />
 
             default:
                 return <CreateImageUI />;
