@@ -41,6 +41,9 @@ const AIModalComponent = ({ open, onClose }) => {
 
             case "instagram_story":
                 return <InstagramStory />
+            
+            case "background":
+                return 
 
             default:
                 return <CreateImageUI />;
