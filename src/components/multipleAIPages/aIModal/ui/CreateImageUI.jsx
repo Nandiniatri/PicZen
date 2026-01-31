@@ -1,4 +1,9 @@
-const CreateImageUI = ({ title }) => {
+const CreateImageUI = () => {
+
+  const handleCreateImageUI = () => {
+    alert('hello')
+  }
+
   return (
     <div className="ai-content-placeholder">
       {/* <p className="ai-helper-text">Need some inspiration?</p> */}
@@ -15,7 +20,7 @@ const CreateImageUI = ({ title }) => {
           <span className="option-pill">Size <b>Square</b></span>
         </div>
 
-        <button className="prompt-send-btn">↑</button>
+        <button className="prompt-send-btn" onClick={handleCreateImageUI}>↑</button>
       </div>
     </div>
   );
