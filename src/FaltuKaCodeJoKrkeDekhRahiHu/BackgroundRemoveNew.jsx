@@ -81,43 +81,65 @@
 
 
 
-import { useState } from "react";
 
-function BackgroundOnly() {
-    const [outputImg, setOutputImg] = useState(null);
 
-    const handleUpload = async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
 
-        const formData = new FormData();
-        formData.append("image", file);
 
-        const res = await fetch("http://localhost:4000/remove-subject", {
-            method: "POST",
-            body: formData,
-        });
 
-        const blob = await res.blob();
-        setOutputImg(URL.createObjectURL(blob));
-    };
+// import { useState } from "react";
 
-    return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>Subject Removal Demo</h1>
-            <input type="file" onChange={handleUpload} />
-            {outputImg && (
-                <div style={{ marginTop: "20px" }}>
-                    <h3>Processed Image:</h3>
-                    <img src={outputImg} alt="Processed" style={{ maxWidth: "400px" }} />
-                </div>
-            )}
-        </div>
-    );
-}
+// function BackgroundOnly() {
+//     const [outputImg, setOutputImg] = useState(null);
 
-export default BackgroundOnly;
+//     const handleUpload = async (e) => {
+//         const file = e.target.files[0];
+//         if (!file) return;
 
+//         const formData = new FormData();
+//         formData.append("image", file);
+
+//         const res = await fetch("http://localhost:4000/remove-subject", {
+//             method: "POST",
+//             body: formData,
+//         });
+
+//         const blob = await res.blob();
+//         setOutputImg(URL.createObjectURL(blob));
+//     };
+
+//     return (
+//         <div style={{ textAlign: "center", marginTop: "50px" }}>
+//             <h1>Subject Removal Demo</h1>
+//             <input type="file" onChange={handleUpload} />
+//             {outputImg && (
+//                 <div style={{ marginTop: "20px" }}>
+//                     <h3>Processed Image:</h3>
+//                     <img src={outputImg} alt="Processed" style={{ maxWidth: "400px" }} />
+//                 </div>
+//             )}
+//         </div>
+//     );
+// }
 
 // export default BackgroundOnly;
 
+
+
+
+
+
+
+const BackgroundOnly = () => {
+
+    const handleCreateImage = () => {
+        alert('h')
+    }
+    
+    return (
+        <>
+            <button onClick={handleCreateImage}>Click to create Image With AI</button>
+        </>
+    )
+}
+
+export default BackgroundOnly;
