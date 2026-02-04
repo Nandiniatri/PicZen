@@ -127,16 +127,19 @@
 
 
 
-
+import './BackgroundRemoveNew.css';
 
 const BackgroundOnly = () => {
 
     const handleCreateImage = () => {
         alert('h')
     }
-    
+
     return (
         <>
+            <div className='backgroundRemove-Main-Container'>
+                Image Coming...............
+            </div>
             <button onClick={handleCreateImage}>Click to create Image With AI</button>
         </>
     )
