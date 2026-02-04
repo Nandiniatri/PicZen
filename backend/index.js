@@ -5,10 +5,28 @@ import rembg from "rembg-node";
 import multer from "multer";
 import { exec } from "child_process";
 import path from "path";
-
+ 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
+
+app.post('/generate-image' , async(req , res) => {
+  const prompt = req.body.prompt;
+
+  const img = await client.images.generate({
+    model: "gpt-image-1.5",
+    prompt: prompt, 
+    n: 1,
+    size: "512x512"
+  })
+
+  const imageUrl = img.data[0].url;
+  res.json({imageUrl});
+})
+
+
 
 const upload = multer({ dest: "uploads/" });
 
