@@ -127,19 +127,29 @@
 
 
 
+import { useState } from 'react';
 import './BackgroundRemoveNew.css';
 
 const BackgroundOnly = () => {
+    const [textareaValue , setTextareaValue] = useState("");
+
+    const handleTextAreaValue = (e) => {
+        const value = e.target.value;
+        console.log(value);
+        setTextareaValue(value);
+    }
 
     const handleCreateImage = () => {
-        alert('h')
+        
     }
 
     return (
         <>
             <div className='backgroundRemove-Main-Container'>
                 Image Coming...............
+                {textareaValue}
             </div>
+            <textarea value={textareaValue} onChange={(e) => handleTextAreaValue(e)} />
             <button onClick={handleCreateImage}>Click to create Image With AI</button>
         </>
     )
