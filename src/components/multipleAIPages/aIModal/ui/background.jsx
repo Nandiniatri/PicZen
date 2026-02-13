@@ -11,6 +11,8 @@ const Background = () => {
                     <span>beach, podium</span>
                     <span>christmas</span>
                     <span>rustic table, shot from above</span>
+                    <span>New, podium</span>
+                    <span>autumn, podium</span>
                     <span>autumn, podium</span>
                 </div>
             </div>
